@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE CORRIDOR GOLF LEAGUE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green:      #1a4730;
+  --green-mid:  #1f5a3a;
+  --green-lt:   #2d7a52;
+  --white:      #ffffff;
+  --off-white:  #f5f5f0;
+  --light-gray: #e8e8e2;
+  --mid-gray:   #9a9a90;
+  --dark:       #111111;
+  --near-black: #1a1a1a;
+  --gold:       #c8a84b;
+  --gold-lt:    #d4b86a;
+  --red:        #c0392b;
+  --f-display:  'Bebas Neue', 'Barlow Condensed', sans-serif;
+  --f-cond:     'Barlow Condensed', sans-serif;
+  --f-body:     'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--dark); font-family: var(--f-body); overflow-x: hidden; }
+
+/* ─── TICKER ─── */
+.ticker {
+  background: var(--green);
+  color: var(--white);
+  padding: 9px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--gold);
+}
+.ticker-inner { display: inline-block; animation: tickerScroll 30s linear infinite; }
+.ticker-item { display: inline-block; font-family: var(--f-cond); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 48px; }
+.ticker-item span { color: var(--gold); margin-right: 8px; }
+@keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ─── NAV ─── */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.nav-logo { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+.nav-logo-the { font-family: var(--f-cond); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid-gray); }
+.nav-logo-main { font-family: var(--f-display); font-size: 1.6rem; letter-spacing: 0.05em; color: var(--green); line-height: 1; }
+.nav-logo-badge { font-family: var(--f-cond); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--gold); padding: 3px 8px; margin-left: 4px; vertical-align: middle; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-family: var(--f-cond); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--near-black); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--green); }
+.nav-btn { font-family: var(--f-cond); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--green); padding: 10px 22px; text-decoration: none; transition: background 0.2s ease; }
+.nav-btn:hover { background: var(--green-lt); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--green);
+  position: relative;
+  overflow: hidden;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(175deg, transparent, transparent 38px, rgba(255,255,255,0.025) 38px, rgba(255,255,255,0.025) 39px);
+  pointer-events: none;
+}
+.hero-scorecard-bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 40px, var(--green-mid) 40px, var(--green-mid) 42px); }
+.hero-yardage { position: absolute; top: 40px; right: 48px; text-align: right; }
+.hero-yardage-num { font-family: var(--f-display); font-size: 9rem; color: rgba(255,255,255,0.05); line-height: 1; display: block; }
+.hero-yardage-label { font-family: var(--f-cond); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+.hero-content { position: relative; z-index: 2; padding: 0 64px 72px; max-width: 900px; }
+.hero-league-tag { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.hero-tag-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+.hero-tag-text { font-family: var(--f-cond); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.hero-the { display: block; font-family: var(--f-cond); font-size: 1.2rem; font-weight: 400; letter-spacing: 0.55em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.hero-title { display: block; font-family: var(--f-display); font-size: clamp(5.5rem, 13vw, 10.5rem); color: var(--white); line-height: 0.87; letter-spacing: 0.02em; margin-bottom: 12px; }
+.hero-subtitle-bar { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+.hero-subtitle-bar::before { content: ''; display: block; width: 40px; height: 2px; background: var(--gold); flex-shrink: 0; }
+.hero-subtitle { font-family: var(--f-cond); font-size: 1.15rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+.hero-cta-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.btn-hero { display: inline-block; font-family: var(--f-cond); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); background: var(--white); padding: 16px 40px; text-decoration: none; border: 2px solid var(--white); transition: all 0.2s ease; }
+.btn-hero::after { content: '→'; margin-left: 10px; transition: transform 0.2s ease; display: inline-block; }
+.btn-hero:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.btn-hero:hover::after { transform: translateX(4px); }
+.btn-hero-ghost { font-family: var(--f-cond); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+.btn-hero-ghost:hover { color: var(--white); border-color: var(--white); }
+.hero-stats-strip { display: flex; background: var(--near-black); align-self: flex-end; margin-left: auto; }
+.hero-stat { padding: 18px 32px; border-left: 1px solid rgba(255,255,255,0.1); text-align: center; }
+.hero-stat-num { font-family: var(--f-display); font-size: 2rem; color: var(--gold); display: block; line-height: 1; }
+.hero-stat-label { font-family: var(--f-cond); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 4px; display: block; }
+
+/* ─── SHARED ─── */
+.section-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+.section-label { font-family: var(--f-cond); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--green); flex-shrink: 0; }
+.section-title { font-family: var(--f-display); font-size: clamp(3rem, 6vw, 5rem); color: var(--near-black); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 20px; }
+.body-text { font-family: var(--f-body); font-size: 1rem; font-weight: 400; line-height: 1.8; color: #444; }
+
+/* ─── FORMAT ─── */
+.section-format { padding: 100px 0; background: var(--off-white); border-top: 4px solid var(--green); }
+.format-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; margin-bottom: 70px; }
+.matchup-diagram { background: var(--white); border: 1px solid var(--light-gray); padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+.matchup-title { font-family: var(--f-cond); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--light-gray); }
+.matchup-row { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--light-gray); gap: 12px; }
+.matchup-row:last-child { border-bottom: none; }
+.matchup-team { flex: 1; text-align: center; }
+.matchup-team-label { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-gray); display: block; }
+.matchup-team-name { font-family: var(--f-cond); font-size: 1.1rem; font-weight: 700; color: var(--near-black); letter-spacing: 0.05em; }
+.matchup-badge { font-family: var(--f-cond); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--green); padding: 2px 7px; }
+.matchup-vs { font-family: var(--f-display); font-size: 1.4rem; color: var(--gold); flex-shrink: 0; width: 32px; text-align: center; }
+.matchup-side-label { font-family: var(--f-cond); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-gray); margin-top: 2px; display: block; }
+.phase-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-gray); border: 1px solid var(--light-gray); }
+.phase-card { background: var(--white); padding: 36px 28px; position: relative; transition: all 0.2s ease; cursor: default; }
+.phase-card:hover { background: var(--green); }
+.phase-card:hover .phase-title, .phase-card:hover .phase-desc { color: var(--white); }
+.phase-card:hover .phase-holes { color: var(--gold); }
+.phase-card:hover .phase-num { color: rgba(255,255,255,0.08); }
+.phase-num { font-family: var(--f-display); font-size: 5.5rem; color: var(--light-gray); line-height: 1; position: absolute; top: 16px; right: 20px; transition: color 0.2s; }
+.phase-holes { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; transition: color 0.2s; }
+.phase-title { font-family: var(--f-display); font-size: 2.2rem; color: var(--near-black); line-height: 1; margin-bottom: 14px; transition: color 0.2s; }
+.phase-desc { font-family: var(--f-body); font-size: 0.85rem; line-height: 1.7; color: #555; transition: color 0.2s; }
+
+/* ─── WHO ─── */
+.section-who { padding: 100px 0; background: var(--near-black); position: relative; overflow: hidden; }
+.section-who::before { content: 'THE CORRIDOR'; position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: var(--f-display); font-size: 12rem; color: rgba(255,255,255,0.025); line-height: 0.85; pointer-events: none; white-space: nowrap; }
+.who-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.who-left .section-label { color: var(--gold); }
+.who-left .section-label::before { background: var(--gold); }
+.who-title { font-family: var(--f-display); font-size: clamp(3rem, 6vw, 5rem); color: var(--white); line-height: 0.95; margin-bottom: 28px; }
+.who-body { color: rgba(255,255,255,0.65); max-width: 480px; }
+.who-checklist { display: flex; flex-direction: column; gap: 0; }
+.who-check-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.who-check-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+.check-icon { width: 28px; height: 28px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; font-size: 0.75rem; color: white; font-weight: 700; }
+.check-text { font-family: var(--f-body); font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+.check-text strong { color: var(--white); }
+
+/* ─── MEMBERSHIP ─── */
+.section-membership { padding: 100px 0; background: var(--white); border-top: 4px solid var(--green); }
+.membership-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-gray); margin-top: 56px; }
+.mem-card { background: var(--white); padding: 44px 36px; }
+.mem-card.featured { background: var(--green); }
+.mem-type { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 8px; }
+.mem-card.featured .mem-type { color: var(--gold); }
+.mem-title { font-family: var(--f-display); font-size: 2.4rem; color: var(--near-black); line-height: 1; margin-bottom: 20px; }
+.mem-card.featured .mem-title { color: var(--white); }
+.mem-divider { width: 40px; height: 2px; background: var(--green); margin-bottom: 24px; }
+.mem-card.featured .mem-divider { background: var(--gold); }
+.mem-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.mem-features li { font-family: var(--f-body); font-size: 0.88rem; color: #444; line-height: 1.5; padding-left: 16px; position: relative; }
+.mem-features li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+.mem-card.featured .mem-features li { color: rgba(255,255,255,0.8); }
+.mem-card.featured .mem-features li::before { background: var(--gold); }
+.stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--light-gray); border: 1px solid var(--light-gray); margin-top: 1px; }
+.stat-cell { background: var(--off-white); padding: 28px 24px; text-align: center; }
+.stat-big { font-family: var(--f-display); font-size: 2.8rem; color: var(--green); display: block; line-height: 1; margin-bottom: 6px; }
+.stat-desc { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-gray); }
+
+/* ─── SEASON ─── */
+.section-season { padding: 100px 0; background: var(--green); position: relative; overflow: hidden; }
+.section-season::after { content: '18'; position: absolute; right: -20px; bottom: -60px; font-family: var(--f-display); font-size: 28rem; color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none; }
+.season-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+.season-left .section-label { color: var(--gold); }
+.season-left .section-label::before { background: var(--gold); }
+.season-title { font-family: var(--f-display); font-size: clamp(3rem, 6vw, 5rem); color: var(--white); line-height: 0.95; margin-bottom: 24px; }
+.season-body { color: rgba(255,255,255,0.7); }
+.finals-board { background: var(--near-black); overflow: hidden; }
+.finals-board-header { background: var(--gold); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+.finals-board-title { font-family: var(--f-cond); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--near-black); }
+.finals-board-live { display: flex; align-items: center; gap: 6px; font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--near-black); }
+.live-dot { width: 7px; height: 7px; background: var(--red); border-radius: 50%; animation: blink 1.4s ease-in-out infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.finals-row { display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 16px; transition: background 0.15s; }
+.finals-row:hover { background: rgba(255,255,255,0.04); }
+.finals-row:last-child { border-bottom: none; }
+.finals-pos { font-family: var(--f-display); font-size: 1.4rem; color: rgba(255,255,255,0.25); width: 28px; flex-shrink: 0; }
+.finals-pos.gold { color: var(--gold); }
+.finals-team { flex: 1; }
+.finals-team-name { font-family: var(--f-cond); font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; color: var(--white); }
+.finals-team-sub { font-family: var(--f-body); font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-top: 1px; }
+.finals-score { font-family: var(--f-display); font-size: 1.6rem; color: var(--gold); letter-spacing: 0.04em; }
+.finals-score.negative { color: #e74c3c; }
+.finals-score.even { color: rgba(255,255,255,0.5); }
+.finals-board-footer { background: rgba(200,168,75,0.1); border-top: 1px solid rgba(200,168,75,0.25); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+.finals-board-footer-text { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+/* ─── FOUNDING ─── */
+.section-founding { padding: 120px 0; background: var(--off-white); border-top: 4px solid var(--green); }
+.founding-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.founding-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: var(--white); padding: 8px 16px; margin-bottom: 32px; }
+.founding-badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: blink 1.6s ease-in-out infinite; }
+.founding-badge-text { font-family: var(--f-cond); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+.founding-perks { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+.perk-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--light-gray); }
+.perk-row:first-child { border-top: 1px solid var(--light-gray); }
+.perk-icon { width: 36px; height: 36px; background: var(--green); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+.perk-text { font-family: var(--f-body); font-size: 0.9rem; color: #333; line-height: 1.4; }
+.perk-text strong { color: var(--near-black); }
+.form-card { background: var(--white); border: 1px solid var(--light-gray); box-shadow: 0 8px 40px rgba(0,0,0,0.08); padding: 48px 40px; }
+.form-card-title { font-family: var(--f-display); font-size: 2.2rem; color: var(--near-black); margin-bottom: 8px; }
+.form-card-sub { font-family: var(--f-body); font-size: 0.9rem; color: var(--mid-gray); margin-bottom: 32px; line-height: 1.6; }
+.form-field { margin-bottom: 16px; }
+.form-label { display: block; font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 6px; }
+.form-input, .form-select { width: 100%; font-family: var(--f-body); font-size: 0.95rem; color: var(--near-black); background: var(--off-white); border: 1px solid var(--light-gray); padding: 13px 16px; outline: none; transition: border-color 0.2s ease; border-radius: 0; -webkit-appearance: none; }
+.form-input:focus, .form-select:focus { border-color: var(--green); background: var(--white); }
+.btn-submit { width: 100%; font-family: var(--f-cond); font-size: 1rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--green); border: none; padding: 18px 32px; cursor: pointer; margin-top: 8px; transition: background 0.2s ease, transform 0.15s ease; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-submit:hover { background: var(--green-lt); transform: translateY(-1px); }
+.btn-arrow { transition: transform 0.2s; }
+.btn-submit:hover .btn-arrow { transform: translateX(4px); }
+.form-disclaimer { font-family: var(--f-body); font-size: 0.75rem; color: var(--mid-gray); text-align: center; margin-top: 14px; line-height: 1.5; }
+
+/* ─── FOOTER ─── */
+footer { background: var(--near-black); padding: 48px 40px; border-top: 4px solid var(--green); }
+.footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.footer-logo-text { font-family: var(--f-display); font-size: 1.8rem; color: var(--white); letter-spacing: 0.05em; }
+.footer-tagline { font-family: var(--f-cond); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-family: var(--f-cond); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-copy { font-family: var(--f-body); font-size: 0.72rem; color: rgba(255,255,255,0.25); text-align: right; line-height: 1.6; }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  /* Nav */
+  .nav-links { display: none; }
+  nav { padding: 0 20px; height: 60px; }
+  .nav-logo-main { font-size: 1.3rem; }
+  .nav-logo-badge { display: none; }
+  .nav-btn { padding: 8px 16px; font-size: 0.7rem; }
+
+  /* Hero */
+  .hero { min-height: 100svh; }
+  .hero-content { padding: 80px 24px 24px; }
+  .hero-the { font-size: 0.9rem; letter-spacing: 0.4em; }
+  .hero-title { font-size: clamp(4rem, 20vw, 6rem); }
+  .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.06em; }
+  .hero-subtitle-bar { margin-bottom: 28px; }
+  .hero-subtitle-bar::before { width: 24px; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .btn-hero { width: 100%; text-align: center; padding: 14px 24px; font-size: 0.8rem; }
+  .hero-yardage { display: none; }
+  .hero-stats-strip { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .hero-stat { padding: 12px 8px; border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
+  .hero-stat-num { font-size: 1.4rem; }
+  .hero-stat-label { font-size: 0.5rem; }
+
+  /* Sections */
+  .section-inner { padding: 0 20px; }
+  .section-format { padding: 60px 0; }
+  .section-who { padding: 60px 0; }
+  .section-membership { padding: 60px 0; }
+  .section-season { padding: 60px 0; }
+  .section-founding { padding: 60px 0; }
+
+  /* Grids → single column */
+  .format-layout,
+  .who-layout,
+  .season-layout,
+  .founding-layout { grid-template-columns: 1fr; gap: 36px; }
+  .phase-cards { grid-template-columns: 1fr; }
+  .membership-grid { grid-template-columns: 1fr !important; }
+
+  /* Phase cards */
+  .phase-card { padding: 28px 24px; }
+  .phase-num { font-size: 4rem; top: 12px; right: 16px; }
+
+  /* Stats row */
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-big { font-size: 2.2rem; }
+
+  /* Matchup diagram */
+  .matchup-diagram { padding: 20px; }
+  .matchup-team-name { font-size: 0.95rem; }
+
+  /* Finals leaderboard */
+  .finals-board-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .finals-row { padding: 12px 16px; }
+  .finals-team-name { font-size: 0.9rem; }
+  .finals-score { font-size: 1.3rem; }
+
+  /* Who checklist */
+  .section-who::before { display: none; }
+
+  /* Membership cards */
+  .mem-card { padding: 32px 24px; }
+
+  /* Founding form */
+  .form-card { padding: 32px 24px; }
+  .form-card-title { font-size: 1.8rem; }
+  .perk-row { padding: 12px 0; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-copy { text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; gap: 16px; }
+  footer { padding: 36px 20px; }
+
+  /* Section titles */
+  .section-title { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .who-title { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .season-title { font-size: clamp(2.2rem, 8vw, 3rem); }
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span>●</span>Early Access Now Open</span>
+    <span class="ticker-item"><span>●</span>24 Tournaments Per Season</span>
+    <span class="ticker-item"><span>●</span>Gulf Coast · PCB to Destin</span>
+    <span class="ticker-item"><span>●</span>4-Man Teams · Shotgun Start</span>
+    <span class="ticker-item"><span>●</span>Tournament Payouts & Skins Every Round</span>
+    <span class="ticker-item"><span>●</span>Field Size Determined by Course Capacity</span>
+    <span class="ticker-item"><span>●</span>Early Access Now Open</span>
+    <span class="ticker-item"><span>●</span>24 Tournaments Per Season</span>
+    <span class="ticker-item"><span>●</span>Gulf Coast · PCB to Destin</span>
+    <span class="ticker-item"><span>●</span>4-Man Teams · Shotgun Start</span>
+    <span class="ticker-item"><span>●</span>Tournament Payouts & Skins Every Round</span>
+    <span class="ticker-item"><span>●</span>Field Size Determined by Course Capacity</span>
+  </div>
+</div>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-the">The</span>
+    <span class="nav-logo-main">CORRIDOR</span>
+    <span class="nav-logo-badge">Golf League</span>
+  </a>
+  <div class="nav-links">
+    <a href="#format">The Format</a>
+    <a href="#membership">Membership</a>
+    <a href="#season">The Season</a>
+  </div>
+  <a href="#founding" class="nav-btn">Get On The List</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-scorecard-bar"></div>
+
+  <div class="hero-content">
+    <div class="hero-league-tag">
+      <span class="hero-tag-dot"></span>
+      <span class="hero-tag-text">Gulf Coast Golf League — Panama City Beach to Destin</span>
+    </div>
+    <span class="hero-the">The</span>
+    <span class="hero-title">CORRIDOR</span>
+    <div class="hero-subtitle-bar">
+      <span class="hero-subtitle">Real Competition. The Courses You Know. Every Other Weekend.</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#founding" class="btn-hero">Get On The List</a>
+      <a href="#format" class="btn-hero-ghost">See The Format</a>
+    </div>
+  </div>
+    <div class="hero-stats-strip">
+    <div class="hero-stat"><span class="hero-stat-num">24</span><span class="hero-stat-label">Tournaments</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">4</span><span class="hero-stat-label">Per Team</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">NET</span><span class="hero-stat-label">Scoring</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">TBD</span><span class="hero-stat-label">Field Size</span></div>
+  </div>
+</section>
+
+<section class="section-format" id="format">
+  <div class="section-inner">
+    <div class="format-layout">
+      <div>
+        <p class="section-label reveal">The Format</p>
+        <h2 class="section-title reveal reveal-d1">The Only League That Plays Like This.</h2>
+        <p class="body-text reveal reveal-d2">4-man teams. Split matchups across the entire course. Three formats in one round. Every player locked in for all 18 holes.</p>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="matchup-diagram">
+          <div class="matchup-title">Tournament Matchup Structure</div>
+          <div class="matchup-row">
+            <div class="matchup-team">
+              <span class="matchup-team-label">Cart 1 — Holes 1–9</span>
+              <div class="matchup-team-name">A1 & A2</div>
+              <span class="matchup-side-label">Team A rides together</span>
+            </div>
+            <div class="matchup-vs">vs</div>
+            <div class="matchup-team">
+              <span class="matchup-team-label">Cart 2 — Holes 1–9</span>
+              <div class="matchup-team-name">B1 & B2</div>
+              <span class="matchup-side-label">Team B rides together</span>
+            </div>
+          </div>
+          <div class="matchup-row">
+            <div class="matchup-team">
+              <span class="matchup-team-label">Cart 3 — Holes 10–18</span>
+              <div class="matchup-team-name">A3 & A4</div>
+              <span class="matchup-side-label">Team A rides together</span>
+            </div>
+            <div class="matchup-vs">vs</div>
+            <div class="matchup-team">
+              <span class="matchup-team-label">Cart 4 — Holes 10–18</span>
+              <div class="matchup-team-name">B3 & B4</div>
+              <span class="matchup-side-label">Team B rides together</span>
+            </div>
+          </div>
+          <div class="matchup-row" style="border-bottom:none;padding-top:16px;">
+            <span class="matchup-badge">Teammates ride together · Opponents in the adjacent cart</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-cards">
+      <div class="phase-card reveal">
+        <div class="phase-num">I</div>
+        <div class="phase-holes">Holes 1–6</div>
+        <div class="phase-title">BEST BALL</div>
+        <p class="phase-desc">Each player plays their own ball. Best score per hole counts for the team. Cover your partner, manage your game, and let the better ball do the work.</p>
+      </div>
+      <div class="phase-card reveal reveal-d1">
+        <div class="phase-num">II</div>
+        <div class="phase-holes">Holes 7–12</div>
+        <div class="phase-title">ALT SHOT</div>
+        <p class="phase-desc">One ball. Two players. Alternate every stroke. This is where partnerships are forged or broken — every shot carries your partner's round. No room to freelance.</p>
+      </div>
+      <div class="phase-card reveal reveal-d2">
+        <div class="phase-num">III</div>
+        <div class="phase-holes">Holes 13–18</div>
+        <div class="phase-title">INDIVIDUAL</div>
+        <p class="phase-desc">Every player. Every ball. Every score counts personally. The back six is yours alone — and every stroke follows you to the Finals leaderboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-who">
+  <div class="section-inner">
+    <div class="who-layout">
+      <div class="who-left">
+        <p class="section-label reveal">Who This Is For</p>
+        <h2 class="who-title reveal reveal-d1">You've already played every course on this corridor.</h2>
+        <p class="who-body body-text reveal reveal-d2">The Corridor is built for golfers who take the game seriously and want to compete alongside others who do the same. Year-round structure, a real format, and a community that shows up every other weekend — on the courses you already know.</p>
+      </div>
+      <div class="who-checklist reveal reveal-d2">
+        <div class="who-check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>GHIN verified handicap</strong> — active USGA index required, 0–18 maximum</div>
+        </div>
+        <div class="who-check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Gulf Coast local</strong> — you live here, you know these courses, you want to own this territory</div>
+        </div>
+        <div class="who-check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Team player</strong> — you want partners who hold their weight and show up to win</div>
+        </div>
+        <div class="who-check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Year-round</strong> — you want something worth putting on the calendar every other Saturday</div>
+        </div>
+        <div class="who-check-item">
+          <div class="check-icon">✓</div>
+          <div class="check-text"><strong>Ready to compete</strong> — for real prize money, skins on every hole, and a name on the Finals board</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-membership" id="membership">
+  <div class="section-inner">
+    <p class="section-label reveal">Membership</p>
+    <h2 class="section-title reveal reveal-d1">Two Ways In. One League.</h2>
+    <p class="body-text reveal reveal-d2">Membership is capped — field size is determined by course cart capacity, not an arbitrary number. That keeps the league tight, the competition real, and every spot meaningful. Active members hold a permanent team roster spot. Reserve members are the depth that keeps the league running.</p>
+
+    <div class="membership-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="mem-card reveal">
+        <div class="mem-type">Active Member</div>
+        <div class="mem-title">ACTIVE MEMBER</div>
+        <div class="mem-divider"></div>
+        <ul class="mem-features">
+          <li>$50/month</li>
+          <li>Tournament entry fee TBD per round</li>
+          <li>Permanent spot on a 4-man team</li>
+          <li>Entry to all 24 tournaments</li>
+          <li>Full standings, stats & league access</li>
+          <li>Finals eligible with 16 of 24 appearances</li>
+        </ul>
+      </div>
+      <div class="mem-card featured reveal reveal-d1">
+        <div class="mem-type">Reserve Member</div>
+        <div class="mem-title">RESERVE MEMBER</div>
+        <div class="mem-divider"></div>
+        <ul class="mem-features">
+          <li>$5/month</li>
+          <li>$50 per round when called up as a sub</li>
+          <li>Full league membership & community access</li>
+          <li>Called up when any team has an absence</li>
+          <li>Priority placement when active spots open</li>
+          <li>Earn Finals eligibility through call-ups</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-cell reveal"><span class="stat-big">24</span><span class="stat-desc">Tournaments / Season</span></div>
+      <div class="stat-cell reveal reveal-d1"><span class="stat-big">4</span><span class="stat-desc">Players Per Team</span></div>
+      <div class="stat-cell reveal reveal-d1"><span class="stat-big">TBD</span><span class="stat-desc">Total Members</span></div>
+      <div class="stat-cell reveal reveal-d2"><span class="stat-big">16</span><span class="stat-desc">Appearances for Finals</span></div>
+      <div class="stat-cell reveal reveal-d2"><span class="stat-big">1</span><span class="stat-desc">Finals. One Champion.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-season" id="season">
+  <div class="section-inner">
+    <div class="season-layout">
+      <div class="season-left">
+        <p class="section-label reveal">The Season & Finals</p>
+        <h2 class="season-title reveal reveal-d1">Every Round Builds The Purse.</h2>
+        <p class="season-body body-text reveal reveal-d2">Twenty-four tournaments across the Gulf Coast corridor — shotgun starts on the best courses between Panama City Beach and Destin. Venues are being finalized now.<br><br>Every tournament pays out to the top 5 teams. A skins game runs alongside — money on every hole across all three format phases. All scoring is net. Points accumulate all season, and the top teams by standings carry into the Finals where the season purse is on the line.</p>
+      </div>
+      <div class="finals-board reveal reveal-d2">
+        <div class="finals-board-header">
+          <span class="finals-board-title">Season Standings — Points</span>
+          <div class="finals-board-live"><div class="live-dot"></div>Season End</div>
+        </div>
+        <div class="finals-row"><div class="finals-pos gold">1</div><div class="finals-team"><div class="finals-team-name">GULF COAST IRON</div><div class="finals-team-sub">Active · 22 of 24 appearances</div></div><div class="finals-score">284 pts</div></div>
+        <div class="finals-row"><div class="finals-pos">2</div><div class="finals-team"><div class="finals-team-name">SALT & SAND</div><div class="finals-team-sub">Active · 20 of 24 appearances</div></div><div class="finals-score">271 pts</div></div>
+        <div class="finals-row"><div class="finals-pos">3</div><div class="finals-team"><div class="finals-team-name">THE FLATS</div><div class="finals-team-sub">Active · 19 of 24 appearances</div></div><div class="finals-score">258 pts</div></div>
+        <div class="finals-row"><div class="finals-pos">4</div><div class="finals-team"><div class="finals-team-name">DEAD LOW</div><div class="finals-team-sub">Reserve · 17 of 24 appearances</div></div><div class="finals-score even">244 pts</div></div>
+        <div class="finals-row"><div class="finals-pos">5</div><div class="finals-team"><div class="finals-team-name">TIGHT LIE</div><div class="finals-team-sub">Active · 16 of 24 appearances</div></div><div class="finals-score even">211 pts</div></div>
+        <div class="finals-board-footer"><span class="finals-board-footer-text">Prize Purse</span><span class="finals-board-footer-text">Built from every round played →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-founding" id="founding">
+  <div class="section-inner">
+    <div class="founding-layout">
+      <div>
+        <div class="founding-badge reveal">
+          <span class="founding-badge-dot"></span>
+          <span class="founding-badge-text">Early Access — Now Open</span>
+        </div>
+        <h2 class="section-title reveal reveal-d1">Get On The List Before We Launch.</h2>
+        <p class="body-text reveal reveal-d2">The Corridor is accepting early interest now. Spots are limited by course capacity — once the field is full, it's full. Get on the list and you'll be first to know when enrollment opens, courses are announced, and teams are formed.</p>
+        <div class="founding-perks">
+          <div class="perk-row reveal reveal-d1"><div class="perk-icon">📋</div><div class="perk-text"><strong>First access</strong> to enrollment before the public</div></div>
+          <div class="perk-row reveal reveal-d2"><div class="perk-icon">⛳</div><div class="perk-text"><strong>Course & schedule announcements</strong> as soon as venues are confirmed</div></div>
+          <div class="perk-row reveal reveal-d2"><div class="perk-icon">👥</div><div class="perk-text"><strong>Early team formation</strong> — pick your squad before general enrollment opens</div></div>
+          <div class="perk-row reveal reveal-d3"><div class="perk-icon">📍</div><div class="perk-text"><strong>No obligation</strong> until you confirm — just hold your place in line</div></div>
+        </div>
+      </div>
+
+      <div class="form-card reveal reveal-d2">
+        <div class="form-card-title">Get On The List</div>
+        <p class="form-card-sub">No payment required. We'll reach out when enrollment opens with course details, pricing, and team formation info.</p>
+
+        <div id="form-success" style="display:none; padding: 24px; background: #1a4730; color: white; text-align: center; margin-bottom: 16px;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 8px;">You're On The List</div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.85;">We'll be in touch as soon as courses are confirmed and enrollment opens.</div>
+        </div>
+
+        <form id="waitlist-form" action="https://formspree.io/f/mpqbygqr" method="POST" data-netlify="false">
+          <div class="form-field">
+            <label class="form-label" for="name">First & Last Name</label>
+            <input type="text" class="form-input" id="name" name="name" placeholder="John Tanner" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" class="form-input" id="email" name="email" placeholder="john@email.com" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input type="tel" class="form-input" id="phone" name="phone" placeholder="(850) 555-0100">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="interest">Membership Interest</label>
+            <select class="form-select" id="interest" name="interest" required>
+              <option value="">Select one...</option>
+              <option value="Active Member">Active Member — Team Roster Spot</option>
+              <option value="Reserve Member">Reserve Member — Sub List</option>
+              <option value="Not sure">Not sure yet — send me the info</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnText">Get On The List</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <p class="form-disclaimer">No payment today. No obligation until you confirm.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-text">THE CORRIDOR</div>
+      <div class="footer-tagline">Gulf Coast · Every Other Weekend · All Year</div>
+    </div>
+    <div class="footer-links">
+      <a href="#format">Format</a>
+      <a href="#membership">Membership</a>
+      <a href="#season">Season</a>
+      <a href="#founding">Join</a>
+    </div>
+    <div class="footer-copy">© 2025 The Corridor Golf League<br>30A · Emerald Coast · Florida</div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+revealEls.forEach(el => obs.observe(el));
+
+// Formspree AJAX submission
+const form = document.getElementById('waitlist-form');
+const btn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const successMsg = document.getElementById('form-success');
+
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    btnText.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        btnText.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btnText.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  });
+}
+</script>
+</body>
+</html>
