@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
- 
+
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
 :root {
   --green:      #1a4730;
   --green-mid:  #1f5a3a;
@@ -28,10 +29,10 @@
   --f-cond:     'Barlow Condensed', sans-serif;
   --f-body:     'Inter', system-ui, sans-serif;
 }
- 
+
 html { scroll-behavior: smooth; }
 body { background: var(--white); color: var(--dark); font-family: var(--f-body); overflow-x: hidden; }
- 
+
 /* ─── TICKER ─── */
 .ticker {
   background: var(--green);
@@ -45,7 +46,7 @@ body { background: var(--white); color: var(--dark); font-family: var(--f-body);
 .ticker-item { display: inline-block; font-family: var(--f-cond); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 48px; }
 .ticker-item span { color: var(--gold); margin-right: 8px; }
 @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
- 
+
 /* ─── NAV ─── */
 nav {
   background: var(--white);
@@ -69,7 +70,7 @@ nav {
 .nav-links a:hover { color: var(--green); }
 .nav-btn { font-family: var(--f-cond); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--green); padding: 10px 22px; text-decoration: none; transition: background 0.2s ease; }
 .nav-btn:hover { background: var(--green-lt); }
- 
+
 /* ─── HERO ─── */
 .hero {
   background: var(--green);
@@ -111,14 +112,14 @@ nav {
 .hero-stat { padding: 18px 32px; border-left: 1px solid rgba(255,255,255,0.1); text-align: center; }
 .hero-stat-num { font-family: var(--f-display); font-size: 2rem; color: var(--gold); display: block; line-height: 1; }
 .hero-stat-label { font-family: var(--f-cond); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 4px; display: block; }
- 
+
 /* ─── SHARED ─── */
 .section-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
 .section-label { font-family: var(--f-cond); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
 .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--green); flex-shrink: 0; }
 .section-title { font-family: var(--f-display); font-size: clamp(3rem, 6vw, 5rem); color: var(--near-black); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 20px; }
 .body-text { font-family: var(--f-body); font-size: 1rem; font-weight: 400; line-height: 1.8; color: #444; }
- 
+
 /* ─── FORMAT ─── */
 .section-format { padding: 100px 0; background: var(--off-white); border-top: 4px solid var(--green); }
 .format-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; margin-bottom: 70px; }
@@ -142,7 +143,7 @@ nav {
 .phase-holes { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; transition: color 0.2s; }
 .phase-title { font-family: var(--f-display); font-size: 2.2rem; color: var(--near-black); line-height: 1; margin-bottom: 14px; transition: color 0.2s; }
 .phase-desc { font-family: var(--f-body); font-size: 0.85rem; line-height: 1.7; color: #555; transition: color 0.2s; }
- 
+
 /* ─── WHO ─── */
 .section-who { padding: 100px 0; background: var(--near-black); position: relative; overflow: hidden; }
 .section-who::before { content: 'THE CORRIDOR'; position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: var(--f-display); font-size: 12rem; color: rgba(255,255,255,0.025); line-height: 0.85; pointer-events: none; white-space: nowrap; }
@@ -157,7 +158,7 @@ nav {
 .check-icon { width: 28px; height: 28px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; font-size: 0.75rem; color: white; font-weight: 700; }
 .check-text { font-family: var(--f-body); font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
 .check-text strong { color: var(--white); }
- 
+
 /* ─── MEMBERSHIP ─── */
 .section-membership { padding: 100px 0; background: var(--white); border-top: 4px solid var(--green); }
 .membership-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-gray); margin-top: 56px; }
@@ -178,7 +179,7 @@ nav {
 .stat-cell { background: var(--off-white); padding: 28px 24px; text-align: center; }
 .stat-big { font-family: var(--f-display); font-size: 2.8rem; color: var(--green); display: block; line-height: 1; margin-bottom: 6px; }
 .stat-desc { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-gray); }
- 
+
 /* ─── SEASON ─── */
 .section-season { padding: 100px 0; background: var(--green); position: relative; overflow: hidden; }
 .section-season::after { content: '18'; position: absolute; right: -20px; bottom: -60px; font-family: var(--f-display); font-size: 28rem; color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none; }
@@ -206,7 +207,7 @@ nav {
 .finals-score.even { color: rgba(255,255,255,0.5); }
 .finals-board-footer { background: rgba(200,168,75,0.1); border-top: 1px solid rgba(200,168,75,0.25); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
 .finals-board-footer-text { font-family: var(--f-cond); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
- 
+
 /* ─── FOUNDING ─── */
 .section-founding { padding: 120px 0; background: var(--off-white); border-top: 4px solid var(--green); }
 .founding-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -231,7 +232,7 @@ nav {
 .btn-arrow { transition: transform 0.2s; }
 .btn-submit:hover .btn-arrow { transform: translateX(4px); }
 .form-disclaimer { font-family: var(--f-body); font-size: 0.75rem; color: var(--mid-gray); text-align: center; margin-top: 14px; line-height: 1.5; }
- 
+
 /* ─── FOOTER ─── */
 footer { background: var(--near-black); padding: 48px 40px; border-top: 4px solid var(--green); }
 .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
@@ -241,7 +242,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
 .footer-links a { font-family: var(--f-cond); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: rgba(255,255,255,0.8); }
 .footer-copy { font-family: var(--f-body); font-size: 0.72rem; color: rgba(255,255,255,0.25); text-align: right; line-height: 1.6; }
- 
+
 .form-error {
   display: none;
   font-family: var(--f-cond);
@@ -256,14 +257,14 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   border-color: #c0392b;
   background: rgba(192,57,43,0.04);
 }
- 
+
 /* ─── REVEAL ─── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
- 
+
 /* ─── MODAL ─── */
 .modal-overlay {
   position: fixed;
@@ -312,7 +313,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   transition: color 0.2s;
 }
 .modal-close:hover { color: #fff; }
- 
+
 /* Modal header */
 .modal-header {
   background: var(--green);
@@ -370,7 +371,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   letter-spacing: 0.08em;
   color: rgba(255,255,255,0.6);
 }
- 
+
 /* Modal stats */
 .modal-stats {
   display: grid;
@@ -400,16 +401,16 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   margin-top: 3px;
   display: block;
 }
- 
+
 /* Modal body */
 .modal-body { padding: 0 40px 40px; }
- 
+
 .modal-section {
   padding: 24px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 .modal-section:last-child { border-bottom: none; }
- 
+
 .modal-section-label {
   font-family: var(--f-cond);
   font-size: 0.6rem;
@@ -443,7 +444,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   line-height: 1.75;
   color: #555;
 }
- 
+
 /* Modal phase grid */
 .modal-phases {
   display: grid;
@@ -478,7 +479,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   line-height: 1.5;
   color: #666;
 }
- 
+
 /* Modal skins */
 .modal-skins {
   display: grid;
@@ -529,7 +530,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   color: #666;
 }
 .modal-skin.featured .modal-skin-desc { color: rgba(255,255,255,0.75); }
- 
+
 /* Modal payout table */
 .modal-table {
   width: 100%;
@@ -559,7 +560,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
 .m-place.gold { color: var(--gold); }
 .m-amount { font-family: var(--f-display); font-size: 1.2rem; color: var(--near-black); }
 .m-pp { font-family: var(--f-cond); font-size: 0.75rem; color: #9a9a90; }
- 
+
 /* Modal membership */
 .modal-mem {
   display: grid;
@@ -615,7 +616,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
 }
 .modal-mem-card.featured .modal-mem-list li { color: rgba(255,255,255,0.8); }
 .modal-mem-card.featured .modal-mem-list li::before { background: var(--gold); }
- 
+
 /* Modal handicap rules */
 .modal-rules { display: flex; flex-direction: column; gap: 0; margin: 14px 0; }
 .modal-rule {
@@ -639,7 +640,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
 }
 .modal-rule-text { font-size: 0.8rem; color: #333; line-height: 1.6; }
 .modal-rule-text strong { color: var(--near-black); }
- 
+
 /* Modal footer */
 .modal-footer {
   background: var(--near-black);
@@ -677,7 +678,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   transition: background 0.2s;
 }
 .modal-footer-close:hover { background: var(--green-lt); }
- 
+
 @media (max-width: 600px) {
   .modal-body { padding: 0 20px 32px; }
   .modal-header { padding: 28px 20px 20px; }
@@ -693,7 +694,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   .nav-logo-main { font-size: 1.3rem; }
   .nav-logo-badge { display: none; }
   .nav-btn { padding: 8px 16px; font-size: 0.7rem; }
- 
+
   /* Hero */
   .hero { min-height: 100svh; }
   .hero-content { padding: 80px 24px 24px; }
@@ -709,7 +710,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   .hero-stat { padding: 12px 8px; border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
   .hero-stat-num { font-size: 1.4rem; }
   .hero-stat-label { font-size: 0.5rem; }
- 
+
   /* Sections */
   .section-inner { padding: 0 20px; }
   .section-format { padding: 60px 0; }
@@ -717,7 +718,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   .section-membership { padding: 60px 0; }
   .section-season { padding: 60px 0; }
   .section-founding { padding: 60px 0; }
- 
+
   /* Grids → single column */
   .format-layout,
   .who-layout,
@@ -725,68 +726,69 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   .founding-layout { grid-template-columns: 1fr; gap: 36px; }
   .phase-cards { grid-template-columns: 1fr; }
   .membership-grid { grid-template-columns: 1fr !important; }
- 
+
   /* Phase cards */
   .phase-card { padding: 28px 24px; }
   .phase-num { font-size: 4rem; top: 12px; right: 16px; }
- 
+
   /* Stats row */
   .stats-row { grid-template-columns: repeat(2, 1fr); }
   .stat-big { font-size: 2.2rem; }
- 
+
   /* Matchup diagram */
   .matchup-diagram { padding: 20px; }
   .matchup-team-name { font-size: 0.95rem; }
- 
+
   /* Finals leaderboard */
   .finals-board-header { flex-direction: column; align-items: flex-start; gap: 4px; }
   .finals-row { padding: 12px 16px; }
   .finals-team-name { font-size: 0.9rem; }
   .finals-score { font-size: 1.3rem; }
- 
+
   /* Who checklist */
   .section-who::before { display: none; }
- 
+
   /* Membership cards */
   .mem-card { padding: 32px 24px; }
- 
+
   /* Founding form */
   .form-card { padding: 32px 24px; }
   .form-card-title { font-size: 1.8rem; }
   .perk-row { padding: 12px 0; }
- 
+
   /* Footer */
   .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
   .footer-copy { text-align: center; }
   .footer-links { justify-content: center; flex-wrap: wrap; gap: 16px; }
   footer { padding: 36px 20px; }
- 
+
   /* Section titles */
   .section-title { font-size: clamp(2.2rem, 8vw, 3rem); }
   .who-title { font-size: clamp(2.2rem, 8vw, 3rem); }
   .season-title { font-size: clamp(2.2rem, 8vw, 3rem); }
 }
 </style>
+
 </head>
 <body>
- 
+
 <div class="ticker">
   <div class="ticker-inner">
-    <span class="ticker-item"><span>●</span>Early Access Now Open</span>
+    <span class="ticker-item"><span>●</span>Competitive Team Golf — Real Money — Real Growth</span>
     <span class="ticker-item"><span>●</span>24 Tournaments Per Season</span>
     <span class="ticker-item"><span>●</span>Gulf Coast · PCB to Destin</span>
-    <span class="ticker-item"><span>●</span>4-Man Teams · Shotgun Start</span>
-    <span class="ticker-item"><span>●</span>Tournament Payouts & Skins Every Round</span>
+    <span class="ticker-item"><span>●</span>4-Man Teams · Shotgun Start · 3 Formats</span>
+    <span class="ticker-item"><span>●</span>Top 5 Teams Paid Every Tournament</span>
     <span class="ticker-item"><span>●</span>Field Size Determined by Course Capacity</span>
-    <span class="ticker-item"><span>●</span>Early Access Now Open</span>
+    <span class="ticker-item"><span>●</span>Competitive Team Golf — Real Money — Real Growth</span>
     <span class="ticker-item"><span>●</span>24 Tournaments Per Season</span>
     <span class="ticker-item"><span>●</span>Gulf Coast · PCB to Destin</span>
-    <span class="ticker-item"><span>●</span>4-Man Teams · Shotgun Start</span>
-    <span class="ticker-item"><span>●</span>Tournament Payouts & Skins Every Round</span>
+    <span class="ticker-item"><span>●</span>4-Man Teams · Shotgun Start · 3 Formats</span>
+    <span class="ticker-item"><span>●</span>Top 5 Teams Paid Every Tournament</span>
     <span class="ticker-item"><span>●</span>Field Size Determined by Course Capacity</span>
   </div>
 </div>
- 
+
 <nav>
   <a href="#" class="nav-logo">
     <span class="nav-logo-the">The</span>
@@ -800,10 +802,10 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
   </div>
   <a href="#founding" class="nav-btn">Get On The List</a>
 </nav>
- 
+
 <section class="hero">
   <div class="hero-scorecard-bar"></div>
- 
+
   <div class="hero-content">
     <div class="hero-league-tag">
       <span class="hero-tag-dot"></span>
@@ -812,7 +814,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
     <span class="hero-the">The</span>
     <span class="hero-title">CORRIDOR</span>
     <div class="hero-subtitle-bar">
-      <span class="hero-subtitle">Real Competition. The Courses You Know. Every Other Weekend.</span>
+      <span class="hero-subtitle">Competitive Team Golf. Real Money. Real Growth. Real Community.</span>
     </div>
     <div class="hero-cta-row">
       <a href="#founding" class="btn-hero">Get On The List</a>
@@ -826,14 +828,14 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
     <div class="hero-stat"><span class="hero-stat-num">TBD</span><span class="hero-stat-label">Field Size</span></div>
   </div>
 </section>
- 
+
 <section class="section-format" id="format">
   <div class="section-inner">
     <div class="format-layout">
       <div>
         <p class="section-label reveal">The Format</p>
-        <h2 class="section-title reveal reveal-d1">The Only League That Plays Like This.</h2>
-        <p class="body-text reveal reveal-d2">4-man teams. Split matchups across the entire course. Three formats in one round. Every player locked in for all 18 holes.</p>
+        <h2 class="section-title reveal reveal-d1">Three Formats. One Round. No Passengers.</h2>
+        <p class="body-text reveal reveal-d2">4-man teams split across the course. Teammates ride together — opponents in the adjacent cart. Every player locked in for all 18 holes across three rotating formats. The pressure shifts every six holes. Nobody checks out.</p>
       </div>
       <div class="reveal reveal-d2">
         <div class="matchup-diagram">
@@ -870,37 +872,40 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
         </div>
       </div>
     </div>
- 
-    <div class="phase-cards">
-      <div class="phase-card reveal">
-        <div class="phase-num">I</div>
-        <div class="phase-holes">Holes 1–6</div>
-        <div class="phase-title">BEST BALL</div>
-        <p class="phase-desc">Each player plays their own ball. Best score per hole counts for the team. Cover your partner, manage your game, and let the better ball do the work.</p>
-      </div>
-      <div class="phase-card reveal reveal-d1">
-        <div class="phase-num">II</div>
-        <div class="phase-holes">Holes 7–12</div>
-        <div class="phase-title">ALT SHOT</div>
-        <p class="phase-desc">One ball. Two players. Alternate every stroke. This is where partnerships are forged or broken — every shot carries your partner's round. No room to freelance.</p>
-      </div>
-      <div class="phase-card reveal reveal-d2">
-        <div class="phase-num">III</div>
-        <div class="phase-holes">Holes 13–18</div>
-        <div class="phase-title">INDIVIDUAL</div>
-        <p class="phase-desc">Every player. Every ball. Every score counts personally. The back six is yours alone — and every stroke follows you to the Finals leaderboard.</p>
-      </div>
-    </div>
+
+```
+<div class="phase-cards">
+  <div class="phase-card reveal">
+    <div class="phase-num">I</div>
+    <div class="phase-holes">Holes 1–6</div>
+    <div class="phase-title">BEST BALL</div>
+    <p class="phase-desc">Each player plays their own ball. Best score per hole counts for the team. Cover your partner, manage your game, and let the better ball do the work.</p>
+  </div>
+  <div class="phase-card reveal reveal-d1">
+    <div class="phase-num">II</div>
+    <div class="phase-holes">Holes 7–12</div>
+    <div class="phase-title">ALT SHOT</div>
+    <p class="phase-desc">One ball. Two players. Alternate every stroke. This is where partnerships are forged or broken — every shot carries your partner's round. No room to freelance.</p>
+  </div>
+  <div class="phase-card reveal reveal-d2">
+    <div class="phase-num">III</div>
+    <div class="phase-holes">Holes 13–18</div>
+    <div class="phase-title">INDIVIDUAL</div>
+    <p class="phase-desc">Every player. Every ball. Every score counts personally. The back six is yours alone — and every stroke follows you to the Finals leaderboard.</p>
+  </div>
+</div>
+```
+
   </div>
 </section>
- 
+
 <section class="section-who">
   <div class="section-inner">
     <div class="who-layout">
       <div class="who-left">
         <p class="section-label reveal">Who This Is For</p>
-        <h2 class="who-title reveal reveal-d1">You've already played every course on this corridor.</h2>
-        <p class="who-body body-text reveal reveal-d2">The Corridor is built for golfers who take the game seriously and want to compete alongside others who do the same. Year-round structure, a real format, and a community that shows up every other weekend — on the courses you already know.</p>
+        <h2 class="who-title reveal reveal-d1">Built for golfers who want to compete. Not just play.</h2>
+        <p class="who-body body-text reveal reveal-d2">24 tournaments a year. Net scoring under pressure. A team counting on you. Real money on the line every round. This is the league that makes you better — not because of coaching, but because the stakes are real and the competition is honest.</p>
       </div>
       <div class="who-checklist reveal reveal-d2">
         <div class="who-check-item">
@@ -909,78 +914,134 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
         </div>
         <div class="who-check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text"><strong>Gulf Coast local</strong> — you live here, you know these courses, you want to own this territory</div>
+          <div class="check-text"><strong>Wants to get better</strong> — 24 tournaments of net scoring pressure moves your handicap</div>
         </div>
         <div class="who-check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text"><strong>Team player</strong> — you want partners who hold their weight and show up to win</div>
+          <div class="check-text"><strong>Team first</strong> — you want partners who hold their weight and show up every round</div>
         </div>
         <div class="who-check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text"><strong>Year-round</strong> — you want something worth putting on the calendar every other Saturday</div>
+          <div class="check-text"><strong>Here for real competition</strong> — not a scramble, not a charity event, a real league with real stakes</div>
         </div>
         <div class="who-check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text"><strong>Ready to compete</strong> — for organizational awards, pro shop vouchers every round, and a name on the Finals board</div>
+          <div class="check-text"><strong>Ready to compete for money</strong> — top 5 teams paid every tournament, $100K+ Finals fund built all season</div>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
+
+<!-- TEAM IDENTITY -->
+
+<section style="padding: 100px 0; background: var(--off-white); border-top: 4px solid var(--green);">
+  <div class="section-inner">
+    <p class="section-label reveal">Team Identity</p>
+    <h2 class="section-title reveal reveal-d1">Your Team. Your Name. Your Identity.</h2>
+    <p class="body-text reveal reveal-d2" style="max-width: 600px; margin-bottom: 56px;">Every team chooses their own name, builds their own identity, and wears their own colors. This isn't a pickup game — it's a franchise. Teams develop rivalries, histories, and reputations over a full season. That's what makes The Corridor different from every other league on the Gulf Coast.</p>
+
+```
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--light-gray); border: 1px solid var(--light-gray); margin-bottom: 40px;">
+  <div class="phase-card reveal" style="padding: 36px 28px; background: var(--white); transition: background 0.2s;">
+    <div style="font-family: var(--f-cond); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Example Team</div>
+    <div style="font-family: var(--f-display); font-size: 2rem; color: var(--green); line-height: 1; margin-bottom: 12px;">GULF COAST IRON</div>
+    <div style="font-size: 0.82rem; color: #555; line-height: 1.6;">6 members · Season record 18-6 · Currently 1st in standings</div>
+  </div>
+  <div class="phase-card reveal reveal-d1" style="padding: 36px 28px; background: var(--white); transition: background 0.2s;">
+    <div style="font-family: var(--f-cond); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Example Team</div>
+    <div style="font-family: var(--f-display); font-size: 2rem; color: var(--green); line-height: 1; margin-bottom: 12px;">DEAD LOW</div>
+    <div style="font-size: 0.82rem; color: #555; line-height: 1.6;">6 members · Season record 14-10 · Currently 4th in standings</div>
+  </div>
+  <div class="phase-card reveal reveal-d2" style="padding: 36px 28px; background: var(--white); transition: background 0.2s;">
+    <div style="font-family: var(--f-cond); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Example Team</div>
+    <div style="font-family: var(--f-display); font-size: 2rem; color: var(--green); line-height: 1; margin-bottom: 12px;">TIGHT LIE</div>
+    <div style="font-size: 0.82rem; color: #555; line-height: 1.6;">6 members · Season record 12-12 · Currently 5th in standings</div>
+  </div>
+</div>
+
+<div style="background: var(--green); padding: 28px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+  <div>
+    <div style="font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px;">Team Roster</div>
+    <div style="font-family: var(--f-display); font-size: 1.8rem; color: var(--white); line-height: 1;">6 Members Per Team</div>
+  </div>
+  <div style="width: 1px; height: 48px; background: rgba(255,255,255,0.15);"></div>
+  <div>
+    <div style="font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px;">Active Players</div>
+    <div style="font-family: var(--f-display); font-size: 1.8rem; color: var(--white); line-height: 1;">4 Per Tournament</div>
+  </div>
+  <div style="width: 1px; height: 48px; background: rgba(255,255,255,0.15);"></div>
+  <div>
+    <div style="font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px;">Team Reserves</div>
+    <div style="font-family: var(--f-display); font-size: 1.8rem; color: var(--white); line-height: 1;">2 On Roster</div>
+  </div>
+  <div style="width: 1px; height: 48px; background: rgba(255,255,255,0.15);"></div>
+  <div>
+    <div style="font-family: var(--f-cond); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px;">Leadership</div>
+    <div style="font-family: var(--f-display); font-size: 1.8rem; color: var(--white); line-height: 1;">1 Captain</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
 <section class="section-membership" id="membership">
   <div class="section-inner">
     <p class="section-label reveal">Membership</p>
     <h2 class="section-title reveal reveal-d1">Two Ways In. One League.</h2>
-    <p class="body-text reveal reveal-d2">Membership is capped — field size is determined by course cart capacity, not an arbitrary number. That keeps the league tight, the competition real, and every spot meaningful. Active members hold a permanent team roster spot. Reserve members are the depth that keeps the league running.</p>
- 
-    <div class="membership-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="mem-card reveal">
-        <div class="mem-type">Active Member</div>
-        <div class="mem-title">ACTIVE MEMBER</div>
-        <div class="mem-divider"></div>
-        <ul class="mem-features">
-          <li>$50/month</li>
-          <li>Tournament service fee TBD at launch</li>
-          <li>Permanent spot on a 4-man team</li>
-          <li>Entry to all 24 tournaments</li>
-          <li>Full standings, stats & league access</li>
-          <li>Finals eligible with 16 of 24 appearances</li>
-        </ul>
-      </div>
-      <div class="mem-card featured reveal reveal-d1">
-        <div class="mem-type">Reserve Member</div>
-        <div class="mem-title">RESERVE MEMBER</div>
-        <div class="mem-divider"></div>
-        <ul class="mem-features">
-          <li>$5/month</li>
-          <li>Full tournament service fee required when called up to play</li>
-          <li>Spectator access to all tournaments included</li>
-          <li>Full league membership & community access</li>
-          <li>Called up when a team has an absence</li>
-          <li>Priority placement when active spots open</li>
-          <li>Earn Finals eligibility through call-ups</li>
-        </ul>
-      </div>
-    </div>
- 
-    <div class="stats-row">
-      <div class="stat-cell reveal"><span class="stat-big">24</span><span class="stat-desc">Tournaments / Season</span></div>
-      <div class="stat-cell reveal reveal-d1"><span class="stat-big">4</span><span class="stat-desc">Players Per Team</span></div>
-      <div class="stat-cell reveal reveal-d1"><span class="stat-big">TBD</span><span class="stat-desc">Total Members</span></div>
-      <div class="stat-cell reveal reveal-d2"><span class="stat-big">16</span><span class="stat-desc">Appearances for Finals</span></div>
-      <div class="stat-cell reveal reveal-d2"><span class="stat-big">1</span><span class="stat-desc">Finals. One Champion.</span></div>
-    </div>
+    <p class="body-text reveal reveal-d2">Membership is capped by course cart capacity — not an arbitrary number. Every spot is meaningful. Active members hold a permanent team roster spot. Reserve members are part of the team community and first in line when active spots open.</p>
+
+```
+<div class="membership-grid" style="grid-template-columns: repeat(2, 1fr);">
+  <div class="mem-card reveal">
+    <div class="mem-type">Active Member</div>
+    <div class="mem-title">ACTIVE MEMBER</div>
+    <div class="mem-divider"></div>
+    <ul class="mem-features">
+      <li>$50/month</li>
+      <li>Tournament service fee TBD at launch</li>
+      <li>Permanent spot on a 4-man team</li>
+      <li>Entry to all 24 tournaments</li>
+      <li>Full standings, stats & league access</li>
+      <li>Finals eligible with 16 of 24 appearances</li>
+    </ul>
+  </div>
+  <div class="mem-card featured reveal reveal-d1">
+    <div class="mem-type">Reserve Member</div>
+    <div class="mem-title">RESERVE MEMBER</div>
+    <div class="mem-divider"></div>
+    <ul class="mem-features">
+      <li>$5/month</li>
+      <li>Full tournament service fee required when called up to play</li>
+      <li>Spectator access to all tournaments included</li>
+      <li>Full league membership & community access</li>
+      <li>Called up when a team has an absence</li>
+      <li>Priority placement when active spots open</li>
+      <li>Earn Finals eligibility through call-ups</li>
+    </ul>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-cell reveal"><span class="stat-big">24</span><span class="stat-desc">Tournaments / Season</span></div>
+  <div class="stat-cell reveal reveal-d1"><span class="stat-big">4</span><span class="stat-desc">Players Per Team</span></div>
+  <div class="stat-cell reveal reveal-d1"><span class="stat-big">TBD</span><span class="stat-desc">Total Members</span></div>
+  <div class="stat-cell reveal reveal-d2"><span class="stat-big">16</span><span class="stat-desc">Appearances for Finals</span></div>
+  <div class="stat-cell reveal reveal-d2"><span class="stat-big">1</span><span class="stat-desc">Finals. One Champion.</span></div>
+</div>
+```
+
   </div>
 </section>
- 
+
 <section class="section-season" id="season">
   <div class="section-inner">
     <div class="season-layout">
       <div class="season-left">
         <p class="section-label reveal">The Season & Finals</p>
-        <h2 class="season-title reveal reveal-d1">Every Round Builds The Purse.</h2>
-        <p class="season-body body-text reveal reveal-d2">Twenty-four tournaments across the Gulf Coast corridor — shotgun starts on the best courses between Panama City Beach and Destin. Venues are being finalized now.<br><br>Tournament service fees fund league operations, season administration, and organizational awards presented to the top 5 finishing teams each round. A skins competition runs alongside — winners receive pro shop vouchers. All scoring is net. Points accumulate all season, and the top teams by standings advance to the Finals where the season award fund is on the line.</p>
+        <h2 class="season-title reveal reveal-d1">Every Round Builds Toward Something Real.</h2>
+        <p class="season-body body-text reveal reveal-d2">Twenty-four tournaments across the Gulf Coast. Shotgun starts on the best courses between Panama City Beach and Destin. Venues finalized soon.<br><br>Net scoring all season. Points accumulate. The top teams advance to the Finals — a season championship at a premier Gulf Coast venue where the full season fund is on the line. 10% of every tournament goes into that fund from day one. The more the league plays, the bigger the Finals.</p>
       </div>
       <div class="finals-board reveal reveal-d2">
         <div class="finals-board-header">
@@ -997,7 +1058,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
     </div>
   </div>
 </section>
- 
+
 <section class="section-founding" id="founding">
   <div class="section-inner">
     <div class="founding-layout">
@@ -1007,7 +1068,7 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
           <span class="founding-badge-text">Early Access — Now Open</span>
         </div>
         <h2 class="section-title reveal reveal-d1">Get On The List Before We Launch.</h2>
-        <p class="body-text reveal reveal-d2">The Corridor is accepting early interest now. Spots are limited by course capacity — once the field is full, it's full. Get on the list and you'll be first to know when enrollment opens, courses are announced, and teams are formed.</p>
+        <p class="body-text reveal reveal-d2">The Corridor is accepting early interest now. Field size is determined by course capacity — once it's full, it's full. Get on the list and you'll be first to know when enrollment opens, courses are announced, and teams are formed.</p>
         <div class="founding-perks">
           <div class="perk-row reveal reveal-d1"><div class="perk-icon">📋</div><div class="perk-text"><strong>First access</strong> to enrollment before the public</div></div>
           <div class="perk-row reveal reveal-d2"><div class="perk-icon">⛳</div><div class="perk-text"><strong>Course & schedule announcements</strong> as soon as venues are confirmed</div></div>
@@ -1015,60 +1076,63 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
           <div class="perk-row reveal reveal-d3"><div class="perk-icon">📍</div><div class="perk-text"><strong>No obligation</strong> until you confirm — just hold your place in line</div></div>
         </div>
       </div>
- 
-      <div class="form-card reveal reveal-d2">
-        <div class="form-card-title">Get On The List</div>
-        <p class="form-card-sub">No payment required. We'll reach out when enrollment opens with course details, pricing, and team formation info.</p>
- 
-        <div id="form-success" style="display:none; padding: 24px; background: #1a4730; color: white; text-align: center; margin-bottom: 16px;">
-          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 8px;">You're On The List</div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.85;">We'll be in touch as soon as courses are confirmed and enrollment opens.</div>
-        </div>
- 
-        <form id="waitlist-form" action="https://formspree.io/f/mpqbygqr" method="POST" data-netlify="false">
-          <div class="form-field">
-            <label class="form-label" for="name">First & Last Name</label>
-            <input type="text" class="form-input" id="name" name="name" placeholder="John Tanner" required>
-            <span class="form-error" id="name-error">Please enter your full name</span>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="email">Email Address *</label>
-            <input type="email" class="form-input" id="email" name="email" placeholder="john@email.com" required>
-            <span class="form-error" id="email-error">Please enter a valid email address</span>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="phone">Phone Number *</label>
-            <input type="tel" class="form-input" id="phone" name="phone" placeholder="(850) 555-0100" required>
-            <span class="form-error" id="phone-error">Please enter your phone number</span>
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="interest">Membership Interest *</label>
-            <select class="form-select" id="interest" name="interest" required>
-              <option value="">Select one...</option>
-              <option value="Active Member">Active Member — Team Roster Spot</option>
-              <option value="Reserve Member">Reserve Member — Sub List</option>
-              <option value="Not sure">Not sure yet — send me the info</option>
-            </select>
-            <span class="form-error" id="interest-error">Please select a membership type</span>
-          </div>
-          <button type="submit" class="btn-submit" id="submitBtn">
-            <span id="btnText">Get On The List</span>
-            <span class="btn-arrow">→</span>
-          </button>
-          <p class="form-disclaimer">* Required fields. No payment today. No obligation until you confirm.</p>
-        </form>
-      </div>
+
+```
+  <div class="form-card reveal reveal-d2">
+    <div class="form-card-title">Get On The List</div>
+    <p class="form-card-sub">No payment required. We'll reach out when enrollment opens with course details, pricing, and team formation info.</p>
+
+    <div id="form-success" style="display:none; padding: 24px; background: #1a4730; color: white; text-align: center; margin-bottom: 16px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 8px;">You're On The List</div>
+      <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.85;">We'll be in touch as soon as courses are confirmed and enrollment opens.</div>
     </div>
+
+    <form id="waitlist-form" action="https://formspree.io/f/mpqbygqr" method="POST" data-netlify="false">
+      <div class="form-field">
+        <label class="form-label" for="name">First & Last Name</label>
+        <input type="text" class="form-input" id="name" name="name" placeholder="John Tanner" required>
+        <span class="form-error" id="name-error">Please enter your full name</span>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="email">Email Address *</label>
+        <input type="email" class="form-input" id="email" name="email" placeholder="john@email.com" required>
+        <span class="form-error" id="email-error">Please enter a valid email address</span>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="phone">Phone Number *</label>
+        <input type="tel" class="form-input" id="phone" name="phone" placeholder="(850) 555-0100" required>
+        <span class="form-error" id="phone-error">Please enter your phone number</span>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="interest">Membership Interest *</label>
+        <select class="form-select" id="interest" name="interest" required>
+          <option value="">Select one...</option>
+          <option value="Active Member">Active Member — Team Roster Spot</option>
+          <option value="Reserve Member">Reserve Member — Sub List</option>
+          <option value="Not sure">Not sure yet — send me the info</option>
+        </select>
+        <span class="form-error" id="interest-error">Please select a membership type</span>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span id="btnText">Get On The List</span>
+        <span class="btn-arrow">→</span>
+      </button>
+      <p class="form-disclaimer">* Required fields. No payment today. No obligation until you confirm.</p>
+    </form>
+  </div>
+</div>
+```
+
   </div>
 </section>
- 
+
 <section style="background: var(--off-white); padding: 48px 0; border-top: 1px solid var(--light-gray);">
   <div class="section-inner">
     <p style="font-family: var(--f-cond); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 16px;">Terms & Conditions</p>
     <p style="font-family: var(--f-body); font-size: 0.78rem; line-height: 1.8; color: var(--mid-gray); max-width: 900px;">All fees paid to The Corridor Golf League are service fees for the administration, coordination, and operation of league tournaments and membership services. These fees are not wagers, stakes, or prize pool contributions. All awards and organizational recognition distributed through league events are funded and presented by The Corridor Golf League as membership benefits. The optional skins competition awards pro shop vouchers and does not constitute a cash prize contest. Membership in The Corridor Golf League constitutes acceptance of all league rules, policies, and these terms. The Corridor Golf League reserves the right to modify rules, fees, and schedules at any time with reasonable notice to members.</p>
   </div>
 </section>
- 
+
 <footer>
   <div class="footer-inner">
     <div>
@@ -1084,160 +1148,164 @@ footer { background: var(--near-black); padding: 48px 40px; border-top: 4px soli
     <div class="footer-copy">© 2026 The Corridor Golf League<br>30A · Emerald Coast · Florida<br><a href="mailto:info@corridorgolfleague.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">info@corridorgolfleague.com</a></div>
   </div>
 </footer>
- 
+
 <!-- ─── INFO MODAL ─── -->
+
 <div class="modal-overlay" id="infoModal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕ Close</button>
- 
-    <div class="modal-header">
-      <div class="modal-confirmed"><span class="modal-confirmed-dot"></span>You're On The List</div>
-      <div class="modal-title">HERE'S EVERYTHING YOU NEED TO KNOW</div>
-      <div class="modal-subtitle">The Corridor Golf League · Gulf Coast · PCB to Destin</div>
-    </div>
- 
-    <div class="modal-stats">
-      <div class="modal-stat"><span class="modal-stat-num">24</span><span class="modal-stat-label">Tournaments</span></div>
-      <div class="modal-stat"><span class="modal-stat-num">Top 5</span><span class="modal-stat-label">Teams Paid</span></div>
-      <div class="modal-stat"><span class="modal-stat-num">$43K</span><span class="modal-stat-label">Finals Purse</span></div>
-      <div class="modal-stat"><span class="modal-stat-num">NET</span><span class="modal-stat-label">Scoring</span></div>
-    </div>
- 
-    <div class="modal-body">
- 
-      <!-- FORMAT -->
-      <div class="modal-section">
-        <div class="modal-section-label">The Format</div>
-        <div class="modal-section-title">HOW IT WORKS</div>
-        <p class="modal-body-text">4-man teams. Split matchups across the course. Teammates ride together — opponents in the adjacent cart. Both cart groups play the same match simultaneously on opposite sides of the course and converge mid-round.</p>
-        <div class="modal-phases">
-          <div class="modal-phase">
-            <div class="modal-phase-holes">Holes 1–6</div>
-            <div class="modal-phase-name">BEST BALL</div>
-            <p class="modal-phase-desc">Best net score per hole counts for the team against the full field.</p>
-          </div>
-          <div class="modal-phase">
-            <div class="modal-phase-holes">Holes 7–12</div>
-            <div class="modal-phase-name">ALT SHOT</div>
-            <p class="modal-phase-desc">One ball, two players. Teammates alternate every stroke.</p>
-          </div>
-          <div class="modal-phase">
-            <div class="modal-phase-holes">Holes 13–18</div>
-            <div class="modal-phase-name">INDIVIDUAL</div>
-            <p class="modal-phase-desc">Every player, every ball. Scores count personally toward standings.</p>
-          </div>
-        </div>
+
+```
+<div class="modal-header">
+  <div class="modal-confirmed"><span class="modal-confirmed-dot"></span>You're On The List</div>
+  <div class="modal-title">HERE'S EVERYTHING YOU NEED TO KNOW</div>
+  <div class="modal-subtitle">The Corridor Golf League · Gulf Coast · PCB to Destin</div>
+</div>
+
+<div class="modal-stats">
+  <div class="modal-stat"><span class="modal-stat-num">24</span><span class="modal-stat-label">Tournaments</span></div>
+  <div class="modal-stat"><span class="modal-stat-num">Top 5</span><span class="modal-stat-label">Teams Paid</span></div>
+  <div class="modal-stat"><span class="modal-stat-num">$43K</span><span class="modal-stat-label">Finals Purse</span></div>
+  <div class="modal-stat"><span class="modal-stat-num">NET</span><span class="modal-stat-label">Scoring</span></div>
+</div>
+
+<div class="modal-body">
+
+  <!-- FORMAT -->
+  <div class="modal-section">
+    <div class="modal-section-label">The Format</div>
+    <div class="modal-section-title">HOW IT WORKS</div>
+    <p class="modal-body-text">4-man teams. Split matchups across the course. Teammates ride together — opponents in the adjacent cart. Both cart groups play the same match simultaneously on opposite sides of the course and converge mid-round.</p>
+    <div class="modal-phases">
+      <div class="modal-phase">
+        <div class="modal-phase-holes">Holes 1–6</div>
+        <div class="modal-phase-name">BEST BALL</div>
+        <p class="modal-phase-desc">Best net score per hole counts for the team against the full field.</p>
       </div>
- 
-      <!-- SKINS -->
-      <div class="modal-section">
-        <div class="modal-section-label">The Skins Game</div>
-        <div class="modal-section-title">MONEY ON EVERY HOLE</div>
-        <p class="modal-body-text">Optional buy-in. The skins competition runs across the entire field — not just your matched opponent. Format changes every six holes. Ties carry over within each phase. New phase always starts fresh. Winners receive pro shop vouchers — no cash pot.</p>
-        <div class="modal-skins">
-          <div class="modal-skin">
-            <div class="modal-skin-holes">Holes 1–6</div>
-            <div class="modal-skin-name">BEST BALL SKINS</div>
-            <span class="modal-skin-split">Split 4 Ways</span>
-            <p class="modal-skin-desc">Lowest net best ball score in the field wins the skin.</p>
-          </div>
-          <div class="modal-skin">
-            <div class="modal-skin-holes">Holes 7–12</div>
-            <div class="modal-skin-name">ALT SHOT SKINS</div>
-            <span class="modal-skin-split">Split 2 Ways</span>
-            <p class="modal-skin-desc">Lowest net alt shot score among all cart groups wins.</p>
-          </div>
-          <div class="modal-skin featured">
-            <div class="modal-skin-holes">Holes 13–18</div>
-            <div class="modal-skin-name">INDIVIDUAL SKINS</div>
-            <span class="modal-skin-split">Winner Takes All</span>
-            <p class="modal-skin-desc">Every player vs. the whole field. The real money.</p>
-          </div>
-        </div>
+      <div class="modal-phase">
+        <div class="modal-phase-holes">Holes 7–12</div>
+        <div class="modal-phase-name">ALT SHOT</div>
+        <p class="modal-phase-desc">One ball, two players. Teammates alternate every stroke.</p>
       </div>
- 
-      <!-- PRIZE MONEY -->
-      <div class="modal-section">
-        <div class="modal-section-label">Prize Money</div>
-        <div class="modal-section-title">TOP 5 TEAMS PAID EVERY TOURNAMENT</div>
-        <p class="modal-body-text">Estimated average payouts based on field size. Actual payouts vary by course cart capacity per tournament.</p>
-        <table class="modal-table">
-          <thead>
-            <tr><th>Place</th><th>Est. Team Payout</th><th>Est. Per Player</th></tr>
-          </thead>
-          <tbody>
-            <tr class="winner"><td><span class="m-place gold">1st</span></td><td><span class="m-amount">~$4,680</span></td><td class="m-pp">~$1,170 / player</td></tr>
-            <tr><td><span class="m-place">2nd</span></td><td><span class="m-amount">~$2,925</span></td><td class="m-pp">~$731 / player</td></tr>
-            <tr><td><span class="m-place">3rd</span></td><td><span class="m-amount">~$1,755</span></td><td class="m-pp">~$439 / player</td></tr>
-            <tr><td><span class="m-place">4th</span></td><td><span class="m-amount">~$1,170</span></td><td class="m-pp">~$293 / player</td></tr>
-            <tr><td><span class="m-place">5th</span></td><td><span class="m-amount">~$1,170</span></td><td class="m-pp">~$293 / player</td></tr>
-          </tbody>
-        </table>
+      <div class="modal-phase">
+        <div class="modal-phase-holes">Holes 13–18</div>
+        <div class="modal-phase-name">INDIVIDUAL</div>
+        <p class="modal-phase-desc">Every player, every ball. Scores count personally toward standings.</p>
       </div>
- 
-      <!-- MEMBERSHIP -->
-      <div class="modal-section">
-        <div class="modal-section-label">Membership</div>
-        <div class="modal-section-title">HOW TO JOIN</div>
-        <div class="modal-mem">
-          <div class="modal-mem-card">
-            <div class="modal-mem-type">Active Member</div>
-            <div class="modal-mem-title">ACTIVE</div>
-            <div class="modal-mem-price">$50<span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;">/mo</span></div>
-            <ul class="modal-mem-list">
-              <li>Permanent spot on a 4-man team</li>
-              <li>Entry to all 24 tournaments</li>
-              <li>Full standings & league access</li>
-              <li>Finals eligible — 16 of 24 required</li>
-              <li>Tournament fees announced at launch</li>
-            </ul>
-          </div>
-          <div class="modal-mem-card featured">
-            <div class="modal-mem-type">Reserve Member</div>
-            <div class="modal-mem-title">RESERVE</div>
-            <div class="modal-mem-price">$5<span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;">/mo</span></div>
-            <ul class="modal-mem-list">
-              <li>Full league membership & community</li>
-              <li>Spectator access to all tournaments</li>
-              <li>Called up when a team needs a sub</li>
-              <li>Full tournament service fee required when called up</li>
-              <li>Priority placement when active spots open</li>
-              <li>Earn Finals eligibility through call-ups</li>
-            </ul>
-          </div>
-        </div>
-      </div>
- 
-      <!-- HANDICAP -->
-      <div class="modal-section">
-        <div class="modal-section-label">Eligibility & Fair Play</div>
-        <div class="modal-section-title">HANDICAP RULES</div>
-        <div class="modal-rules">
-          <div class="modal-rule"><div class="modal-rule-icon">1</div><div class="modal-rule-text"><strong>GHIN Verified Index Required</strong> — Active USGA handicap index required. Self-reported handicaps not accepted. ~$30–40/year through your home club or USGA.</div></div>
-          <div class="modal-rule"><div class="modal-rule-icon">2</div><div class="modal-rule-text"><strong>Maximum Index: 18</strong> — Open to players with a verified GHIN index of 0–18.</div></div>
-          <div class="modal-rule"><div class="modal-rule-icon">3</div><div class="modal-rule-text"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and standings calculated on a net basis.</div></div>
-          <div class="modal-rule"><div class="modal-rule-icon">4</div><div class="modal-rule-text"><strong>Sandbagging Clause</strong> — Consistent over-performance triggers a mandatory handicap review. The league reserves the right to adjust playing handicaps.</div></div>
-          <div class="modal-rule"><div class="modal-rule-icon">5</div><div class="modal-rule-text"><strong>Balanced Team Assignment</strong> — Teams assigned to ensure a balanced mix across the 0–18 index spectrum.</div></div>
-        </div>
-      </div>
- 
-    </div>
- 
-    <div class="modal-footer">
-      <div class="modal-footer-logo">THE CORRIDOR</div>
-      <div class="modal-footer-tag">Gulf Coast · Every Other Weekend · All Year</div>
-      <button class="modal-footer-close" onclick="closeModal()">Close</button>
     </div>
   </div>
+
+  <!-- SKINS -->
+  <div class="modal-section">
+    <div class="modal-section-label">The Skins Game</div>
+    <div class="modal-section-title">MONEY ON EVERY HOLE</div>
+    <p class="modal-body-text">Optional buy-in. The skins competition runs across the entire field — not just your matched opponent. Format changes every six holes. Ties carry over within each phase. New phase always starts fresh. Winners receive pro shop vouchers — no cash pot.</p>
+    <div class="modal-skins">
+      <div class="modal-skin">
+        <div class="modal-skin-holes">Holes 1–6</div>
+        <div class="modal-skin-name">BEST BALL SKINS</div>
+        <span class="modal-skin-split">Split 4 Ways</span>
+        <p class="modal-skin-desc">Lowest net best ball score in the field wins the skin.</p>
+      </div>
+      <div class="modal-skin">
+        <div class="modal-skin-holes">Holes 7–12</div>
+        <div class="modal-skin-name">ALT SHOT SKINS</div>
+        <span class="modal-skin-split">Split 2 Ways</span>
+        <p class="modal-skin-desc">Lowest net alt shot score among all cart groups wins.</p>
+      </div>
+      <div class="modal-skin featured">
+        <div class="modal-skin-holes">Holes 13–18</div>
+        <div class="modal-skin-name">INDIVIDUAL SKINS</div>
+        <span class="modal-skin-split">Winner Takes All</span>
+        <p class="modal-skin-desc">Every player vs. the whole field. The real money.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIZE MONEY -->
+  <div class="modal-section">
+    <div class="modal-section-label">Prize Money</div>
+    <div class="modal-section-title">TOP 5 TEAMS PAID EVERY TOURNAMENT</div>
+    <p class="modal-body-text">Estimated average payouts based on field size. Actual payouts vary by course cart capacity per tournament.</p>
+    <table class="modal-table">
+      <thead>
+        <tr><th>Place</th><th>Est. Team Payout</th><th>Est. Per Player</th></tr>
+      </thead>
+      <tbody>
+        <tr class="winner"><td><span class="m-place gold">1st</span></td><td><span class="m-amount">~$4,680</span></td><td class="m-pp">~$1,170 / player</td></tr>
+        <tr><td><span class="m-place">2nd</span></td><td><span class="m-amount">~$2,925</span></td><td class="m-pp">~$731 / player</td></tr>
+        <tr><td><span class="m-place">3rd</span></td><td><span class="m-amount">~$1,755</span></td><td class="m-pp">~$439 / player</td></tr>
+        <tr><td><span class="m-place">4th</span></td><td><span class="m-amount">~$1,170</span></td><td class="m-pp">~$293 / player</td></tr>
+        <tr><td><span class="m-place">5th</span></td><td><span class="m-amount">~$1,170</span></td><td class="m-pp">~$293 / player</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MEMBERSHIP -->
+  <div class="modal-section">
+    <div class="modal-section-label">Membership</div>
+    <div class="modal-section-title">HOW TO JOIN</div>
+    <div class="modal-mem">
+      <div class="modal-mem-card">
+        <div class="modal-mem-type">Active Member</div>
+        <div class="modal-mem-title">ACTIVE</div>
+        <div class="modal-mem-price">$50<span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;">/mo</span></div>
+        <ul class="modal-mem-list">
+          <li>Permanent spot on a 4-man team</li>
+          <li>Entry to all 24 tournaments</li>
+          <li>Full standings & league access</li>
+          <li>Finals eligible — 16 of 24 required</li>
+          <li>Tournament fees announced at launch</li>
+        </ul>
+      </div>
+      <div class="modal-mem-card featured">
+        <div class="modal-mem-type">Reserve Member</div>
+        <div class="modal-mem-title">RESERVE</div>
+        <div class="modal-mem-price">$5<span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;">/mo</span></div>
+        <ul class="modal-mem-list">
+          <li>Full league membership & community</li>
+          <li>Spectator access to all tournaments</li>
+          <li>Called up when a team needs a sub</li>
+          <li>Full tournament service fee required when called up</li>
+          <li>Priority placement when active spots open</li>
+          <li>Earn Finals eligibility through call-ups</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HANDICAP -->
+  <div class="modal-section">
+    <div class="modal-section-label">Eligibility & Fair Play</div>
+    <div class="modal-section-title">HANDICAP RULES</div>
+    <div class="modal-rules">
+      <div class="modal-rule"><div class="modal-rule-icon">1</div><div class="modal-rule-text"><strong>GHIN Verified Index Required</strong> — Active USGA handicap index required. Self-reported handicaps not accepted. ~$30–40/year through your home club or USGA.</div></div>
+      <div class="modal-rule"><div class="modal-rule-icon">2</div><div class="modal-rule-text"><strong>Maximum Index: 18</strong> — Open to players with a verified GHIN index of 0–18.</div></div>
+      <div class="modal-rule"><div class="modal-rule-icon">3</div><div class="modal-rule-text"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and standings calculated on a net basis.</div></div>
+      <div class="modal-rule"><div class="modal-rule-icon">4</div><div class="modal-rule-text"><strong>Sandbagging Clause</strong> — Consistent over-performance triggers a mandatory handicap review. The league reserves the right to adjust playing handicaps.</div></div>
+      <div class="modal-rule"><div class="modal-rule-icon">5</div><div class="modal-rule-text"><strong>Balanced Team Assignment</strong> — Teams assigned to ensure a balanced mix across the 0–18 index spectrum.</div></div>
+    </div>
+  </div>
+
 </div>
- 
+
+<div class="modal-footer">
+  <div class="modal-footer-logo">THE CORRIDOR</div>
+  <div class="modal-footer-tag">Gulf Coast · Every Other Weekend · All Year</div>
+  <button class="modal-footer-close" onclick="closeModal()">Close</button>
+</div>
+```
+
+  </div>
+</div>
+
 <script>
 const revealEls = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
 revealEls.forEach(el => obs.observe(el));
- 
+
 // Modal controls
 function openModal() {
   document.getElementById('infoModal').classList.add('active');
@@ -1253,13 +1321,13 @@ document.getElementById('infoModal').addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
- 
+
 // Formspree AJAX submission with validation
 const form = document.getElementById('waitlist-form');
 const btn = document.getElementById('submitBtn');
 const btnText = document.getElementById('btnText');
 const successMsg = document.getElementById('form-success');
- 
+
 function showError(fieldId, errorId, show) {
   const field = document.getElementById(fieldId);
   const error = document.getElementById(errorId);
@@ -1271,7 +1339,7 @@ function showError(fieldId, errorId, show) {
     error.style.display = 'none';
   }
 }
- 
+
 if (form) {
   // Clear errors on input
   ['name', 'email', 'phone', 'interest'].forEach(id => {
@@ -1282,44 +1350,44 @@ if (form) {
       if (err) err.style.display = 'none';
     });
   });
- 
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
- 
+
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const interest = document.getElementById('interest').value;
- 
+
     // Validate
     let valid = true;
     showError('name', 'name-error', !name);
     if (!name) valid = false;
- 
+
     const emailOk = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     showError('email', 'email-error', !emailOk);
     if (!emailOk) valid = false;
- 
+
     showError('phone', 'phone-error', !phone);
     if (!phone) valid = false;
- 
+
     showError('interest', 'interest-error', !interest);
     if (!interest) valid = false;
- 
+
     if (!valid) return;
- 
+
     btnText.textContent = 'Sending...';
     btn.disabled = true;
- 
+
     const data = new FormData(form);
- 
+
     try {
       const response = await fetch(form.action, {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
       });
- 
+
       if (response.ok) {
         form.style.display = 'none';
         successMsg.style.display = 'block';
@@ -1335,5 +1403,6 @@ if (form) {
   });
 }
 </script>
+
 </body>
 </html>
