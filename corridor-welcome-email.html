@@ -16,7 +16,7 @@ table { border-collapse: collapse; }
 .email-subtitle { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; }
 .stats-bar { background-color: #111111; }
 .stat-cell { padding: 14px 10px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
-.stat-num { font-size: 22px; font-weight: bold; color: #c8a84b; display: block; font-family: Georgia, serif; line-height: 1; }
+.stat-num { font-size: 20px; font-weight: bold; color: #c8a84b; display: block; font-family: Georgia, serif; line-height: 1; }
 .stat-lbl { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 2px; display: block; }
 .email-body { padding: 0 40px 40px; }
 .section { padding: 24px 0; border-bottom: 1px solid #e8e8e2; }
@@ -28,13 +28,12 @@ table { border-collapse: collapse; }
 .phase-holes { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
 .phase-name { font-size: 16px; font-weight: bold; color: #1a4730; margin-bottom: 6px; font-family: Georgia, serif; }
 .phase-desc { font-size: 12px; line-height: 1.5; color: #666666; margin: 0; }
-.team-cell-active { background-color: #f5f5f0; padding: 20px 16px; border: 1px solid #e8e8e2; vertical-align: top; width: 33.33%; }
-.team-cell-featured { background-color: #1a4730; padding: 20px 16px; border: 1px solid #1a4730; vertical-align: top; width: 33.33%; }
-.team-cell-plain { background-color: #f5f5f0; padding: 20px 16px; border: 1px solid #e8e8e2; border-left: none; vertical-align: top; width: 33.33%; }
+.team-cell-regular { background-color: #f5f5f0; padding: 16px 14px; border: 1px solid #e8e8e2; vertical-align: top; width: 33.33%; }
+.team-cell-featured { background-color: #1a4730; padding: 16px 14px; border: 1px solid #1a4730; vertical-align: top; width: 33.33%; }
 .team-type { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #9a9a90; margin-bottom: 4px; }
 .team-type-gold { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
-.team-title { font-size: 18px; font-weight: bold; color: #1a4730; font-family: Georgia, serif; margin-bottom: 8px; }
-.team-title-white { font-size: 18px; font-weight: bold; color: #ffffff; font-family: Georgia, serif; margin-bottom: 8px; }
+.team-title { font-size: 16px; font-weight: bold; color: #1a4730; font-family: Georgia, serif; margin-bottom: 6px; }
+.team-title-white { font-size: 16px; font-weight: bold; color: #ffffff; font-family: Georgia, serif; margin-bottom: 6px; }
 .team-desc { font-size: 12px; color: #555; line-height: 1.6; }
 .team-desc-white { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.6; }
 .skin-cell-regular { background-color: #f5f5f0; padding: 14px 12px; border: 1px solid #e8e8e2; vertical-align: top; width: 33.33%; }
@@ -66,6 +65,11 @@ table { border-collapse: collapse; }
 .tbd-banner { background-color: #f5f5f0; border-left: 3px solid #c8a84b; padding: 12px 16px; margin-top: 14px; }
 .tbd-label { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
 .tbd-text { font-size: 12px; color: #555555; line-height: 1.5; margin: 0; }
+.hcap-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+.hcap-th { font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #9a9a90; text-align: left; padding: 7px 10px; background-color: #f5f5f0; border-bottom: 2px solid #1a4730; }
+.hcap-td { padding: 9px 10px; border-bottom: 1px solid #e8e8e2; font-size: 13px; color: #333; }
+.hcap-index { font-size: 16px; font-weight: bold; color: #1a4730; font-family: Georgia, serif; }
+.hcap-plays { font-size: 16px; font-weight: bold; color: #c8a84b; font-family: Georgia, serif; }
 .email-footer { background-color: #1a4730; padding: 24px 40px; border-top: 3px solid #c8a84b; }
 .footer-logo { font-size: 20px; font-weight: bold; color: #ffffff; font-family: Georgia, serif; letter-spacing: 2px; }
 .footer-tag { font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-top: 4px; }
@@ -74,7 +78,7 @@ table { border-collapse: collapse; }
   .container { width: 100% !important; }
   .email-body { padding: 0 20px 32px !important; }
   .header { padding: 24px 20px 20px !important; }
-  .phase-cell, .skin-cell-regular, .skin-cell-featured, .team-cell-active, .team-cell-featured, .team-cell-plain, .mem-active, .mem-reserve { display: block !important; width: 100% !important; }
+  .phase-cell, .skin-cell-regular, .skin-cell-featured, .team-cell-regular, .team-cell-featured, .mem-active, .mem-reserve { display: block !important; width: 100% !important; }
   .stat-cell { padding: 10px 6px !important; }
 }
 </style>
@@ -93,7 +97,7 @@ table { border-collapse: collapse; }
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td width="64" valign="middle" style="padding-right:20px;">
-            <svg width="56" height="64" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="56" height="64" viewBox="0 0 220 200" fill="none">
               <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
               <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
               <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
@@ -107,7 +111,7 @@ table { border-collapse: collapse; }
             </svg>
           </td>
           <td valign="middle">
-            <p class="confirmed-label">&#9679; You're On The List</p>
+            <p class="confirmed-label">&#9679; Application Received</p>
             <p class="email-title">Welcome to<br>The Corridor.</p>
             <p class="email-subtitle">Competitive Team Golf · Gulf Coast</p>
           </td>
@@ -123,8 +127,8 @@ table { border-collapse: collapse; }
         <tr>
           <td class="stat-cell"><span class="stat-num">24</span><span class="stat-lbl">Tournaments</span></td>
           <td class="stat-cell"><span class="stat-num">6</span><span class="stat-lbl">Per Team</span></td>
-          <td class="stat-cell"><span class="stat-num">Top 5</span><span class="stat-lbl">Teams Paid</span></td>
-          <td class="stat-cell" style="border-right:none;"><span class="stat-num">$TBD</span><span class="stat-lbl">Finals Fund</span></td>
+          <td class="stat-cell"><span class="stat-num">50%</span><span class="stat-lbl">Handicap Allow.</span></td>
+          <td class="stat-cell" style="border-right:none;"><span class="stat-num">Top 5</span><span class="stat-lbl">Teams Paid</span></td>
         </tr>
       </table>
     </td>
@@ -136,19 +140,19 @@ table { border-collapse: collapse; }
 
       <!-- INTRO -->
       <div class="section">
-        <p class="section-text">You're on the early access list for The Corridor Golf League — a competitive team golf league on the Gulf Coast. Here's everything you need to know about how the league works, how teams are structured, and what you can win. Tournament fees and course schedule will be announced at launch.</p>
+        <p class="section-text">Your application for The Corridor Golf League has been received. Here is everything you need to know about the format, team structure, handicap rules, skins competition, and membership. Tournament fees and course schedule will be announced at launch. You will hear from us before the public.</p>
       </div>
 
       <!-- FORMAT -->
       <div class="section">
         <p class="section-label">01 &mdash; The Format</p>
         <p class="section-title">Three Formats. One Round. No Passengers.</p>
-        <p class="section-text">4-man teams compete in a split matchup format. Teammates ride together — opponents in the adjacent cart. Both cart groups play simultaneously on opposite sides of the course and converge mid-round. Every player locked in for all 18 holes. The pressure shifts every six holes.</p>
+        <p class="section-text">4-man teams compete in a split matchup format. Teammates ride together &mdash; opponents in the adjacent cart. Both cart groups play simultaneously on opposite sides of the course and converge mid-round. Every player locked in for all 18 holes. The pressure shifts every six holes. Nobody checks out.</p>
         <table width="100%" cellpadding="0" cellspacing="2" border="0" style="margin-top:14px;">
           <tr>
             <td class="phase-cell"><p class="phase-holes">Holes 1&ndash;6</p><p class="phase-name">BEST BALL</p><p class="phase-desc">Best net score per hole counts for the team against the full field.</p></td>
-            <td class="phase-cell" style="border-left:none;"><p class="phase-holes">Holes 7&ndash;12</p><p class="phase-name">ALT SHOT</p><p class="phase-desc">One ball, two players. Teammates alternate every stroke.</p></td>
-            <td class="phase-cell" style="border-left:none;"><p class="phase-holes">Holes 13&ndash;18</p><p class="phase-name">INDIVIDUAL</p><p class="phase-desc">Every player, every ball. Scores count personally toward standings.</p></td>
+            <td class="phase-cell" style="border-left:none;"><p class="phase-holes">Holes 7&ndash;12</p><p class="phase-name">ALT SHOT</p><p class="phase-desc">One ball, two players. Teammates alternate every stroke. Chemistry wins here.</p></td>
+            <td class="phase-cell" style="border-left:none;"><p class="phase-holes">Holes 13&ndash;18</p><p class="phase-name">INDIVIDUAL</p><p class="phase-desc">Every player, every ball. Scores count personally toward standings and the Corridor Cup.</p></td>
           </tr>
         </table>
       </div>
@@ -157,37 +161,66 @@ table { border-collapse: collapse; }
       <div class="section">
         <p class="section-label">02 &mdash; Team Structure</p>
         <p class="section-title">Your Team. Your Name. Your Identity.</p>
-        <p class="section-text">Every team carries 6 members — 4 active players and 2 reserves. Teams are formed by friends. Each team chooses their own name and identity. A captain manages the lineup each week.</p>
+        <p class="section-text">Every team carries 6 members &mdash; 4 active players and 2 reserves. Teams are formed by friends. Each team chooses their own name and identity. A captain manages the lineup each week and submits the playing 4 to the league before each tournament.</p>
         <table width="100%" cellpadding="0" cellspacing="2" border="0" style="margin-top:14px;">
           <tr>
-            <td class="team-cell-active">
+            <td class="team-cell-regular">
               <p class="team-type">Active Players</p>
               <p class="team-title">4 PER ROUND</p>
-              <p class="team-desc">The four competing that week. Captain sets the lineup before each tournament.</p>
+              <p class="team-desc">The four competing that week. Must meet the combined handicap requirement of 20 at 50%.</p>
             </td>
             <td class="team-cell-featured" style="border-left:none;">
               <p class="team-type-gold">Team Reserves</p>
               <p class="team-title-white">2 ON ROSTER</p>
-              <p class="team-desc-white">Part of the team. Called up when a player can't make it. Spectator access when not playing.</p>
+              <p class="team-desc-white">Part of the team. Called up when a player can't make it. Full tournament fee when playing. Spectator access when not.</p>
             </td>
-            <td class="team-cell-plain">
+            <td class="team-cell-regular" style="border-left:none;">
               <p class="team-type">Leadership</p>
               <p class="team-title">1 CAPTAIN</p>
-              <p class="team-desc">Confirms attendance, manages lineup, and is the league's point of contact.</p>
+              <p class="team-desc">Confirms attendance, manages lineup, and is the league's point of contact for the team.</p>
             </td>
           </tr>
         </table>
-        <div class="tbd-banner" style="margin-top:14px;">
-          <p class="tbd-label">Team Names</p>
-          <p class="tbd-text">Teams choose their own name at enrollment. Gulf Coast Iron. Dead Low. Tight Lie. Salt & Sand. Your team. Your identity. Your rivalry.</p>
+        <div class="tbd-banner" style="margin-top:12px;">
+          <p class="tbd-label">Shorthanded Rule</p>
+          <p class="tbd-text">If a full lineup isn't available a team may play shorthanded or borrow a reserve from another team with captain approval. Borrowed reserves play under their own handicap for that tournament only.</p>
         </div>
+      </div>
+
+      <!-- HANDICAP RULES -->
+      <div class="section">
+        <p class="section-label">03 &mdash; Eligibility & Fair Play</p>
+        <p class="section-title">Handicap Rules</p>
+        <p class="section-text">All scoring is net at 50% of your GHIN index across all 18 holes. Strokes are distributed by the course stroke index card &mdash; wherever the hardest holes fall across the three formats is where your strokes land. BlueGolf handles all calculations automatically per course.</p>
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:14px;">
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">1</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>GHIN Verified Index Required</strong> &mdash; Active USGA handicap index required. ~$30&ndash;40/year through your home club or USGA.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">2</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Maximum Index: 15 &mdash; Plus Handicaps Welcome</strong> &mdash; Open to players with a verified GHIN index of + to 15. Protects the competitive standard and pace of play.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">3</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>50% Handicap Allowance</strong> &mdash; All net scoring at 50% of GHIN index across 18 holes. A 15 plays as 7 or 8. A 10 plays as 5. Scratch plays as scratch. Plus handicaps play to their plus allowance.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">4</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Team Composition &mdash; Minimum Combined 20</strong> &mdash; The playing 4 must have a minimum combined handicap of 20 at 50%. Prevents stacking and keeps competition balanced.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">5</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Sandbagging Clause</strong> &mdash; Consistent net over-performance triggers a mandatory handicap review. The league reserves the right to adjust playing handicaps.</td></tr></table></td></tr>
+        </table>
+
+        <!-- Handicap reference table -->
+        <table class="hcap-table" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;">
+          <thead><tr><th class="hcap-th">GHIN Index</th><th class="hcap-th">Plays At (50%)</th><th class="hcap-th">Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="hcap-td"><span class="hcap-index">+2</span></td><td class="hcap-td"><span class="hcap-plays">+1</span></td><td class="hcap-td" style="font-size:11px;color:#666;">Strokes given to field</td></tr>
+            <tr><td class="hcap-td"><span class="hcap-index">0</span></td><td class="hcap-td"><span class="hcap-plays">0</span></td><td class="hcap-td" style="font-size:11px;color:#666;">Scratch plays as scratch</td></tr>
+            <tr><td class="hcap-td"><span class="hcap-index">4</span></td><td class="hcap-td"><span class="hcap-plays">2</span></td><td class="hcap-td" style="font-size:11px;color:#666;">2 strokes on hardest holes</td></tr>
+            <tr><td class="hcap-td"><span class="hcap-index">8</span></td><td class="hcap-td"><span class="hcap-plays">4</span></td><td class="hcap-td" style="font-size:11px;color:#666;">4 strokes on hardest holes</td></tr>
+            <tr><td class="hcap-td"><span class="hcap-index">10</span></td><td class="hcap-td"><span class="hcap-plays">5</span></td><td class="hcap-td" style="font-size:11px;color:#666;">5 strokes on hardest holes</td></tr>
+            <tr><td class="hcap-td"><span class="hcap-index">12</span></td><td class="hcap-td"><span class="hcap-plays">6</span></td><td class="hcap-td" style="font-size:11px;color:#666;">6 strokes on hardest holes</td></tr>
+            <tr><td class="hcap-td" style="border-bottom:none;"><span class="hcap-index">15</span></td><td class="hcap-td" style="border-bottom:none;"><span class="hcap-plays">7–8</span></td><td class="hcap-td" style="border-bottom:none;font-size:11px;color:#666;">Maximum index allowed</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- SKINS -->
       <div class="section">
-        <p class="section-label">03 &mdash; Skins Competition</p>
+        <p class="section-label">04 &mdash; Skins Competition</p>
         <p class="section-title">Pro Shop Vouchers Every Round</p>
-        <p class="section-text">Optional buy-in. Skins run across the entire field — not just your matched opponent. Winners receive pro shop vouchers. Format shifts every six holes. Ties carry within each phase — new phase starts fresh.</p>
+        <p class="section-text">Optional buy-in. Skins run across the entire field &mdash; not just your matched opponent. Winners receive pro shop vouchers paid out at end of round. Same 50% handicap allowance applies. Ties carry within each phase &mdash; each new phase starts fresh.</p>
         <table width="100%" cellpadding="0" cellspacing="2" border="0" style="margin-top:14px;">
           <tr>
             <td class="skin-cell-regular"><p class="phase-holes">Holes 1&ndash;6</p><p class="skin-name">BEST BALL SKINS</p><span class="skin-split">Split 4 Ways</span><p class="skin-desc">Lowest net best ball in the field wins the skin.</p></td>
@@ -199,9 +232,9 @@ table { border-collapse: collapse; }
 
       <!-- AWARDS -->
       <div class="section">
-        <p class="section-label">04 &mdash; Tournament Awards</p>
+        <p class="section-label">05 &mdash; Tournament Awards</p>
         <p class="section-title">Top 5 Teams Paid Every Tournament</p>
-        <p class="section-text">Estimated average awards based on field size. Actual amounts vary by course capacity per tournament.</p>
+        <p class="section-text">Estimated average awards based on field size. Actual amounts vary by course capacity per tournament. Tournament fees announced at season launch.</p>
         <table class="payout-table" cellpadding="0" cellspacing="0" border="0">
           <thead><tr><th class="payout-th">Place</th><th class="payout-th">Est. Team Award</th><th class="payout-th">Est. Per Player</th></tr></thead>
           <tbody>
@@ -216,8 +249,8 @@ table { border-collapse: collapse; }
           <tr><td style="background-color:#1a4730; padding:12px 16px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
               <tr>
-                <td style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.6);">Finals Fund &mdash; 10% of Every Tournament</td>
-                <td align="right" style="font-size:18px; font-weight:bold; color:#c8a84b; font-family:Georgia,serif;">Built from every round played</td>
+                <td style="font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);">Corridor Cup Fund &mdash; 10% of Every Tournament</td>
+                <td align="right" style="font-size:14px;font-weight:bold;color:#c8a84b;font-family:Georgia,serif;">Built All Season Long</td>
               </tr>
             </table>
           </td></tr>
@@ -226,7 +259,7 @@ table { border-collapse: collapse; }
 
       <!-- MEMBERSHIP -->
       <div class="section">
-        <p class="section-label">05 &mdash; Membership</p>
+        <p class="section-label">06 &mdash; Membership</p>
         <p class="section-title">How To Join</p>
         <table width="100%" cellpadding="0" cellspacing="2" border="0">
           <tr>
@@ -238,8 +271,8 @@ table { border-collapse: collapse; }
                 <tr><td class="mem-li">Permanent spot on a 6-man team</td></tr>
                 <tr><td class="mem-li">Compete in all 24 tournaments</td></tr>
                 <tr><td class="mem-li">Full standings & league access</td></tr>
-                <tr><td class="mem-li">Finals eligible &mdash; 16 of 24 required</td></tr>
-                <tr><td class="mem-li" style="border-bottom:none;">Tournament fee TBD at launch</td></tr>
+                <tr><td class="mem-li">Season points toward Corridor Cup</td></tr>
+                <tr><td class="mem-li" style="border-bottom:none;">Corridor Cup eligible &mdash; 16 of 24 required</td></tr>
               </table>
             </td>
             <td class="mem-reserve" style="border-left:none;">
@@ -250,7 +283,7 @@ table { border-collapse: collapse; }
                 <tr><td class="mem-li-white">Part of a 6-man team roster</td></tr>
                 <tr><td class="mem-li-white">Spectator access to all tournaments</td></tr>
                 <tr><td class="mem-li-white">Called up by captain when needed</td></tr>
-                <tr><td class="mem-li-white">Full service fee required when playing</td></tr>
+                <tr><td class="mem-li-white">Full tournament fee when playing</td></tr>
                 <tr><td class="mem-li-white" style="border-bottom:none;">Priority when active spots open</td></tr>
               </table>
             </td>
@@ -258,27 +291,14 @@ table { border-collapse: collapse; }
         </table>
         <div class="tbd-banner">
           <p class="tbd-label">Tournament Fee</p>
-          <p class="tbd-text">All tournament and course fees announced at season launch. Handled directly through The Corridor — members book through us.</p>
+          <p class="tbd-text">All tournament and course fees announced at season launch. Handled directly through The Corridor &mdash; members book through us.</p>
         </div>
       </div>
 
-      <!-- HANDICAP -->
-      <div class="section">
-        <p class="section-label">06 &mdash; Eligibility & Fair Play</p>
-        <p class="section-title">Handicap Rules</p>
-        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">1</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>GHIN Verified Index Required</strong> — Active USGA handicap index required. ~$30&ndash;40/year through your home club or USGA.</td></tr></table></td></tr>
-          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">2</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Maximum Index: 18</strong> — Open to players with a verified GHIN index of 0&ndash;18.</td></tr></table></td></tr>
-          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">3</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and standings calculated on a net basis.</td></tr></table></td></tr>
-          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">4</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Sandbagging Clause</strong> — Consistent over-performance triggers a mandatory handicap review. The league reserves the right to adjust playing handicaps.</td></tr></table></td></tr>
-          <tr><td style="padding:10px 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">5</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Team Balance</strong> — Teams are friend groups but must carry a reasonable spread across the 0&ndash;18 index range.</td></tr></table></td></tr>
-        </table>
-      </div>
-
-      <!-- NEXT -->
+      <!-- NEXT STEPS -->
       <div class="section" style="border-bottom:none;">
-        <p class="section-label">What's Next</p>
-        <p class="section-text">We'll be in touch as soon as courses are confirmed and enrollment officially opens. You'll hear from us first — before the public. Questions? Reply directly to this email at info@corridorgolfleague.com</p>
+        <p class="section-label">What Happens Next</p>
+        <p class="section-text">We will be in touch as soon as courses are confirmed and enrollment officially opens. You will hear from us before the public. In the meantime if you have any questions reply directly to this email at info@corridorgolfleague.com</p>
       </div>
 
     </td>
@@ -290,11 +310,10 @@ table { border-collapse: collapse; }
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td width="52" valign="middle" style="padding-right:16px;">
-            <svg width="44" height="50" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="44" height="50" viewBox="0 0 220 200" fill="none">
               <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
               <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
-              <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
-              <text x="110" y="108" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="white">C</text>
+              <text x="110" y="115" text-anchor="middle" font-family="Arial" font-size="28" font-weight="bold" fill="white">C</text>
             </svg>
           </td>
           <td valign="middle">
@@ -302,11 +321,11 @@ table { border-collapse: collapse; }
             <p class="footer-tag">Competitive Team Golf · Gulf Coast</p>
           </td>
           <td align="right" valign="middle">
-            <p style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.8;">corridorgolfleague.com<br>info@corridorgolfleague.com</p>
+            <p style="font-size:11px;color:rgba(255,255,255,0.4);line-height:1.8;">corridorgolfleague.com<br>info@corridorgolfleague.com</p>
           </td>
         </tr>
       </table>
-      <p class="footer-unsub">You're receiving this because you signed up for early access at corridorgolfleague.com</p>
+      <p class="footer-unsub">You are receiving this because you applied for membership at corridorgolfleague.com</p>
     </td>
   </tr>
 
