@@ -7,605 +7,164 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
+.page { max-width: 780px; margin: 40px auto; background: #ffffff; box-shadow: 0 4px 40px rgba(0,0,0,0.12); }
 
-body {
-  background: #f0ede6;
-  font-family: 'Inter', sans-serif;
-  color: #1a1a1a;
-}
-
-.page {
-  max-width: 780px;
-  margin: 40px auto;
-  background: #ffffff;
-  box-shadow: 0 4px 40px rgba(0,0,0,0.12);
-}
-
-/* ─── HEADER ─── */
-.header {
-  background: #1a4730;
-  padding: 48px 56px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 5px;
-  background: repeating-linear-gradient(90deg, #c8a84b 0px, #c8a84b 40px, #1f5a3a 40px, #1f5a3a 42px);
-}
-.header::after {
-  content: 'CORRIDOR';
-  position: absolute;
-  right: -20px;
-  bottom: -20px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 9rem;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  pointer-events: none;
-}
-.header-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 32px;
-}
-.logo-the {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: #c8a84b;
-  display: block;
-  margin-bottom: 4px;
-}
-.logo-main {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.8rem;
-  color: #ffffff;
-  line-height: 0.9;
-  letter-spacing: 0.04em;
-  display: block;
-}
-.logo-sub {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-top: 8px;
-  display: block;
-}
+/* HEADER */
+.header { background: #1a4730; padding: 48px 56px 40px; position: relative; overflow: hidden; }
+.header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, #c8a84b 0px, #c8a84b 40px, #1f5a3a 40px, #1f5a3a 42px); }
+.header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; }
+.header-logo { display: flex; align-items: center; gap: 20px; }
+.logo-text { display: flex; flex-direction: column; }
+.logo-the { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: #c8a84b; display: block; margin-bottom: 4px; }
+.logo-main { font-family: 'Bebas Neue', sans-serif; font-size: 3.8rem; color: #ffffff; line-height: 0.9; letter-spacing: 0.04em; display: block; }
+.logo-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 8px; display: block; }
 .header-badge { text-align: right; }
-.badge-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  display: block;
-  margin-bottom: 4px;
-}
-.badge-value {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.4rem;
-  color: #c8a84b;
-  display: block;
-  line-height: 1;
-}
-.header-tagline {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
+.badge-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); display: block; margin-bottom: 4px; }
+.badge-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: #c8a84b; display: block; line-height: 1; }
+.header-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
 .header-tagline strong { color: rgba(255,255,255,0.9); font-weight: 600; }
 
-/* ─── STATS BAR ─── */
-.stats-bar {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  background: #111111;
-}
-.stat-item {
-  padding: 16px 12px;
-  text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.08);
-}
+/* STATS BAR */
+.stats-bar { display: grid; grid-template-columns: repeat(5, 1fr); background: #111111; }
+.stat-item { padding: 16px 12px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
 .stat-item:last-child { border-right: none; }
-.stat-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  color: #c8a84b;
-  display: block;
-  line-height: 1;
-}
-.stat-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-top: 3px;
-  display: block;
-}
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: #c8a84b; display: block; line-height: 1; }
+.stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 3px; display: block; }
 
-/* ─── BODY ─── */
+/* BODY */
 .body { padding: 0 56px 56px; }
-
-.section {
-  padding: 36px 0;
-  border-bottom: 1px solid #e8e8e2;
-}
+.section { padding: 36px 0; border-bottom: 1px solid #e8e8e2; }
 .section:last-child { border-bottom: none; }
+.section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.section-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: #e8e8e2; line-height: 1; flex-shrink: 0; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: #1a4730; line-height: 1; letter-spacing: 0.03em; }
+.section-title span { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
+.body-text { font-size: 0.9rem; line-height: 1.8; color: #444; }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-}
-.section-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  color: #e8e8e2;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.section-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  color: #1a4730;
-  line-height: 1;
-  letter-spacing: 0.03em;
-}
-.section-title span {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #c8a84b;
-  margin-bottom: 4px;
-}
-.body-text {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  color: #444;
-}
-
-/* ─── FORMAT ─── */
-.matchup-box {
-  background: #f5f5f0;
-  border: 1px solid #e8e8e2;
-  padding: 20px 24px;
-  margin: 16px 0;
-}
-.matchup-box-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #9a9a90;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e8e8e2;
-}
-.matchup-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid #e8e8e2;
-}
+/* MATCHUP */
+.matchup-box { background: #f5f5f0; border: 1px solid #e8e8e2; padding: 20px 24px; margin: 16px 0; }
+.matchup-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #9a9a90; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #e8e8e2; }
+.matchup-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #e8e8e2; }
 .matchup-row:last-child { border-bottom: none; }
 .matchup-cart { flex: 1; }
-.matchup-cart-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #9a9a90;
-  display: block;
-}
-.matchup-cart-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-.matchup-vs {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2rem;
-  color: #c8a84b;
-  flex-shrink: 0;
-}
-.matchup-note {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #fff;
-  background: #1a4730;
-  padding: 3px 8px;
-  display: inline-block;
-  margin-top: 12px;
-}
+.matchup-cart-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9a90; display: block; }
+.matchup-cart-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #1a1a1a; }
+.matchup-vs { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: #c8a84b; flex-shrink: 0; }
+.matchup-note { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; background: #1a4730; padding: 3px 8px; display: inline-block; margin-top: 12px; }
 
-.phases {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: #e8e8e2;
-  border: 1px solid #e8e8e2;
-  margin: 16px 0;
-}
+/* PHASES */
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e8e8e2; border: 1px solid #e8e8e2; margin: 16px 0; }
 .phase { background: #fff; padding: 20px 16px; }
-.phase-holes {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #c8a84b;
-  margin-bottom: 6px;
-}
-.phase-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  color: #1a4730;
-  line-height: 1;
-  margin-bottom: 8px;
-}
+.phase-holes { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 6px; }
+.phase-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: #1a4730; line-height: 1; margin-bottom: 8px; }
 .phase-desc { font-size: 0.78rem; line-height: 1.6; color: #666; }
 
-/* ─── SKINS ─── */
-.skins-phases {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: #e8e8e2;
-  border: 1px solid #e8e8e2;
-  margin: 16px 0;
-}
+/* TEAM STRUCTURE */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e8e8e2; border: 1px solid #e8e8e2; margin: 16px 0; }
+.team-cell { background: #fff; padding: 20px 16px; }
+.team-cell.featured { background: #1a4730; }
+.team-cell-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 6px; }
+.team-cell-value { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #1a4730; line-height: 1; margin-bottom: 8px; }
+.team-cell.featured .team-cell-value { color: #ffffff; }
+.team-cell-desc { font-size: 0.78rem; line-height: 1.6; color: #666; }
+.team-cell.featured .team-cell-desc { color: rgba(255,255,255,0.75); }
+
+/* SKINS */
+.skins-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e8e8e2; border: 1px solid #e8e8e2; margin: 16px 0; }
 .skins-phase { background: #fff; padding: 20px 16px; }
 .skins-phase.featured { background: #1a4730; }
-.skins-phase-holes {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #c8a84b;
-  margin-bottom: 6px;
-}
-.skins-phase-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: #1a4730;
-  line-height: 1;
-  margin-bottom: 4px;
-}
+.skins-phase-holes { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 6px; }
+.skins-phase-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: #1a4730; line-height: 1; margin-bottom: 4px; }
 .skins-phase.featured .skins-phase-name { color: #fff; }
-.skins-phase-type {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #9a9a90;
-  margin-bottom: 10px;
-}
+.skins-phase-type { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #9a9a90; margin-bottom: 10px; }
 .skins-phase.featured .skins-phase-type { color: rgba(255,255,255,0.5); }
 .skins-phase-desc { font-size: 0.78rem; line-height: 1.6; color: #666; }
 .skins-phase.featured .skins-phase-desc { color: rgba(255,255,255,0.75); }
-.skins-phase-winner {
-  display: inline-block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  background: #1a4730;
-  color: #fff;
-  padding: 3px 8px;
-  margin-top: 10px;
-}
+.skins-phase-winner { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: #1a4730; color: #fff; padding: 3px 8px; margin-top: 10px; }
 .skins-phase.featured .skins-phase-winner { background: #c8a84b; color: #111; }
-
-.skins-rule-box {
-  background: #f5f5f0;
-  border: 1px solid #e8e8e2;
-  padding: 16px 20px;
-  margin-top: 16px;
-  display: flex;
-  gap: 20px;
-}
-.skins-rule {
-  flex: 1;
-  border-right: 1px solid #e8e8e2;
-  padding-right: 20px;
-}
+.skins-rule-box { background: #f5f5f0; border: 1px solid #e8e8e2; padding: 16px 20px; margin-top: 16px; display: flex; gap: 20px; }
+.skins-rule { flex: 1; border-right: 1px solid #e8e8e2; padding-right: 20px; }
 .skins-rule:last-child { border-right: none; padding-right: 0; }
-.skins-rule-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #c8a84b;
-  margin-bottom: 6px;
-}
-.skins-rule-text { font-size: 0.78rem; line-height: 1.6; color: #555; }
+.skins-rule-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 6px; }
+.skins-rule-text { font-size: 0.78rem; color: #666; line-height: 1.5; }
 
-/* ─── PRIZE TABLE ─── */
-.money-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0;
-  font-size: 0.85rem;
-}
-.money-table th {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #9a9a90;
-  text-align: left;
-  padding: 8px 12px;
-  border-bottom: 2px solid #1a4730;
-  background: #f5f5f0;
-}
-.money-table td {
-  padding: 12px 12px;
-  border-bottom: 1px solid #e8e8e2;
-  color: #333;
-}
+/* PRIZE TABLE */
+.money-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+.money-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #9a9a90; text-align: left; padding: 8px 12px; border-bottom: 2px solid #1a4730; background: #f5f5f0; }
+.money-table td { padding: 12px 12px; border-bottom: 1px solid #e8e8e2; }
 .money-table tr:last-child td { border-bottom: none; }
 .money-table tr.winner td { background: rgba(26,71,48,0.04); }
-.place {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: #1a4730;
-}
+.place { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: #1a4730; }
 .place.gold { color: #c8a84b; }
-.amount {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: #1a1a1a;
-}
+.amount { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: #1a1a1a; }
 .per-player { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; color: #9a9a90; }
+.prize-note { background: #1a4730; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
+.prize-note-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.prize-note-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: #c8a84b; }
 
-.prize-note {
-  background: #1a4730;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.prize-note-text {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-}
-.prize-note-value {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2rem;
-  color: #c8a84b;
-}
-
-/* ─── FINALS ─── */
-.finals-box {
-  background: #111;
-  overflow: hidden;
-  margin: 16px 0;
-}
-.finals-box-header {
-  background: #c8a84b;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.finals-box-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #111;
-}
-.finals-purse {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: #111;
-}
-.finals-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
+/* FINALS */
+.finals-box { background: #111; overflow: hidden; margin: 16px 0; }
+.finals-box-header { background: #c8a84b; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+.finals-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #111; }
+.finals-purse { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: #111; }
+.finals-row { display: flex; align-items: center; gap: 14px; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .finals-row:last-child { border-bottom: none; }
-.finals-pos {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: rgba(255,255,255,0.2);
-  width: 24px;
-  flex-shrink: 0;
-}
+.finals-pos { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: rgba(255,255,255,0.2); width: 24px; flex-shrink: 0; }
 .finals-pos.gold { color: #c8a84b; }
-.finals-team-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-  flex: 1;
-  letter-spacing: 0.05em;
-}
-.finals-pts {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: #c8a84b;
-}
+.finals-team-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; color: #fff; flex: 1; letter-spacing: 0.05em; }
+.finals-pts { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: #c8a84b; }
 
-/* ─── MEMBERSHIP ─── */
-.mem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: #e8e8e2;
-  border: 1px solid #e8e8e2;
-  margin: 16px 0;
-}
+/* MEMBERSHIP */
+.mem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #e8e8e2; border: 1px solid #e8e8e2; margin: 16px 0; }
 .mem-cell { background: #fff; padding: 24px 20px; }
 .mem-cell.featured { background: #1a4730; }
-.mem-cell-type {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #9a9a90;
-  margin-bottom: 6px;
-}
+.mem-cell-type { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #9a9a90; margin-bottom: 6px; }
 .mem-cell.featured .mem-cell-type { color: #c8a84b; }
-.mem-cell-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: #1a1a1a;
-  line-height: 1;
-  margin-bottom: 4px;
-}
+.mem-cell-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #1a1a1a; line-height: 1; margin-bottom: 4px; }
 .mem-cell.featured .mem-cell-title { color: #fff; }
-.mem-cell-price {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  color: #1a4730;
-  line-height: 1;
-  margin-bottom: 14px;
-}
+.mem-cell-price { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #1a4730; line-height: 1; margin-bottom: 14px; }
 .mem-cell.featured .mem-cell-price { color: #c8a84b; }
-.mem-cell-sub {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #9a9a90;
-  margin-bottom: 14px;
-}
-.mem-cell.featured .mem-cell-sub { color: rgba(255,255,255,0.45); }
 .mem-cell-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.mem-cell-features li {
-  font-size: 0.78rem;
-  color: #555;
-  padding-left: 12px;
-  position: relative;
-  line-height: 1.4;
-}
-.mem-cell-features li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 7px;
-  width: 5px; height: 5px;
-  background: #1a4730;
-  border-radius: 50%;
-}
-.mem-cell.featured .mem-cell-features li { color: rgba(255,255,255,0.75); }
+.mem-cell-features li { font-size: 0.78rem; color: #555; padding-left: 12px; position: relative; line-height: 1.4; }
+.mem-cell-features li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; background: #1a4730; border-radius: 50%; }
+.mem-cell.featured .mem-cell-features li { color: rgba(255,255,255,0.8); }
 .mem-cell.featured .mem-cell-features li::before { background: #c8a84b; }
+.tbd-banner { background: #f5f5f0; border-left: 3px solid #c8a84b; padding: 14px 20px; margin-top: 16px; }
+.tbd-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
+.tbd-text { font-size: 0.82rem; color: #555; line-height: 1.5; margin: 0; }
 
-.tbd-banner {
-  background: #f5f5f0;
-  border: 1px solid #e8e8e2;
-  border-left: 3px solid #c8a84b;
-  padding: 14px 20px;
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.tbd-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #c8a84b;
-  flex-shrink: 0;
-}
-.tbd-text { font-size: 0.82rem; color: #555; line-height: 1.5; }
-
-/* ─── HANDICAP ─── */
+/* HANDICAP */
 .rule-list { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
-.rule-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid #e8e8e2;
-}
+.rule-item { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid #e8e8e2; }
 .rule-item:first-child { border-top: 1px solid #e8e8e2; }
-.rule-icon {
-  width: 32px; height: 32px;
-  background: #1a4730;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1rem;
-}
+.rule-icon { width: 32px; height: 32px; background: #1a4730; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; }
 .rule-text { font-size: 0.85rem; color: #333; line-height: 1.6; }
 .rule-text strong { color: #1a1a1a; }
 
-/* ─── FOOTER ─── */
-.footer {
-  background: #1a4730;
-  padding: 28px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 3px solid #c8a84b;
-}
+/* FOOTER */
+.footer { background: #1a4730; padding: 28px 56px; display: flex; align-items: center; justify-content: space-between; border-top: 3px solid #c8a84b; }
+.footer-left { display: flex; align-items: center; gap: 16px; }
 .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: #fff; letter-spacing: 0.05em; }
-.footer-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #c8a84b; }
-.footer-url { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); text-align: right; }
+.footer-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #c8a84b; margin-top: 4px; }
+.footer-url { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); text-align: right; line-height: 1.8; }
 
 @media (max-width: 600px) {
   .page { margin: 0; }
   .header { padding: 32px 24px 28px; }
   .body { padding: 0 24px 40px; }
-  .header-top { flex-direction: column; gap: 16px; }
+  .header-top { flex-direction: column; gap: 20px; }
   .header-badge { text-align: left; }
   .stats-bar { grid-template-columns: repeat(3, 1fr); }
   .stat-item:nth-child(4), .stat-item:nth-child(5) { display: none; }
-  .phases, .skins-phases { grid-template-columns: 1fr; }
+  .phases, .skins-phases, .team-grid { grid-template-columns: 1fr; }
   .mem-grid { grid-template-columns: 1fr; }
-  .skins-rule-box { flex-direction: column; gap: 12px; }
+  .skins-rule-box { flex-direction: column; }
   .skins-rule { border-right: none; border-bottom: 1px solid #e8e8e2; padding-right: 0; padding-bottom: 12px; }
-  .skins-rule:last-child { border-bottom: none; padding-bottom: 0; }
-  .footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+  .skins-rule:last-child { border-bottom: none; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
+  .footer-url { text-align: center; }
+  .header-logo { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -615,10 +174,25 @@ body {
   <!-- HEADER -->
   <div class="header">
     <div class="header-top">
-      <div>
-        <span class="logo-the">The</span>
-        <span class="logo-main">CORRIDOR</span>
-        <span class="logo-sub">Gulf Coast Golf League · PCB to Destin</span>
+      <div class="header-logo">
+        <!-- Crest -->
+        <svg width="64" height="72" viewBox="0 0 220 200" fill="none" style="flex-shrink:0;">
+          <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
+          <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
+          <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <text x="110" y="72" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="11" font-weight="700" letter-spacing="6" fill="#c8a84b">THE</text>
+          <text x="110" y="108" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="30" letter-spacing="3" fill="white">CORRIDOR</text>
+          <line x1="52" y1="118" x2="168" y2="118" stroke="#c8a84b" stroke-width="1" opacity="0.6"/>
+          <text x="110" y="140" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="10" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.6)">GOLF LEAGUE</text>
+          <circle cx="86" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
+          <circle cx="110" cy="158" r="2.5" fill="#c8a84b"/>
+          <circle cx="134" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-the">The</span>
+          <span class="logo-main">CORRIDOR</span>
+          <span class="logo-sub">Gulf Coast Golf League · PCB to Destin</span>
+        </div>
       </div>
       <div class="header-badge">
         <span class="badge-label">Season</span>
@@ -629,17 +203,15 @@ body {
         <span class="badge-value">GHIN</span>
       </div>
     </div>
-    <div class="header-tagline">
-      <strong>Real competition.</strong> The courses you know. Every other weekend, all year long.
-    </div>
+    <div class="header-tagline"><strong>Competitive Team Golf.</strong> Real Money. Real Growth. Real Community.</div>
   </div>
 
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">Tournaments</span></div>
-    <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Players / Team</span></div>
+    <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Per Team</span></div>
     <div class="stat-item"><span class="stat-num">Top 5</span><span class="stat-label">Teams Paid</span></div>
-    <div class="stat-item"><span class="stat-num">$43K</span><span class="stat-label">Finals Purse</span></div>
+    <div class="stat-item"><span class="stat-num">$100K+</span><span class="stat-label">Finals Fund</span></div>
     <div class="stat-item"><span class="stat-num">NET</span><span class="stat-label">Scoring</span></div>
   </div>
 
@@ -649,167 +221,140 @@ body {
     <div class="section">
       <div class="section-header">
         <div class="section-num">01</div>
-        <div class="section-title"><span>How It Works</span>The Format</div>
+        <div class="section-title"><span>How It Works</span>Three Formats. One Round. No Passengers.</div>
       </div>
-      <p class="body-text">4-man teams compete in a split matchup format. Teammates ride together in their own cart — their two opponents ride in the adjacent cart. Both cart groups play the same match simultaneously on opposite sides of the course and converge mid-round. Every player locked in for all 18 holes.</p>
+      <p class="body-text">4-man teams compete in a split matchup format. Teammates ride together in their own cart — their two opponents ride in the adjacent cart. Both cart groups play the same match simultaneously on opposite sides of the course and converge mid-round. Every player is locked in for all 18 holes across three rotating formats. The pressure shifts every six holes. Nobody checks out.</p>
 
       <div class="matchup-box">
         <div class="matchup-box-title">Tournament Matchup Structure — Per Round</div>
         <div class="matchup-row">
-          <div class="matchup-cart">
-            <span class="matchup-cart-label">Cart 1 — Front Side</span>
-            <div class="matchup-cart-name">Team A · Players 1 & 2</div>
-          </div>
+          <div class="matchup-cart"><span class="matchup-cart-label">Cart 1 — Front Side</span><div class="matchup-cart-name">Team A · Players 1 & 2</div></div>
           <div class="matchup-vs">vs</div>
-          <div class="matchup-cart">
-            <span class="matchup-cart-label">Cart 2 — Front Side</span>
-            <div class="matchup-cart-name">Team B · Players 1 & 2</div>
-          </div>
+          <div class="matchup-cart"><span class="matchup-cart-label">Cart 2 — Front Side</span><div class="matchup-cart-name">Team B · Players 1 & 2</div></div>
         </div>
         <div class="matchup-row">
-          <div class="matchup-cart">
-            <span class="matchup-cart-label">Cart 3 — Back Side</span>
-            <div class="matchup-cart-name">Team A · Players 3 & 4</div>
-          </div>
+          <div class="matchup-cart"><span class="matchup-cart-label">Cart 3 — Back Side</span><div class="matchup-cart-name">Team A · Players 3 & 4</div></div>
           <div class="matchup-vs">vs</div>
-          <div class="matchup-cart">
-            <span class="matchup-cart-label">Cart 4 — Back Side</span>
-            <div class="matchup-cart-name">Team B · Players 3 & 4</div>
-          </div>
+          <div class="matchup-cart"><span class="matchup-cart-label">Cart 4 — Back Side</span><div class="matchup-cart-name">Team B · Players 3 & 4</div></div>
         </div>
         <div class="matchup-note">Shotgun Start · Teammates ride together · Opponents in the adjacent cart</div>
       </div>
 
       <div class="phases">
-        <div class="phase">
-          <div class="phase-holes">Holes 1–6</div>
-          <div class="phase-name">BEST BALL</div>
-          <p class="phase-desc">Each player plays their own ball. Best net score per hole counts for the team against the full field.</p>
-        </div>
-        <div class="phase">
-          <div class="phase-holes">Holes 7–12</div>
-          <div class="phase-name">ALT SHOT</div>
-          <p class="phase-desc">One ball, two players. Teammates alternate every stroke. One net score per cart group per hole.</p>
-        </div>
-        <div class="phase">
-          <div class="phase-holes">Holes 13–18</div>
-          <div class="phase-name">INDIVIDUAL</div>
-          <p class="phase-desc">Every player, every ball. Individual net scores count personally toward standings and skins.</p>
-        </div>
+        <div class="phase"><div class="phase-holes">Holes 1–6</div><div class="phase-name">BEST BALL</div><p class="phase-desc">Best net score per hole counts for the team against the full field.</p></div>
+        <div class="phase"><div class="phase-holes">Holes 7–12</div><div class="phase-name">ALT SHOT</div><p class="phase-desc">One ball, two players. Teammates alternate every stroke for 6 holes.</p></div>
+        <div class="phase"><div class="phase-holes">Holes 13–18</div><div class="phase-name">INDIVIDUAL</div><p class="phase-desc">Every player, every ball. Scores count personally toward season standings.</p></div>
       </div>
     </div>
 
-    <!-- 02 SKINS -->
+    <!-- 02 TEAM STRUCTURE -->
     <div class="section">
       <div class="section-header">
         <div class="section-num">02</div>
-        <div class="section-title"><span>Whole Field · Optional Buy-In</span>The Skins Game</div>
+        <div class="section-title"><span>Team Roster</span>Your Team. Your Name. Your Identity.</div>
       </div>
-      <p class="body-text">The skins game runs across the entire field — not just your matched opponent. Every team that buys in competes on every hole against all other teams in the tournament. Skins are settled after the round once all scorecards are posted. The format changes every six holes — and so does how a skin is won.</p>
+      <p class="body-text">Every team carries 6 members — 4 active players and 2 reserves. Teams are formed by friends. Each team chooses their own name and builds their own identity. A team captain manages the lineup each week, deciding who plays and who sits. Reserves are part of the team community and attend all tournaments as spectators when not playing.</p>
+
+      <div class="team-grid">
+        <div class="team-cell">
+          <div class="team-cell-label">Active Players</div>
+          <div class="team-cell-value">4 PER ROUND</div>
+          <p class="team-cell-desc">The four competing that week. Captain sets the lineup before each tournament.</p>
+        </div>
+        <div class="team-cell featured">
+          <div class="team-cell-label">Team Reserves</div>
+          <div class="team-cell-value">2 ON ROSTER</div>
+          <p class="team-cell-desc">Part of the team. Called up when a player can't make it. Spectator access when not playing.</p>
+        </div>
+        <div class="team-cell">
+          <div class="team-cell-label">Leadership</div>
+          <div class="team-cell-value">1 CAPTAIN</div>
+          <p class="team-cell-desc">Confirms attendance, manages lineup, and is the league's point of contact for the team.</p>
+        </div>
+      </div>
+
+      <div class="tbd-banner">
+        <p class="tbd-label">Team Names</p>
+        <p class="tbd-text">Teams choose their own name at enrollment. Gulf Coast Iron. Dead Low. Tight Lie. Salt & Sand. Your team. Your identity. Your rivalry.</p>
+      </div>
+    </div>
+
+    <!-- 03 SKINS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-title"><span>Optional Buy-In · Pro Shop Vouchers</span>The Skins Competition</div>
+      </div>
+      <p class="body-text">The skins competition runs across the entire field — not just your matched opponent. Every team that buys in competes on every hole against all other teams in the tournament. Winners receive pro shop vouchers. The format shifts every six holes matching the tournament format.</p>
 
       <div class="skins-phases">
         <div class="skins-phase">
           <div class="skins-phase-holes">Holes 1–6</div>
           <div class="skins-phase-name">BEST BALL SKINS</div>
           <div class="skins-phase-type">Team vs. Whole Field</div>
-          <p class="skins-phase-desc">The team's best net score on each hole competes against all other teams. Lowest net best ball in the field wins the skin. Tie = carries over to the next hole.</p>
+          <p class="skins-phase-desc">Lowest net best ball score in the field wins the skin. Tie carries over.</p>
           <span class="skins-phase-winner">Split 4 Ways</span>
         </div>
         <div class="skins-phase">
           <div class="skins-phase-holes">Holes 7–12</div>
           <div class="skins-phase-name">ALT SHOT SKINS</div>
           <div class="skins-phase-type">Cart Group vs. Whole Field</div>
-          <p class="skins-phase-desc">Each cart group's alternate shot net score competes against all other cart groups in the field. Lowest net alt shot score wins the skin. Tie = carries over.</p>
+          <p class="skins-phase-desc">Lowest net alt shot score among all cart groups wins. Tie carries over.</p>
           <span class="skins-phase-winner">Split 2 Ways</span>
         </div>
         <div class="skins-phase featured">
           <div class="skins-phase-holes">Holes 13–18</div>
           <div class="skins-phase-name">INDIVIDUAL SKINS</div>
           <div class="skins-phase-type">Player vs. Whole Field</div>
-          <p class="skins-phase-desc">Every player competes individually. Lowest net score on each hole across the entire field wins the skin outright. The real money. Tie = carries over.</p>
+          <p class="skins-phase-desc">Every player individually vs. the entire field. The biggest vouchers of the round.</p>
           <span class="skins-phase-winner">Winner Takes All</span>
         </div>
       </div>
 
       <div class="skins-rule-box">
-        <div class="skins-rule">
-          <div class="skins-rule-label">Carryover Rule</div>
-          <p class="skins-rule-text">Ties carry over within each phase. A new phase always starts fresh — no carryover between Best Ball, Alt Shot, and Individual.</p>
-        </div>
-        <div class="skins-rule">
-          <div class="skins-rule-label">Scoring</div>
-          <p class="skins-rule-text">All skins played on net scores using verified GHIN indexes. Handicap strokes applied per hole based on stroke index.</p>
-        </div>
-        <div class="skins-rule">
-          <div class="skins-rule-label">Settlement</div>
-          <p class="skins-rule-text">Skins paid out at the end of the round once all scorecards are posted. Separate from the main tournament payout.</p>
-        </div>
+        <div class="skins-rule"><div class="skins-rule-label">Carryover Rule</div><p class="skins-rule-text">Ties carry within each phase. Each new phase starts fresh — no carryover between formats.</p></div>
+        <div class="skins-rule"><div class="skins-rule-label">Scoring</div><p class="skins-rule-text">All skins played on net scores using verified GHIN indexes. Handicap strokes applied per stroke index.</p></div>
+        <div class="skins-rule"><div class="skins-rule-label">Vouchers</div><p class="skins-rule-text">Pro shop vouchers paid out at the end of the round once all scorecards are posted.</p></div>
       </div>
     </div>
 
-    <!-- 03 PRIZE MONEY -->
+    <!-- 04 PRIZE MONEY -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">03</div>
-        <div class="section-title"><span>Per Tournament · Top 5 Teams</span>Prize Money</div>
+        <div class="section-num">04</div>
+        <div class="section-title"><span>Per Tournament · Top 5 Teams</span>Tournament Awards</div>
       </div>
-      <p class="body-text">Every tournament pays out to the top 5 teams based on net team score across all 18 holes. Tournament fees will be announced at season launch. The following reflects estimated average payouts — actual payouts will vary based on course cart capacity and field size per tournament.</p>
+      <p class="body-text">Every tournament pays the top 5 finishing teams based on net team score across all 18 holes. Estimated average awards based on field size — actual amounts vary by course capacity per tournament.</p>
 
       <table class="money-table">
-        <thead>
-          <tr>
-            <th>Place</th>
-            <th>Est. Team Payout</th>
-            <th>Est. Per Player</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Place</th><th>Est. Team Award</th><th>Est. Per Player</th></tr></thead>
         <tbody>
-          <tr class="winner">
-            <td><span class="place gold">1st</span></td>
-            <td><span class="amount">~$4,680</span></td>
-            <td class="per-player">~$1,170 / player</td>
-          </tr>
-          <tr>
-            <td><span class="place">2nd</span></td>
-            <td><span class="amount">~$2,925</span></td>
-            <td class="per-player">~$731 / player</td>
-          </tr>
-          <tr>
-            <td><span class="place">3rd</span></td>
-            <td><span class="amount">~$1,755</span></td>
-            <td class="per-player">~$439 / player</td>
-          </tr>
-          <tr>
-            <td><span class="place">4th</span></td>
-            <td><span class="amount">~$1,170</span></td>
-            <td class="per-player">~$293 / player</td>
-          </tr>
-          <tr>
-            <td><span class="place">5th</span></td>
-            <td><span class="amount">~$1,170</span></td>
-            <td class="per-player">~$293 / player</td>
-          </tr>
+          <tr class="winner"><td><span class="place gold">1st</span></td><td><span class="amount">~$4,680</span></td><td class="per-player">~$1,170 / player</td></tr>
+          <tr><td><span class="place">2nd</span></td><td><span class="amount">~$2,925</span></td><td class="per-player">~$731 / player</td></tr>
+          <tr><td><span class="place">3rd</span></td><td><span class="amount">~$1,755</span></td><td class="per-player">~$439 / player</td></tr>
+          <tr><td><span class="place">4th</span></td><td><span class="amount">~$1,170</span></td><td class="per-player">~$293 / player</td></tr>
+          <tr><td><span class="place">5th</span></td><td><span class="amount">~$1,170</span></td><td class="per-player">~$293 / player</td></tr>
         </tbody>
       </table>
 
       <div class="prize-note">
-        <span class="prize-note-text">Skins Game — Separate Optional Pot</span>
-        <span class="prize-note-value">~$4,800 Per Tournament</span>
+        <span class="prize-note-text">Skins Competition — Pro Shop Vouchers</span>
+        <span class="prize-note-value">Optional Buy-In Per Tournament</span>
       </div>
     </div>
 
-    <!-- 04 FINALS -->
+    <!-- 05 FINALS -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">04</div>
+        <div class="section-num">05</div>
         <div class="section-title"><span>Season Championship</span>The Finals</div>
       </div>
-      <p class="body-text">Points accumulate all season based on tournament finish position. Every appearance earns base points — consistent teams are rewarded regardless of finish. The top teams by season standings qualify for the Finals at a premier Emerald Coast venue. Minimum 16 of 24 appearances required to qualify. The season purse is built from every tournament played all year long.</p>
+      <p class="body-text">10% of every tournament goes directly into the Finals fund all season long. Points accumulate based on tournament finish — consistent teams are rewarded. The top teams by standings qualify for the season championship at a premier Gulf Coast venue. Minimum 16 of 24 appearances required to qualify.</p>
 
       <div class="finals-box">
         <div class="finals-box-header">
           <span class="finals-box-title">Season Standings — Finals Qualified</span>
-          <span class="finals-purse">Est. $43,200 Purse</span>
+          <span class="finals-purse">Est. $100K+ Finals Fund</span>
         </div>
         <div class="finals-row"><div class="finals-pos gold">1</div><div class="finals-team-name">GULF COAST IRON</div><div class="finals-pts">284 pts</div></div>
         <div class="finals-row"><div class="finals-pos">2</div><div class="finals-team-name">SALT & SAND</div><div class="finals-pts">271 pts</div></div>
@@ -819,10 +364,10 @@ body {
       </div>
     </div>
 
-    <!-- 05 MEMBERSHIP -->
+    <!-- 06 MEMBERSHIP -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">05</div>
+        <div class="section-num">06</div>
         <div class="section-title"><span>Monthly Membership</span>How To Join</div>
       </div>
 
@@ -831,10 +376,9 @@ body {
           <div class="mem-cell-type">Active Member</div>
           <div class="mem-cell-title">ACTIVE</div>
           <div class="mem-cell-price">$50<span style="font-size:1rem;font-family:'Barlow Condensed',sans-serif;">/mo</span></div>
-          <div class="mem-cell-sub">Tournament fees announced at launch</div>
           <ul class="mem-cell-features">
-            <li>Permanent spot on a 4-man team</li>
-            <li>Entry to all 24 tournaments</li>
+            <li>Permanent spot on a 6-man team roster</li>
+            <li>Compete in all 24 tournaments</li>
             <li>Full standings & league access</li>
             <li>Season points toward Finals</li>
             <li>Finals eligible — 16 of 24 required</li>
@@ -844,51 +388,35 @@ body {
           <div class="mem-cell-type">Reserve Member</div>
           <div class="mem-cell-title">RESERVE</div>
           <div class="mem-cell-price">$5<span style="font-size:1rem;font-family:'Barlow Condensed',sans-serif;">/mo</span></div>
-          <div class="mem-cell-sub">Per-round fee when called up</div>
           <ul class="mem-cell-features">
-            <li>Full league membership & community</li>
-            <li>Called up when a team needs a sub</li>
+            <li>Part of a 6-man team roster</li>
+            <li>Spectator access to all tournaments</li>
+            <li>Called up by captain when a spot opens</li>
+            <li>Full tournament service fee required when playing</li>
             <li>Priority placement when active spots open</li>
-            <li>Earn Finals eligibility through call-ups</li>
-            <li>First to know when active spots open</li>
           </ul>
         </div>
       </div>
 
       <div class="tbd-banner">
-        <span class="tbd-label">Tournament Fees</span>
-        <span class="tbd-text">All tournament and course fees will be announced when the season launches. Fees are handled directly through The Corridor — members book through us.</span>
+        <p class="tbd-label">Tournament Service Fee</p>
+        <p class="tbd-text">All tournament and course fees will be announced when the season launches. Fees are handled directly through The Corridor — members book through us.</p>
       </div>
     </div>
 
-    <!-- 06 HANDICAP -->
+    <!-- 07 HANDICAP -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">06</div>
+        <div class="section-num">07</div>
         <div class="section-title"><span>Eligibility & Fair Play</span>Handicap Rules</div>
       </div>
 
       <div class="rule-list">
-        <div class="rule-item">
-          <div class="rule-icon">1</div>
-          <div class="rule-text"><strong>GHIN Verified Index Required</strong> — All members must maintain an active GHIN handicap index through the USGA. Self-reported handicaps are not accepted. GHIN costs approximately $30–40/year through your home club or the USGA directly.</div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-icon">2</div>
-          <div class="rule-text"><strong>Maximum Index: 18</strong> — The Corridor is open to players with a verified GHIN index of 0–18. This keeps competition serious while remaining accessible to dedicated recreational golfers.</div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-icon">3</div>
-          <div class="rule-text"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and season standings are calculated on a net basis. Handicap strokes applied per hole based on stroke index.</div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-icon">4</div>
-          <div class="rule-text"><strong>Sandbagging Clause</strong> — Any player whose net scores consistently outperform their handicap by 3 or more strokes over multiple tournaments is subject to a mandatory handicap review. The league reserves the right to adjust playing handicaps.</div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-icon">5</div>
-          <div class="rule-text"><strong>Balanced Team Assignment</strong> — Teams are assigned to ensure a balanced handicap mix. Each team will carry a range across the 0–18 index spectrum. No team may stack all low or all high handicap players.</div>
-        </div>
+        <div class="rule-item"><div class="rule-icon">1</div><div class="rule-text"><strong>GHIN Verified Index Required</strong> — All members must maintain an active GHIN handicap index through the USGA. Self-reported handicaps are not accepted. GHIN costs approximately $30–40/year through your home club or the USGA directly.</div></div>
+        <div class="rule-item"><div class="rule-icon">2</div><div class="rule-text"><strong>Maximum Index: 18</strong> — The Corridor is open to players with a verified GHIN index of 0–18. This keeps competition serious while remaining accessible to dedicated recreational golfers.</div></div>
+        <div class="rule-item"><div class="rule-icon">3</div><div class="rule-text"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and season standings are calculated on a net basis. Handicap strokes applied per hole based on stroke index.</div></div>
+        <div class="rule-item"><div class="rule-icon">4</div><div class="rule-text"><strong>Sandbagging Clause</strong> — Any player whose net scores consistently outperform their handicap by 3 or more strokes over multiple tournaments is subject to a mandatory handicap review. The league reserves the right to adjust playing handicaps.</div></div>
+        <div class="rule-item"><div class="rule-icon">5</div><div class="rule-text"><strong>Team Balance</strong> — Teams are friend groups but must carry a reasonable handicap spread. No team may stack all low handicap players. Captain submits roster for approval at enrollment.</div></div>
       </div>
     </div>
 
@@ -896,9 +424,25 @@ body {
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="footer-logo">THE CORRIDOR</div>
-    <div class="footer-tagline">Gulf Coast · Every Other Weekend · All Year</div>
-    <div class="footer-url">Get on the list at<br>yourcorridorsite.com</div>
+    <div class="footer-left">
+      <svg width="40" height="45" viewBox="0 0 220 200" fill="none">
+        <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
+        <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
+        <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <text x="110" y="72" text-anchor="middle" font-family="Barlow Condensed" font-size="11" font-weight="700" letter-spacing="6" fill="#c8a84b">THE</text>
+        <text x="110" y="108" text-anchor="middle" font-family="Bebas Neue" font-size="30" letter-spacing="3" fill="white">CORRIDOR</text>
+        <line x1="52" y1="118" x2="168" y2="118" stroke="#c8a84b" stroke-width="1" opacity="0.6"/>
+        <text x="110" y="140" text-anchor="middle" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.6)">GOLF LEAGUE</text>
+        <circle cx="86" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
+        <circle cx="110" cy="158" r="2.5" fill="#c8a84b"/>
+        <circle cx="134" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
+      </svg>
+      <div>
+        <div class="footer-logo">THE CORRIDOR</div>
+        <div class="footer-tagline">Competitive Team Golf · Gulf Coast</div>
+      </div>
+    </div>
+    <div class="footer-url">corridorgolfleague.com<br>info@corridorgolfleague.com</div>
   </div>
 
 </div>
