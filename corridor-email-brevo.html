@@ -4,59 +4,127 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome to The Corridor</title>
-<style type="text/css">@media only screen and (max-width: 480px) {
-    .container {
-        width: 100%
-        }
-    .email-body {
-        padding: 0 20px 32px
-        }
-    .header {
-        padding: 24px 20px 20px
-        }
-    .email-title {
-        font-size: 24px
-        }
-    .phase-cell, .skin-cell-regular, .skin-cell-featured {
-        display: block;
-        width: 100%
-        }
-    .mem-active, .mem-reserve {
-        display: block;
-        width: 100%
-        }
-    .stat-cell {
-        padding: 10px 6px
-        }
-    }</style>
+<style type="text/css">
+body { margin: 0; padding: 0; background-color: #f0ede6; font-family: Arial, Helvetica, sans-serif; }
+table { border-collapse: collapse; }
+.wrapper { width: 100%; background-color: #f0ede6; padding: 32px 0; }
+.container { max-width: 620px; margin: 0 auto; background-color: #ffffff; }
+.header { background-color: #1a4730; padding: 36px 40px 28px; }
+.header-stripe { height: 5px; background: repeating-linear-gradient(90deg, #c8a84b 0px, #c8a84b 40px, #1f5a3a 40px, #1f5a3a 42px); }
+.confirmed-label { font-size: 11px; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; color: #c8a84b; margin-bottom: 10px; }
+.email-title { font-size: 32px; font-weight: bold; color: #ffffff; line-height: 1.1; margin-bottom: 10px; font-family: Georgia, serif; }
+.email-subtitle { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; }
+.stats-bar { background-color: #111111; }
+.stat-cell { padding: 14px 10px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+.stat-num { font-size: 22px; font-weight: bold; color: #c8a84b; display: block; font-family: Georgia, serif; line-height: 1; }
+.stat-lbl { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 2px; display: block; }
+.email-body { padding: 0 40px 40px; }
+.section { padding: 24px 0; border-bottom: 1px solid #e8e8e2; }
+.section:last-child { border-bottom: none; }
+.section-label { font-size: 10px; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; color: #1a4730; margin-bottom: 6px; }
+.section-title { font-size: 22px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px; font-family: Georgia, serif; }
+.section-text { font-size: 14px; line-height: 1.75; color: #555555; margin: 0; }
+.phase-cell { width: 33.33%; background-color: #f5f5f0; padding: 14px 12px; border: 1px solid #e8e8e2; vertical-align: top; }
+.phase-holes { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
+.phase-name { font-size: 16px; font-weight: bold; color: #1a4730; margin-bottom: 6px; font-family: Georgia, serif; }
+.phase-desc { font-size: 12px; line-height: 1.5; color: #666666; margin: 0; }
+.team-cell-active { background-color: #f5f5f0; padding: 20px 16px; border: 1px solid #e8e8e2; vertical-align: top; width: 33.33%; }
+.team-cell-featured { background-color: #1a4730; padding: 20px 16px; border: 1px solid #1a4730; vertical-align: top; width: 33.33%; }
+.team-cell-plain { background-color: #f5f5f0; padding: 20px 16px; border: 1px solid #e8e8e2; border-left: none; vertical-align: top; width: 33.33%; }
+.team-type { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #9a9a90; margin-bottom: 4px; }
+.team-type-gold { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
+.team-title { font-size: 18px; font-weight: bold; color: #1a4730; font-family: Georgia, serif; margin-bottom: 8px; }
+.team-title-white { font-size: 18px; font-weight: bold; color: #ffffff; font-family: Georgia, serif; margin-bottom: 8px; }
+.team-desc { font-size: 12px; color: #555; line-height: 1.6; }
+.team-desc-white { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+.skin-cell-regular { background-color: #f5f5f0; padding: 14px 12px; border: 1px solid #e8e8e2; vertical-align: top; width: 33.33%; }
+.skin-cell-featured { background-color: #1a4730; padding: 14px 12px; border: 1px solid #1a4730; vertical-align: top; width: 33.33%; }
+.skin-name { font-size: 14px; font-weight: bold; color: #1a4730; margin-bottom: 4px; font-family: Georgia, serif; }
+.skin-name-white { font-size: 14px; font-weight: bold; color: #ffffff; margin-bottom: 4px; font-family: Georgia, serif; }
+.skin-split { font-size: 9px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; color: #ffffff; background-color: #1a4730; padding: 2px 6px; display: inline-block; margin-bottom: 6px; }
+.skin-split-gold { font-size: 9px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; color: #111111; background-color: #c8a84b; padding: 2px 6px; display: inline-block; margin-bottom: 6px; }
+.skin-desc { font-size: 12px; line-height: 1.5; color: #666666; margin: 0; }
+.skin-desc-white { font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.75); margin: 0; }
+.payout-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+.payout-th { font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #9a9a90; text-align: left; padding: 8px 10px; background-color: #f5f5f0; border-bottom: 2px solid #1a4730; }
+.payout-td { padding: 10px 10px; border-bottom: 1px solid #e8e8e2; font-size: 13px; color: #333333; }
+.payout-place { font-size: 18px; font-weight: bold; color: #1a4730; font-family: Georgia, serif; }
+.payout-place-gold { font-size: 18px; font-weight: bold; color: #c8a84b; font-family: Georgia, serif; }
+.payout-amount { font-size: 18px; font-weight: bold; color: #1a1a1a; font-family: Georgia, serif; }
+.payout-pp { font-size: 12px; color: #9a9a90; }
+.payout-winner { background-color: rgba(26,71,48,0.05); }
+.mem-active { background-color: #f5f5f0; padding: 20px 16px; border: 1px solid #e8e8e2; vertical-align: top; width: 50%; }
+.mem-reserve { background-color: #1a4730; padding: 20px 16px; border: 1px solid #1a4730; vertical-align: top; width: 50%; }
+.mem-type { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #9a9a90; margin-bottom: 4px; }
+.mem-type-gold { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
+.mem-title { font-size: 20px; font-weight: bold; color: #1a1a1a; font-family: Georgia, serif; margin-bottom: 2px; }
+.mem-title-white { font-size: 20px; font-weight: bold; color: #ffffff; font-family: Georgia, serif; margin-bottom: 2px; }
+.mem-price { font-size: 26px; font-weight: bold; color: #1a4730; font-family: Georgia, serif; margin-bottom: 12px; }
+.mem-price-gold { font-size: 26px; font-weight: bold; color: #c8a84b; font-family: Georgia, serif; margin-bottom: 12px; }
+.mem-li { font-size: 12px; color: #555555; line-height: 1.6; padding: 3px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.mem-li-white { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.6; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.tbd-banner { background-color: #f5f5f0; border-left: 3px solid #c8a84b; padding: 12px 16px; margin-top: 14px; }
+.tbd-label { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
+.tbd-text { font-size: 12px; color: #555555; line-height: 1.5; margin: 0; }
+.email-footer { background-color: #1a4730; padding: 24px 40px; border-top: 3px solid #c8a84b; }
+.footer-logo { font-size: 20px; font-weight: bold; color: #ffffff; font-family: Georgia, serif; letter-spacing: 2px; }
+.footer-tag { font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #c8a84b; margin-top: 4px; }
+.footer-unsub { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 16px; }
+@media only screen and (max-width: 480px) {
+  .container { width: 100% !important; }
+  .email-body { padding: 0 20px 32px !important; }
+  .header { padding: 24px 20px 20px !important; }
+  .phase-cell, .skin-cell-regular, .skin-cell-featured, .team-cell-active, .team-cell-featured, .team-cell-plain, .mem-active, .mem-reserve { display: block !important; width: 100% !important; }
+  .stat-cell { padding: 10px 6px !important; }
+}
+</style>
 </head>
-<body style="margin:0; padding:0; background-color:#f0ede6; font-family:Arial, Helvetica, sans-serif" bgcolor="#f0ede6">
-<div class="wrapper" style="width:100%; background-color:#f0ede6; padding:32px 0" width="100%" bgcolor="#f0ede6">
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+<body>
+<div class="wrapper">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td align="center">
-<table class="container" width="620" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; max-width:620px; margin:0 auto; background-color:#fff" bgcolor="#ffffff">
+<table class="container" width="620" cellpadding="0" cellspacing="0" border="0">
 
-  <!-- HEADER STRIPE -->
-  <tr><td class="header-stripe" style="height:5px; background:repeating-linear-gradient(90deg, #c8a84b 0, #c8a84b 40px, #1f5a3a 40px, #1f5a3a 42px)" height="5"></td></tr>
+  <tr><td class="header-stripe"></td></tr>
 
   <!-- HEADER -->
   <tr>
-    <td class="header" style="background-color:#1a4730; padding:36px 40px 28px" bgcolor="#1a4730">
-      <p class="confirmed-label" style="font-size:11px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#c8a84b; margin-bottom:10px">● You're On The List</p>
-      <p class="email-title" style="font-size:32px; font-weight:bold; color:#fff; line-height:1.1; margin-bottom:10px; font-family:Georgia, serif">Welcome to<br>The Corridor.</p>
-      <p class="email-subtitle" style="font-size:13px; color:rgba(255, 255, 255, 0.6); letter-spacing:1px; text-transform:uppercase">Gulf Coast Golf League · PCB to Destin</p>
+    <td class="header">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="64" valign="middle" style="padding-right:20px;">
+            <svg width="56" height="64" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
+              <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
+              <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
+              <text x="110" y="72" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#c8a84b">THE</text>
+              <text x="110" y="112" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="white">CORRIDOR</text>
+              <line x1="52" y1="122" x2="168" y2="122" stroke="#c8a84b" stroke-width="1" opacity="0.6"/>
+              <text x="110" y="144" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.5)">GOLF LEAGUE</text>
+              <circle cx="86" cy="162" r="3" fill="#c8a84b" opacity="0.7"/>
+              <circle cx="110" cy="162" r="3" fill="#c8a84b"/>
+              <circle cx="134" cy="162" r="3" fill="#c8a84b" opacity="0.7"/>
+            </svg>
+          </td>
+          <td valign="middle">
+            <p class="confirmed-label">&#9679; You're On The List</p>
+            <p class="email-title">Welcome to<br>The Corridor.</p>
+            <p class="email-subtitle">Competitive Team Golf · Gulf Coast</p>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
 
   <!-- STATS BAR -->
   <tr>
-    <td class="stats-bar" style="background-color:#111" bgcolor="#111111">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+    <td class="stats-bar">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td class="stat-cell" style="padding:14px 10px; text-align:center; border-right:1px solid rgba(255, 255, 255, 0.08)" align="center"><span class="stat-num" style="font-size:22px; font-weight:bold; color:#c8a84b; display:block; font-family:Georgia, serif">24</span><span class="stat-lbl" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255, 255, 255, 0.35); margin-top:2px; display:block">Tournaments</span></td>
-          <td class="stat-cell" style="padding:14px 10px; text-align:center; border-right:1px solid rgba(255, 255, 255, 0.08)" align="center"><span class="stat-num" style="font-size:22px; font-weight:bold; color:#c8a84b; display:block; font-family:Georgia, serif">Top 5</span><span class="stat-lbl" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255, 255, 255, 0.35); margin-top:2px; display:block">Teams Paid</span></td>
-          <td class="stat-cell" style="padding:14px 10px; text-align:center; border-right:1px solid rgba(255, 255, 255, 0.08)" align="center"><span class="stat-num" style="font-size:22px; font-weight:bold; color:#c8a84b; display:block; font-family:Georgia, serif">$43K</span><span class="stat-lbl" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255, 255, 255, 0.35); margin-top:2px; display:block">Finals Purse</span></td>
-          <td class="stat-cell" style="padding:14px 10px; text-align:center; border-right:none" align="center"><span class="stat-num" style="font-size:22px; font-weight:bold; color:#c8a84b; display:block; font-family:Georgia, serif">NET</span><span class="stat-lbl" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255, 255, 255, 0.35); margin-top:2px; display:block">Scoring</span></td>
+          <td class="stat-cell"><span class="stat-num">24</span><span class="stat-lbl">Tournaments</span></td>
+          <td class="stat-cell"><span class="stat-num">6</span><span class="stat-lbl">Per Team</span></td>
+          <td class="stat-cell"><span class="stat-num">Top 5</span><span class="stat-lbl">Teams Paid</span></td>
+          <td class="stat-cell" style="border-right:none;"><span class="stat-num">$100K+</span><span class="stat-lbl">Finals Fund</span></td>
         </tr>
       </table>
     </td>
@@ -64,230 +132,153 @@
 
   <!-- BODY -->
   <tr>
-    <td class="email-body" style="padding:0 40px 40px">
+    <td class="email-body">
 
       <!-- INTRO -->
-      <div class="section" style="padding:24px 0; border-bottom:1px solid #e8e8e2">
-        <p class="section-text" style="font-size:14px; line-height:1.75; color:#555; margin:0">You're on the early access list for The Corridor Golf League. Here's everything you need to know about how the league works, what it costs, and what you can win. Tournament fees and course schedule will be announced at launch.</p>
+      <div class="section">
+        <p class="section-text">You're on the early access list for The Corridor Golf League — a competitive team golf league on the Gulf Coast. Here's everything you need to know about how the league works, how teams are structured, and what you can win. Tournament fees and course schedule will be announced at launch.</p>
       </div>
 
       <!-- FORMAT -->
-      <div class="section" style="padding:24px 0; border-bottom:1px solid #e8e8e2">
-        <p class="section-label" style="font-size:10px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#1a4730; margin-bottom:6px">01 — The Format</p>
-        <p class="section-title" style="font-size:22px; font-weight:bold; color:#1a1a1a; margin-bottom:10px; font-family:Georgia, serif">How It Works</p>
-        <p class="section-text" style="font-size:14px; line-height:1.75; color:#555; margin:0">4-man teams. Split matchups across the course. Teammates ride together — opponents in the adjacent cart. Both cart groups play simultaneously on opposite sides of the course and converge mid-round. Every player locked in for all 18 holes.</p>
-        <table class="phase-table" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; width:100%; margin:14px 0; margin-top:14px" width="100%">
+      <div class="section">
+        <p class="section-label">01 &mdash; The Format</p>
+        <p class="section-title">Three Formats. One Round. No Passengers.</p>
+        <p class="section-text">4-man teams compete in a split matchup format. Teammates ride together — opponents in the adjacent cart. Both cart groups play simultaneously on opposite sides of the course and converge mid-round. Every player locked in for all 18 holes. The pressure shifts every six holes.</p>
+        <table width="100%" cellpadding="0" cellspacing="2" border="0" style="margin-top:14px;">
           <tr>
-            <td class="phase-cell" style="width:33.33%; background-color:#f5f5f0; padding:14px 12px; border:1px solid #e8e8e2; vertical-align:top" width="33.33%" bgcolor="#f5f5f0" valign="top">
-              <p class="phase-holes" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Holes 1–6</p>
-              <p class="phase-name" style="font-size:16px; font-weight:bold; color:#1a4730; margin-bottom:6px; font-family:Georgia, serif">BEST BALL</p>
-              <p class="phase-desc" style="font-size:12px; line-height:1.5; color:#666; margin:0">Best net score per hole counts for the team against the full field.</p>
+            <td class="phase-cell"><p class="phase-holes">Holes 1&ndash;6</p><p class="phase-name">BEST BALL</p><p class="phase-desc">Best net score per hole counts for the team against the full field.</p></td>
+            <td class="phase-cell" style="border-left:none;"><p class="phase-holes">Holes 7&ndash;12</p><p class="phase-name">ALT SHOT</p><p class="phase-desc">One ball, two players. Teammates alternate every stroke.</p></td>
+            <td class="phase-cell" style="border-left:none;"><p class="phase-holes">Holes 13&ndash;18</p><p class="phase-name">INDIVIDUAL</p><p class="phase-desc">Every player, every ball. Scores count personally toward standings.</p></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- TEAM STRUCTURE -->
+      <div class="section">
+        <p class="section-label">02 &mdash; Team Structure</p>
+        <p class="section-title">Your Team. Your Name. Your Identity.</p>
+        <p class="section-text">Every team carries 6 members — 4 active players and 2 reserves. Teams are formed by friends. Each team chooses their own name and identity. A captain manages the lineup each week.</p>
+        <table width="100%" cellpadding="0" cellspacing="2" border="0" style="margin-top:14px;">
+          <tr>
+            <td class="team-cell-active">
+              <p class="team-type">Active Players</p>
+              <p class="team-title">4 PER ROUND</p>
+              <p class="team-desc">The four competing that week. Captain sets the lineup before each tournament.</p>
             </td>
-            <td class="phase-cell" style="width:33.33%; background-color:#f5f5f0; padding:14px 12px; border:1px solid #e8e8e2; vertical-align:top; border-left:none" width="33.33%" bgcolor="#f5f5f0" valign="top">
-              <p class="phase-holes" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Holes 7–12</p>
-              <p class="phase-name" style="font-size:16px; font-weight:bold; color:#1a4730; margin-bottom:6px; font-family:Georgia, serif">ALT SHOT</p>
-              <p class="phase-desc" style="font-size:12px; line-height:1.5; color:#666; margin:0">One ball, two players. Teammates alternate every stroke.</p>
+            <td class="team-cell-featured" style="border-left:none;">
+              <p class="team-type-gold">Team Reserves</p>
+              <p class="team-title-white">2 ON ROSTER</p>
+              <p class="team-desc-white">Part of the team. Called up when a player can't make it. Spectator access when not playing.</p>
             </td>
-            <td class="phase-cell" style="width:33.33%; background-color:#f5f5f0; padding:14px 12px; border:1px solid #e8e8e2; vertical-align:top; border-left:none" width="33.33%" bgcolor="#f5f5f0" valign="top">
-              <p class="phase-holes" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Holes 13–18</p>
-              <p class="phase-name" style="font-size:16px; font-weight:bold; color:#1a4730; margin-bottom:6px; font-family:Georgia, serif">INDIVIDUAL</p>
-              <p class="phase-desc" style="font-size:12px; line-height:1.5; color:#666; margin:0">Every player, every ball. Scores count personally toward standings.</p>
+            <td class="team-cell-plain">
+              <p class="team-type">Leadership</p>
+              <p class="team-title">1 CAPTAIN</p>
+              <p class="team-desc">Confirms attendance, manages lineup, and is the league's point of contact.</p>
             </td>
           </tr>
         </table>
+        <div class="tbd-banner" style="margin-top:14px;">
+          <p class="tbd-label">Team Names</p>
+          <p class="tbd-text">Teams choose their own name at enrollment. Gulf Coast Iron. Dead Low. Tight Lie. Salt & Sand. Your team. Your identity. Your rivalry.</p>
+        </div>
       </div>
 
       <!-- SKINS -->
-      <div class="section" style="padding:24px 0; border-bottom:1px solid #e8e8e2">
-        <p class="section-label" style="font-size:10px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#1a4730; margin-bottom:6px">02 — The Skins Game</p>
-        <p class="section-title" style="font-size:22px; font-weight:bold; color:#1a1a1a; margin-bottom:10px; font-family:Georgia, serif">Money on Every Hole</p>
-        <p class="section-text" style="font-size:14px; line-height:1.75; color:#555; margin:0">Optional buy-in. Skins run across the entire field — not just your matched opponent. Format shifts every six holes. Ties carry over within each phase. New phase always starts fresh.</p>
-        <table class="phase-table" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; width:100%; margin:14px 0; margin-top:14px" width="100%">
+      <div class="section">
+        <p class="section-label">03 &mdash; Skins Competition</p>
+        <p class="section-title">Pro Shop Vouchers Every Round</p>
+        <p class="section-text">Optional buy-in. Skins run across the entire field — not just your matched opponent. Winners receive pro shop vouchers. Format shifts every six holes. Ties carry within each phase — new phase starts fresh.</p>
+        <table width="100%" cellpadding="0" cellspacing="2" border="0" style="margin-top:14px;">
           <tr>
-            <td class="skin-cell-regular" style="background-color:#f5f5f0; padding:14px 12px; border:1px solid #e8e8e2; vertical-align:top; width:33.33%" bgcolor="#f5f5f0" valign="top" width="33.33%">
-              <p class="phase-holes" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Holes 1–6</p>
-              <p class="skin-name" style="font-size:14px; font-weight:bold; color:#1a4730; margin-bottom:4px; font-family:Georgia, serif">BEST BALL SKINS</p>
-              <span class="skin-split" style="font-size:9px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:#fff; background-color:#1a4730; padding:2px 6px; display:inline-block; margin-bottom:6px" bgcolor="#1a4730">Split 4 Ways</span>
-              <p class="skin-desc" style="font-size:12px; line-height:1.5; color:#666; margin:0">Lowest net best ball score in the field wins the skin.</p>
-            </td>
-            <td class="skin-cell-regular" style="background-color:#f5f5f0; padding:14px 12px; border:1px solid #e8e8e2; vertical-align:top; width:33.33%; border-left:none" bgcolor="#f5f5f0" valign="top" width="33.33%">
-              <p class="phase-holes" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Holes 7–12</p>
-              <p class="skin-name" style="font-size:14px; font-weight:bold; color:#1a4730; margin-bottom:4px; font-family:Georgia, serif">ALT SHOT SKINS</p>
-              <span class="skin-split" style="font-size:9px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:#fff; background-color:#1a4730; padding:2px 6px; display:inline-block; margin-bottom:6px" bgcolor="#1a4730">Split 2 Ways</span>
-              <p class="skin-desc" style="font-size:12px; line-height:1.5; color:#666; margin:0">Lowest net alt shot score among all cart groups wins.</p>
-            </td>
-            <td class="skin-cell-featured" style="background-color:#1a4730; padding:14px 12px; border:1px solid #1a4730; vertical-align:top; width:33.33%; border-left:none" bgcolor="#1a4730" valign="top" width="33.33%">
-              <p class="phase-holes" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Holes 13–18</p>
-              <p class="skin-name-white" style="font-size:14px; font-weight:bold; color:#fff; margin-bottom:4px; font-family:Georgia, serif">INDIVIDUAL SKINS</p>
-              <span class="skin-split-gold" style="font-size:9px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:#111; background-color:#c8a84b; padding:2px 6px; display:inline-block; margin-bottom:6px" bgcolor="#c8a84b">Winner Takes All</span>
-              <p class="skin-desc-white" style="font-size:12px; line-height:1.5; color:rgba(255, 255, 255, 0.75); margin:0">Every player vs. the whole field. The real money.</p>
-            </td>
+            <td class="skin-cell-regular"><p class="phase-holes">Holes 1&ndash;6</p><p class="skin-name">BEST BALL SKINS</p><span class="skin-split">Split 4 Ways</span><p class="skin-desc">Lowest net best ball in the field wins the skin.</p></td>
+            <td class="skin-cell-regular" style="border-left:none;"><p class="phase-holes">Holes 7&ndash;12</p><p class="skin-name">ALT SHOT SKINS</p><span class="skin-split">Split 2 Ways</span><p class="skin-desc">Lowest net alt shot among all cart groups wins.</p></td>
+            <td class="skin-cell-featured" style="border-left:none;"><p class="phase-holes">Holes 13&ndash;18</p><p class="skin-name-white">INDIVIDUAL SKINS</p><span class="skin-split-gold">Winner Takes All</span><p class="skin-desc-white">Every player vs. the whole field. Biggest vouchers of the round.</p></td>
           </tr>
         </table>
       </div>
 
-      <!-- PRIZE MONEY -->
-      <div class="section" style="padding:24px 0; border-bottom:1px solid #e8e8e2">
-        <p class="section-label" style="font-size:10px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#1a4730; margin-bottom:6px">03 — Prize Money</p>
-        <p class="section-title" style="font-size:22px; font-weight:bold; color:#1a1a1a; margin-bottom:10px; font-family:Georgia, serif">Top 5 Teams Paid Every Tournament</p>
-        <p class="section-text" style="font-size:14px; line-height:1.75; color:#555; margin:0">Estimated average payouts based on field size. Actual payouts vary by course cart capacity per tournament.</p>
-        <table class="payout-table" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; width:100%; margin:14px 0" width="100%">
-          <tr>
-            <th class="payout-th" style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#9a9a90; text-align:left; padding:8px 10px; background-color:#f5f5f0; border-bottom:2px solid #1a4730" align="left" bgcolor="#f5f5f0">Place</th>
-            <th class="payout-th" style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#9a9a90; text-align:left; padding:8px 10px; background-color:#f5f5f0; border-bottom:2px solid #1a4730" align="left" bgcolor="#f5f5f0">Est. Team Payout</th>
-            <th class="payout-th" style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#9a9a90; text-align:left; padding:8px 10px; background-color:#f5f5f0; border-bottom:2px solid #1a4730" align="left" bgcolor="#f5f5f0">Est. Per Player</th>
-          </tr>
-          <tr class="payout-winner" style="background-color:rgba(26, 71, 48, 0.05)" bgcolor="rgba(26, 71, 48, 0.05)">
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-place-gold" style="font-size:18px; font-weight:bold; color:#c8a84b; font-family:Georgia, serif">1st</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-amount" style="font-size:18px; font-weight:bold; color:#1a1a1a; font-family:Georgia, serif">~$4,680</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-pp" style="font-size:12px; color:#9a9a90">~$1,170 / player</span></td>
-          </tr>
-          <tr>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-place" style="font-size:18px; font-weight:bold; color:#1a4730; font-family:Georgia, serif">2nd</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-amount" style="font-size:18px; font-weight:bold; color:#1a1a1a; font-family:Georgia, serif">~$2,925</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-pp" style="font-size:12px; color:#9a9a90">~$731 / player</span></td>
-          </tr>
-          <tr>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-place" style="font-size:18px; font-weight:bold; color:#1a4730; font-family:Georgia, serif">3rd</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-amount" style="font-size:18px; font-weight:bold; color:#1a1a1a; font-family:Georgia, serif">~$1,755</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-pp" style="font-size:12px; color:#9a9a90">~$439 / player</span></td>
-          </tr>
-          <tr>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-place" style="font-size:18px; font-weight:bold; color:#1a4730; font-family:Georgia, serif">4th</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-amount" style="font-size:18px; font-weight:bold; color:#1a1a1a; font-family:Georgia, serif">~$1,170</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:1px solid #e8e8e2; font-size:13px; color:#333"><span class="payout-pp" style="font-size:12px; color:#9a9a90">~$293 / player</span></td>
-          </tr>
-          <tr>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:none; font-size:13px; color:#333"><span class="payout-place" style="font-size:18px; font-weight:bold; color:#1a4730; font-family:Georgia, serif">5th</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:none; font-size:13px; color:#333"><span class="payout-amount" style="font-size:18px; font-weight:bold; color:#1a1a1a; font-family:Georgia, serif">~$1,170</span></td>
-            <td class="payout-td" style="padding:10px 10px; border-bottom:none; font-size:13px; color:#333"><span class="payout-pp" style="font-size:12px; color:#9a9a90">~$293 / player</span></td>
-          </tr>
+      <!-- AWARDS -->
+      <div class="section">
+        <p class="section-label">04 &mdash; Tournament Awards</p>
+        <p class="section-title">Top 5 Teams Paid Every Tournament</p>
+        <p class="section-text">Estimated average awards based on field size. Actual amounts vary by course capacity per tournament.</p>
+        <table class="payout-table" cellpadding="0" cellspacing="0" border="0">
+          <thead><tr><th class="payout-th">Place</th><th class="payout-th">Est. Team Award</th><th class="payout-th">Est. Per Player</th></tr></thead>
+          <tbody>
+            <tr class="payout-winner"><td class="payout-td"><span class="payout-place-gold">1st</span></td><td class="payout-td"><span class="payout-amount">~$4,680</span></td><td class="payout-td"><span class="payout-pp">~$1,170 / player</span></td></tr>
+            <tr><td class="payout-td"><span class="payout-place">2nd</span></td><td class="payout-td"><span class="payout-amount">~$2,925</span></td><td class="payout-td"><span class="payout-pp">~$731 / player</span></td></tr>
+            <tr><td class="payout-td"><span class="payout-place">3rd</span></td><td class="payout-td"><span class="payout-amount">~$1,755</span></td><td class="payout-td"><span class="payout-pp">~$439 / player</span></td></tr>
+            <tr><td class="payout-td"><span class="payout-place">4th</span></td><td class="payout-td"><span class="payout-amount">~$1,170</span></td><td class="payout-td"><span class="payout-pp">~$293 / player</span></td></tr>
+            <tr><td class="payout-td" style="border-bottom:none;"><span class="payout-place">5th</span></td><td class="payout-td" style="border-bottom:none;"><span class="payout-amount">~$1,170</span></td><td class="payout-td" style="border-bottom:none;"><span class="payout-pp">~$293 / player</span></td></tr>
+          </tbody>
         </table>
-        <!-- Skins note -->
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-          <tr>
-            <td style="background-color:#1a4730; padding:12px 16px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr>
-                  <td style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.6);">Skins Game — Separate Optional Pot</td>
-                  <td align="right" style="font-size:18px; font-weight:bold; color:#c8a84b; font-family:Georgia,serif;">~$4,800 Per Tournament</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr><td style="background-color:#1a4730; padding:12px 16px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.6);">Finals Fund &mdash; 10% of Every Tournament</td>
+                <td align="right" style="font-size:18px; font-weight:bold; color:#c8a84b; font-family:Georgia,serif;">Est. $100K+ Season Total</td>
+              </tr>
+            </table>
+          </td></tr>
         </table>
       </div>
 
       <!-- MEMBERSHIP -->
-      <div class="section" style="padding:24px 0; border-bottom:1px solid #e8e8e2">
-        <p class="section-label" style="font-size:10px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#1a4730; margin-bottom:6px">04 — Membership</p>
-        <p class="section-title" style="font-size:22px; font-weight:bold; color:#1a1a1a; margin-bottom:10px; font-family:Georgia, serif">How To Join</p>
-        <table class="mem-table" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; width:100%; margin:14px 0" width="100%">
+      <div class="section">
+        <p class="section-label">05 &mdash; Membership</p>
+        <p class="section-title">How To Join</p>
+        <table width="100%" cellpadding="0" cellspacing="2" border="0">
           <tr>
-            <td class="mem-active" style="background-color:#f5f5f0; padding:20px 16px; border:1px solid #e8e8e2; vertical-align:top; width:50%" bgcolor="#f5f5f0" valign="top" width="50%">
-              <p class="mem-type" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#9a9a90; margin-bottom:4px">Active Member</p>
-              <p class="mem-title" style="font-size:20px; font-weight:bold; color:#1a1a1a; font-family:Georgia, serif; margin-bottom:2px">ACTIVE</p>
-              <p class="mem-price" style="font-size:26px; font-weight:bold; color:#1a4730; font-family:Georgia, serif; margin-bottom:12px">$50<span style="font-size:14px;">/mo</span></p>
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr><td class="mem-li" style="font-size:12px; color:#555; line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(0, 0, 0, 0.06)">Permanent spot on a 4-man team</td></tr>
-                <tr><td class="mem-li" style="font-size:12px; color:#555; line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(0, 0, 0, 0.06)">Entry to all 24 tournaments</td></tr>
-                <tr><td class="mem-li" style="font-size:12px; color:#555; line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(0, 0, 0, 0.06)">Full standings &amp; league access</td></tr>
-                <tr><td class="mem-li" style="font-size:12px; color:#555; line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(0, 0, 0, 0.06)">Finals eligible — 16 of 24 required</td></tr>
-                <tr><td class="mem-li" style="font-size:12px; color:#555; line-height:1.6; padding:3px 0; border-bottom:none">Tournament fees announced at launch</td></tr>
+            <td class="mem-active">
+              <p class="mem-type">Active Member</p>
+              <p class="mem-title">ACTIVE</p>
+              <p class="mem-price">$50<span style="font-size:14px;">/mo</span></p>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td class="mem-li">Permanent spot on a 6-man team</td></tr>
+                <tr><td class="mem-li">Compete in all 24 tournaments</td></tr>
+                <tr><td class="mem-li">Full standings & league access</td></tr>
+                <tr><td class="mem-li">Finals eligible &mdash; 16 of 24 required</td></tr>
+                <tr><td class="mem-li" style="border-bottom:none;">Tournament service fee TBD at launch</td></tr>
               </table>
             </td>
-            <td class="mem-reserve" style="background-color:#1a4730; padding:20px 16px; border:1px solid #1a4730; vertical-align:top; width:50%; border-left:none" bgcolor="#1a4730" valign="top" width="50%">
-              <p class="mem-type-gold" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Reserve Member</p>
-              <p class="mem-title-white" style="font-size:20px; font-weight:bold; color:#fff; font-family:Georgia, serif; margin-bottom:2px">RESERVE</p>
-              <p class="mem-price-gold" style="font-size:26px; font-weight:bold; color:#c8a84b; font-family:Georgia, serif; margin-bottom:12px">$5<span style="font-size:14px;">/mo</span></p>
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr><td class="mem-li-white" style="font-size:12px; color:rgba(255, 255, 255, 0.8); line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(255, 255, 255, 0.08)">Full league membership &amp; community</td></tr>
-                <tr><td class="mem-li-white" style="font-size:12px; color:rgba(255, 255, 255, 0.8); line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(255, 255, 255, 0.08)">Called up when a team needs a sub</td></tr>
-                <tr><td class="mem-li-white" style="font-size:12px; color:rgba(255, 255, 255, 0.8); line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(255, 255, 255, 0.08)">Per-round fee when called up</td></tr>
-                <tr><td class="mem-li-white" style="font-size:12px; color:rgba(255, 255, 255, 0.8); line-height:1.6; padding:3px 0; border-bottom:1px solid rgba(255, 255, 255, 0.08)">Priority placement when active spots open</td></tr>
-                <tr><td class="mem-li-white" style="font-size:12px; color:rgba(255, 255, 255, 0.8); line-height:1.6; padding:3px 0; border-bottom:none">Earn Finals eligibility through call-ups</td></tr>
+            <td class="mem-reserve" style="border-left:none;">
+              <p class="mem-type-gold">Reserve Member</p>
+              <p class="mem-title-white">RESERVE</p>
+              <p class="mem-price-gold">$5<span style="font-size:14px;">/mo</span></p>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td class="mem-li-white">Part of a 6-man team roster</td></tr>
+                <tr><td class="mem-li-white">Spectator access to all tournaments</td></tr>
+                <tr><td class="mem-li-white">Called up by captain when needed</td></tr>
+                <tr><td class="mem-li-white">Full service fee required when playing</td></tr>
+                <tr><td class="mem-li-white" style="border-bottom:none;">Priority when active spots open</td></tr>
               </table>
             </td>
           </tr>
         </table>
-        <div class="tbd-banner" style="background-color:#f5f5f0; border-left:3px solid #c8a84b; padding:12px 16px; margin-top:14px" bgcolor="#f5f5f0">
-          <p class="tbd-label" style="font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-bottom:4px">Tournament Fees</p>
-          <p class="tbd-text" style="font-size:12px; color:#555; line-height:1.5; margin:0">All tournament and course fees will be announced when the season launches. Fees are handled directly through The Corridor — members book through us.</p>
+        <div class="tbd-banner">
+          <p class="tbd-label">Tournament Service Fee</p>
+          <p class="tbd-text">All tournament and course fees announced at season launch. Handled directly through The Corridor — members book through us.</p>
         </div>
       </div>
 
-      <!-- HANDICAP RULES -->
-      <div class="section" style="padding:24px 0; border-bottom:1px solid #e8e8e2">
-        <p class="section-label" style="font-size:10px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#1a4730; margin-bottom:6px">05 — Eligibility &amp; Fair Play</p>
-        <p class="section-title" style="font-size:22px; font-weight:bold; color:#1a1a1a; margin-bottom:10px; font-family:Georgia, serif">Handicap Rules</p>
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-          <tr>
-            <td style="padding:10px 0; border-bottom:1px solid #e8e8e2;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr>
-                  <td width="32" valign="top" style="padding-right:12px;">
-                    <div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;font-family:Georgia,serif;">1</div>
-                  </td>
-                  <td style="font-size:13px;color:#333333;line-height:1.6;"><strong>GHIN Verified Index Required</strong> — Active USGA handicap index required. Self-reported handicaps not accepted. ~$30–40/year through your home club or USGA.</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; border-bottom:1px solid #e8e8e2;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr>
-                  <td width="32" valign="top" style="padding-right:12px;">
-                    <div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;font-family:Georgia,serif;">2</div>
-                  </td>
-                  <td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Maximum Index: 18</strong> — Open to players with a verified GHIN index of 0–18.</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; border-bottom:1px solid #e8e8e2;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr>
-                  <td width="32" valign="top" style="padding-right:12px;">
-                    <div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;font-family:Georgia,serif;">3</div>
-                  </td>
-                  <td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and standings calculated on a net basis.</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; border-bottom:1px solid #e8e8e2;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr>
-                  <td width="32" valign="top" style="padding-right:12px;">
-                    <div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;font-family:Georgia,serif;">4</div>
-                  </td>
-                  <td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Sandbagging Clause</strong> — Consistent over-performance triggers a mandatory handicap review. The league reserves the right to adjust playing handicaps.</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
-                <tr>
-                  <td width="32" valign="top" style="padding-right:12px;">
-                    <div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;font-family:Georgia,serif;">5</div>
-                  </td>
-                  <td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Balanced Team Assignment</strong> — Teams assigned to ensure a balanced mix across the 0–18 index spectrum.</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+      <!-- HANDICAP -->
+      <div class="section">
+        <p class="section-label">06 &mdash; Eligibility & Fair Play</p>
+        <p class="section-title">Handicap Rules</p>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">1</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>GHIN Verified Index Required</strong> — Active USGA handicap index required. ~$30&ndash;40/year through your home club or USGA.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">2</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Maximum Index: 18</strong> — Open to players with a verified GHIN index of 0&ndash;18.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">3</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and standings calculated on a net basis.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0; border-bottom:1px solid #e8e8e2;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">4</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Sandbagging Clause</strong> — Consistent over-performance triggers a mandatory handicap review. The league reserves the right to adjust playing handicaps.</td></tr></table></td></tr>
+          <tr><td style="padding:10px 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="32" valign="top" style="padding-right:12px;"><div style="width:26px;height:26px;background-color:#1a4730;text-align:center;line-height:26px;font-size:13px;font-weight:bold;color:#ffffff;">5</div></td><td style="font-size:13px;color:#333333;line-height:1.6;"><strong>Team Balance</strong> — Teams are friend groups but must carry a reasonable spread across the 0&ndash;18 index range.</td></tr></table></td></tr>
         </table>
       </div>
 
-      <!-- WHAT'S NEXT -->
-      <div class="section" style="padding:24px 0; border-bottom:none">
-        <p class="section-label" style="font-size:10px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#1a4730; margin-bottom:6px">What's Next</p>
-        <p class="section-text" style="font-size:14px; line-height:1.75; color:#555; margin:0">We'll be in touch as soon as course partnerships are confirmed and enrollment officially opens. When that happens you'll hear from us first — before the public. In the meantime if you have any questions reply directly to this email.</p>
+      <!-- NEXT -->
+      <div class="section" style="border-bottom:none;">
+        <p class="section-label">What's Next</p>
+        <p class="section-text">We'll be in touch as soon as courses are confirmed and enrollment officially opens. You'll hear from us first — before the public. Questions? Reply directly to this email at info@corridorgolfleague.com</p>
       </div>
 
     </td>
@@ -295,10 +286,27 @@
 
   <!-- FOOTER -->
   <tr>
-    <td class="email-footer" style="background-color:#1a4730; padding:24px 40px; border-top:3px solid #c8a84b" bgcolor="#1a4730">
-      <p class="footer-logo" style="font-size:20px; font-weight:bold; color:#fff; font-family:Georgia, serif; letter-spacing:2px">THE CORRIDOR</p>
-      <p class="footer-tag" style="font-size:10px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#c8a84b; margin-top:4px">Gulf Coast · Every Other Weekend · All Year</p>
-      <p class="footer-unsub" style="font-size:11px; color:rgba(255, 255, 255, 0.3); margin-top:16px">You're receiving this because you signed up for early access to The Corridor Golf League.</p>
+    <td class="email-footer">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="52" valign="middle" style="padding-right:16px;">
+            <svg width="44" height="50" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
+              <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
+              <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
+              <text x="110" y="108" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="white">C</text>
+            </svg>
+          </td>
+          <td valign="middle">
+            <p class="footer-logo">THE CORRIDOR</p>
+            <p class="footer-tag">Competitive Team Golf · Gulf Coast</p>
+          </td>
+          <td align="right" valign="middle">
+            <p style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.8;">corridorgolfleague.com<br>info@corridorgolfleague.com</p>
+          </td>
+        </tr>
+      </table>
+      <p class="footer-unsub">You're receiving this because you signed up for early access at corridorgolfleague.com</p>
     </td>
   </tr>
 
