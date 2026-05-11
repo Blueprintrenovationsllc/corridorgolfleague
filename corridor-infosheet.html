@@ -60,7 +60,7 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .phase-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: #1a4730; line-height: 1; margin-bottom: 8px; }
 .phase-desc { font-size: 0.78rem; line-height: 1.6; color: #666; }
 
-/* TEAM STRUCTURE */
+/* TEAM */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e8e8e2; border: 1px solid #e8e8e2; margin: 16px 0; }
 .team-cell { background: #fff; padding: 20px 16px; }
 .team-cell.featured { background: #1a4730; }
@@ -69,6 +69,14 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .team-cell.featured .team-cell-value { color: #ffffff; }
 .team-cell-desc { font-size: 0.78rem; line-height: 1.6; color: #666; }
 .team-cell.featured .team-cell-desc { color: rgba(255,255,255,0.75); }
+
+/* HANDICAP TABLE */
+.handicap-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+.handicap-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #9a9a90; text-align: left; padding: 8px 12px; border-bottom: 2px solid #1a4730; background: #f5f5f0; }
+.handicap-table td { padding: 10px 12px; border-bottom: 1px solid #e8e8e2; font-size: 0.85rem; color: #333; }
+.handicap-table tr:last-child td { border-bottom: none; }
+.handicap-table .index { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: #1a4730; }
+.handicap-table .plays-as { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: #c8a84b; }
 
 /* SKINS */
 .skins-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e8e8e2; border: 1px solid #e8e8e2; margin: 16px 0; }
@@ -83,11 +91,6 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .skins-phase.featured .skins-phase-desc { color: rgba(255,255,255,0.75); }
 .skins-phase-winner { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; background: #1a4730; color: #fff; padding: 3px 8px; margin-top: 10px; }
 .skins-phase.featured .skins-phase-winner { background: #c8a84b; color: #111; }
-.skins-rule-box { background: #f5f5f0; border: 1px solid #e8e8e2; padding: 16px 20px; margin-top: 16px; display: flex; gap: 20px; }
-.skins-rule { flex: 1; border-right: 1px solid #e8e8e2; padding-right: 20px; }
-.skins-rule:last-child { border-right: none; padding-right: 0; }
-.skins-rule-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 6px; }
-.skins-rule-text { font-size: 0.78rem; color: #666; line-height: 1.5; }
 
 /* PRIZE TABLE */
 .money-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
@@ -134,7 +137,7 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 .tbd-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84b; margin-bottom: 4px; }
 .tbd-text { font-size: 0.82rem; color: #555; line-height: 1.5; margin: 0; }
 
-/* HANDICAP */
+/* RULES */
 .rule-list { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
 .rule-item { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid #e8e8e2; }
 .rule-item:first-child { border-top: 1px solid #e8e8e2; }
@@ -159,11 +162,7 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   .stat-item:nth-child(4), .stat-item:nth-child(5) { display: none; }
   .phases, .skins-phases, .team-grid { grid-template-columns: 1fr; }
   .mem-grid { grid-template-columns: 1fr; }
-  .skins-rule-box { flex-direction: column; }
-  .skins-rule { border-right: none; border-bottom: 1px solid #e8e8e2; padding-right: 0; padding-bottom: 12px; }
-  .skins-rule:last-child { border-bottom: none; }
   .footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
-  .footer-url { text-align: center; }
   .header-logo { flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -175,15 +174,14 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   <div class="header">
     <div class="header-top">
       <div class="header-logo">
-        <!-- Crest -->
-        <svg width="64" height="72" viewBox="0 0 220 200" fill="none" style="flex-shrink:0;">
+        <svg width="64" height="72" viewBox="0 0 220 200" fill="none">
           <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
           <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
           <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
-          <text x="110" y="72" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="11" font-weight="700" letter-spacing="6" fill="#c8a84b">THE</text>
-          <text x="110" y="108" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="30" letter-spacing="3" fill="white">CORRIDOR</text>
+          <text x="110" y="72" text-anchor="middle" font-family="Barlow Condensed" font-size="11" font-weight="700" letter-spacing="6" fill="#c8a84b">THE</text>
+          <text x="110" y="108" text-anchor="middle" font-family="Bebas Neue" font-size="30" letter-spacing="3" fill="white">CORRIDOR</text>
           <line x1="52" y1="118" x2="168" y2="118" stroke="#c8a84b" stroke-width="1" opacity="0.6"/>
-          <text x="110" y="140" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="10" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.6)">GOLF LEAGUE</text>
+          <text x="110" y="140" text-anchor="middle" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.6)">GOLF LEAGUE</text>
           <circle cx="86" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
           <circle cx="110" cy="158" r="2.5" fill="#c8a84b"/>
           <circle cx="134" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
@@ -198,9 +196,9 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <span class="badge-label">Season</span>
         <span class="badge-value">TBD</span>
         <span class="badge-label" style="margin-top:12px;">Handicap Max</span>
-        <span class="badge-value">18 Index</span>
-        <span class="badge-label" style="margin-top:12px;">Verified Via</span>
-        <span class="badge-value">GHIN</span>
+        <span class="badge-value">15 Index</span>
+        <span class="badge-label" style="margin-top:12px;">Allowance</span>
+        <span class="badge-value">50%</span>
       </div>
     </div>
     <div class="header-tagline"><strong>Competitive Team Golf.</strong> Real Money. Real Growth. Real Community.</div>
@@ -210,8 +208,8 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
   <div class="stats-bar">
     <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">Tournaments</span></div>
     <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Per Team</span></div>
+    <div class="stat-item"><span class="stat-num">50%</span><span class="stat-label">Handicap Allow.</span></div>
     <div class="stat-item"><span class="stat-num">Top 5</span><span class="stat-label">Teams Paid</span></div>
-    <div class="stat-item"><span class="stat-num">$TBD</span><span class="stat-label">Finals Fund</span></div>
     <div class="stat-item"><span class="stat-num">NET</span><span class="stat-label">Scoring</span></div>
   </div>
 
@@ -223,7 +221,7 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <div class="section-num">01</div>
         <div class="section-title"><span>How It Works</span>Three Formats. One Round. No Passengers.</div>
       </div>
-      <p class="body-text">4-man teams compete in a split matchup format. Teammates ride together in their own cart — their two opponents ride in the adjacent cart. Both cart groups play the same match simultaneously on opposite sides of the course and converge mid-round. Every player is locked in for all 18 holes across three rotating formats. The pressure shifts every six holes. Nobody checks out.</p>
+      <p class="body-text">4-man teams compete in a split matchup format. Teammates ride together in their own cart — their two opponents ride in the adjacent cart. Both cart groups play the same match simultaneously on opposite sides of the course and converge mid-round. Every player locked in for all 18 holes. The pressure shifts every six holes. Nobody checks out.</p>
 
       <div class="matchup-box">
         <div class="matchup-box-title">Tournament Matchup Structure — Per Round</div>
@@ -241,9 +239,9 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
 
       <div class="phases">
-        <div class="phase"><div class="phase-holes">Holes 1–6</div><div class="phase-name">BEST BALL</div><p class="phase-desc">Best net score per hole counts for the team against the full field.</p></div>
-        <div class="phase"><div class="phase-holes">Holes 7–12</div><div class="phase-name">ALT SHOT</div><p class="phase-desc">One ball, two players. Teammates alternate every stroke for 6 holes.</p></div>
-        <div class="phase"><div class="phase-holes">Holes 13–18</div><div class="phase-name">INDIVIDUAL</div><p class="phase-desc">Every player, every ball. Scores count personally toward season standings.</p></div>
+        <div class="phase"><div class="phase-holes">Holes 1–6</div><div class="phase-name">BEST BALL</div><p class="phase-desc">Each player plays their own ball. Best net score per hole counts for the team against the full field.</p></div>
+        <div class="phase"><div class="phase-holes">Holes 7–12</div><div class="phase-name">ALT SHOT</div><p class="phase-desc">One ball, two players. Teammates alternate every stroke. Chemistry wins here.</p></div>
+        <div class="phase"><div class="phase-holes">Holes 13–18</div><div class="phase-name">INDIVIDUAL</div><p class="phase-desc">Every player, every ball. Scores count personally toward season standings and the Corridor Cup.</p></div>
       </div>
     </div>
 
@@ -253,78 +251,114 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <div class="section-num">02</div>
         <div class="section-title"><span>Team Roster</span>Your Team. Your Name. Your Identity.</div>
       </div>
-      <p class="body-text">Every team carries 6 members — 4 active players and 2 reserves. Teams are formed by friends. Each team chooses their own name and builds their own identity. A team captain manages the lineup each week, deciding who plays and who sits. Reserves are part of the team community and attend all tournaments as spectators when not playing.</p>
+      <p class="body-text">Every team carries 6 members — 4 active players and 2 reserves. Teams are formed by friends. Each team chooses their own name and identity. A team captain manages the lineup each week, deciding who plays and who sits. Reserves attend all tournaments as spectators when not in the lineup.</p>
 
       <div class="team-grid">
         <div class="team-cell">
           <div class="team-cell-label">Active Players</div>
           <div class="team-cell-value">4 PER ROUND</div>
-          <p class="team-cell-desc">The four competing that week. Captain sets the lineup before each tournament.</p>
+          <p class="team-cell-desc">The four competing that week. Captain sets the lineup. All four must meet the combined handicap requirement.</p>
         </div>
         <div class="team-cell featured">
           <div class="team-cell-label">Team Reserves</div>
           <div class="team-cell-value">2 ON ROSTER</div>
-          <p class="team-cell-desc">Part of the team. Called up when a player can't make it. Spectator access when not playing.</p>
+          <p class="team-cell-desc">Part of the team. Called up when a player can't make it. Full tournament fee required when playing. Spectator access when not.</p>
         </div>
         <div class="team-cell">
           <div class="team-cell-label">Leadership</div>
           <div class="team-cell-value">1 CAPTAIN</div>
-          <p class="team-cell-desc">Confirms attendance, manages lineup, and is the league's point of contact for the team.</p>
+          <p class="team-cell-desc">Confirms attendance, manages the lineup, submits the playing 4 to the league before each tournament.</p>
         </div>
       </div>
 
       <div class="tbd-banner">
-        <p class="tbd-label">Team Names</p>
-        <p class="tbd-text">Teams choose their own name at enrollment. Gulf Coast Iron. Dead Low. Tight Lie. Salt & Sand. Your team. Your identity. Your rivalry.</p>
+        <p class="tbd-label">Shorthanded Rule</p>
+        <p class="tbd-text">If a full lineup isn't available a team may play shorthanded or borrow a reserve from another team with captain approval. Borrowed reserves play under their own handicap for that tournament only.</p>
       </div>
     </div>
 
-    <!-- 03 SKINS -->
+    <!-- 03 HANDICAP RULES -->
     <div class="section">
       <div class="section-header">
         <div class="section-num">03</div>
+        <div class="section-title"><span>Eligibility & Fair Play</span>Handicap Rules</div>
+      </div>
+      <p class="body-text">The Corridor uses a verified net scoring system designed to protect competitive integrity across the full field. All scoring is net at 50% of your GHIN index. Strokes are distributed across all 18 holes by course stroke index — wherever the hardest holes fall across the three formats is where your strokes land.</p>
+
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-icon">1</div><div class="rule-text"><strong>GHIN Verified Index Required</strong> — All members must maintain an active GHIN handicap index through the USGA. Self-reported handicaps are not accepted. GHIN costs approximately $30–40/year through your home club or the USGA directly.</div></div>
+        <div class="rule-item"><div class="rule-icon">2</div><div class="rule-text"><strong>Maximum Index: 15 — Plus Handicaps Welcome</strong> — The Corridor is open to players with a verified GHIN index of + to 15. This protects the competitive standard, the pace of play, and the quality of the field.</div></div>
+        <div class="rule-item"><div class="rule-icon">3</div><div class="rule-text"><strong>50% Handicap Allowance</strong> — All net scoring is calculated at 50% of your GHIN index across all 18 holes. Strokes are distributed by the course stroke index card. A 15 index plays as a 7 or 8. A 10 plays as a 5. A scratch plays as scratch. Plus handicaps play to their plus allowance.</div></div>
+        <div class="rule-item"><div class="rule-icon">4</div><div class="rule-text"><strong>Team Composition — Minimum Combined 20</strong> — The playing 4 each week must have a minimum combined handicap of 20 at 50% allowance. This prevents teams from stacking all low handicap players and keeps competition balanced across the full field.</div></div>
+        <div class="rule-item"><div class="rule-icon">5</div><div class="rule-text"><strong>Sandbagging Clause</strong> — Any player whose net scores consistently outperform their handicap by 3 or more strokes over multiple tournaments is subject to a mandatory handicap review. The league reserves the right to adjust playing handicaps to protect competitive integrity.</div></div>
+      </div>
+
+      <!-- Handicap reference table -->
+      <table class="handicap-table" style="margin-top:20px;">
+        <thead>
+          <tr>
+            <th>GHIN Index</th>
+            <th>Plays At (50%)</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="index">+2</span></td><td><span class="plays-as">+1</span></td><td style="font-size:0.78rem;color:#666;">Plus handicap — strokes given to field</td></tr>
+          <tr><td><span class="index">0</span></td><td><span class="plays-as">0</span></td><td style="font-size:0.78rem;color:#666;">Scratch plays as scratch</td></tr>
+          <tr><td><span class="index">4</span></td><td><span class="plays-as">2</span></td><td style="font-size:0.78rem;color:#666;">2 strokes on the 2 hardest holes</td></tr>
+          <tr><td><span class="index">8</span></td><td><span class="plays-as">4</span></td><td style="font-size:0.78rem;color:#666;">4 strokes on the 4 hardest holes</td></tr>
+          <tr><td><span class="index">10</span></td><td><span class="plays-as">5</span></td><td style="font-size:0.78rem;color:#666;">5 strokes on the 5 hardest holes</td></tr>
+          <tr><td><span class="index">12</span></td><td><span class="plays-as">6</span></td><td style="font-size:0.78rem;color:#666;">6 strokes on the 6 hardest holes</td></tr>
+          <tr><td><span class="index">15</span></td><td><span class="plays-as">7–8</span></td><td style="font-size:0.78rem;color:#666;">Maximum index allowed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 04 SKINS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">04</div>
         <div class="section-title"><span>Optional Buy-In · Pro Shop Vouchers</span>The Skins Competition</div>
       </div>
-      <p class="body-text">The skins competition runs across the entire field — not just your matched opponent. Every team that buys in competes on every hole against all other teams in the tournament. Winners receive pro shop vouchers. The format shifts every six holes matching the tournament format.</p>
+      <p class="body-text">The skins competition runs across the entire field — not just your matched opponent. Every team that buys in competes on every hole against all other teams. Winners receive pro shop vouchers paid out at the end of the round. Same 50% handicap allowance applies. The format shifts every six holes matching the tournament structure.</p>
 
       <div class="skins-phases">
         <div class="skins-phase">
           <div class="skins-phase-holes">Holes 1–6</div>
           <div class="skins-phase-name">BEST BALL SKINS</div>
           <div class="skins-phase-type">Team vs. Whole Field</div>
-          <p class="skins-phase-desc">Lowest net best ball score in the field wins the skin. Tie carries over.</p>
+          <p class="skins-phase-desc">Lowest net best ball score in the field wins the skin. Tie carries over to the next hole.</p>
           <span class="skins-phase-winner">Split 4 Ways</span>
         </div>
         <div class="skins-phase">
           <div class="skins-phase-holes">Holes 7–12</div>
           <div class="skins-phase-name">ALT SHOT SKINS</div>
           <div class="skins-phase-type">Cart Group vs. Whole Field</div>
-          <p class="skins-phase-desc">Lowest net alt shot score among all cart groups wins. Tie carries over.</p>
+          <p class="skins-phase-desc">Lowest net alt shot score among all cart groups in the field wins. Tie carries over.</p>
           <span class="skins-phase-winner">Split 2 Ways</span>
         </div>
         <div class="skins-phase featured">
           <div class="skins-phase-holes">Holes 13–18</div>
           <div class="skins-phase-name">INDIVIDUAL SKINS</div>
           <div class="skins-phase-type">Player vs. Whole Field</div>
-          <p class="skins-phase-desc">Every player individually vs. the entire field. The biggest vouchers of the round.</p>
+          <p class="skins-phase-desc">Every player individually against the entire field. Biggest vouchers of the round.</p>
           <span class="skins-phase-winner">Winner Takes All</span>
         </div>
       </div>
 
-      <div class="skins-rule-box">
-        <div class="skins-rule"><div class="skins-rule-label">Carryover Rule</div><p class="skins-rule-text">Ties carry within each phase. Each new phase starts fresh — no carryover between formats.</p></div>
-        <div class="skins-rule"><div class="skins-rule-label">Scoring</div><p class="skins-rule-text">All skins played on net scores using verified GHIN indexes. Handicap strokes applied per stroke index.</p></div>
-        <div class="skins-rule"><div class="skins-rule-label">Vouchers</div><p class="skins-rule-text">Pro shop vouchers paid out at the end of the round once all scorecards are posted.</p></div>
+      <div class="tbd-banner">
+        <p class="tbd-label">Carryover Rule</p>
+        <p class="tbd-text">Ties carry within each phase. Each new phase starts fresh — no carryover between Best Ball, Alt Shot, and Individual phases.</p>
       </div>
     </div>
 
-    <!-- 04 PRIZE MONEY -->
+    <!-- 05 TOURNAMENT AWARDS -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">04</div>
+        <div class="section-num">05</div>
         <div class="section-title"><span>Per Tournament · Top 5 Teams</span>Tournament Awards</div>
       </div>
-      <p class="body-text">Every tournament pays the top 5 finishing teams based on net team score across all 18 holes. Estimated average awards based on field size — actual amounts vary by course capacity per tournament.</p>
+      <p class="body-text">Every tournament pays the top 5 finishing teams based on net team score across all 18 holes. Estimated average awards based on field size — actual amounts vary by course capacity per tournament. Tournament fees announced at season launch.</p>
 
       <table class="money-table">
         <thead><tr><th>Place</th><th>Est. Team Award</th><th>Est. Per Player</th></tr></thead>
@@ -343,18 +377,18 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
     </div>
 
-    <!-- 05 FINALS -->
+    <!-- 06 CORRIDOR CUP -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">05</div>
+        <div class="section-num">06</div>
         <div class="section-title"><span>Season Championship</span>The Corridor Cup</div>
       </div>
-      <p class="body-text">10% of every tournament goes directly into the Corridor Cup fund all season long. Points accumulate based on tournament finish — consistent teams are rewarded. The top teams by standings qualify for the season championship at a premier Gulf Coast venue. Minimum 16 of 24 appearances required to qualify.</p>
+      <p class="body-text">10% of every tournament goes directly into the Corridor Cup fund all season long. Points accumulate based on tournament finish position — consistent teams are rewarded regardless of where they finish. The top teams by season standings qualify for the Corridor Cup at a premier Gulf Coast venue. Minimum 16 of 24 appearances required to qualify.</p>
 
       <div class="finals-box">
         <div class="finals-box-header">
-          <span class="finals-box-title">Season Standings — Finals Qualified</span>
-          <span class="finals-purse">Finals Fund TBD</span>
+          <span class="finals-box-title">Season Standings — Corridor Cup Qualified</span>
+          <span class="finals-purse">Fund Built All Season</span>
         </div>
         <div class="finals-row"><div class="finals-pos gold">1</div><div class="finals-team-name">GULF COAST IRON</div><div class="finals-pts">284 pts</div></div>
         <div class="finals-row"><div class="finals-pos">2</div><div class="finals-team-name">SALT & SAND</div><div class="finals-pts">271 pts</div></div>
@@ -364,10 +398,10 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
     </div>
 
-    <!-- 06 MEMBERSHIP -->
+    <!-- 07 MEMBERSHIP -->
     <div class="section">
       <div class="section-header">
-        <div class="section-num">06</div>
+        <div class="section-num">07</div>
         <div class="section-title"><span>Monthly Membership</span>How To Join</div>
       </div>
 
@@ -404,22 +438,6 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
       </div>
     </div>
 
-    <!-- 07 HANDICAP -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-num">07</div>
-        <div class="section-title"><span>Eligibility & Fair Play</span>Handicap Rules</div>
-      </div>
-
-      <div class="rule-list">
-        <div class="rule-item"><div class="rule-icon">1</div><div class="rule-text"><strong>GHIN Verified Index Required</strong> — All members must maintain an active GHIN handicap index through the USGA. Self-reported handicaps are not accepted. GHIN costs approximately $30–40/year through your home club or the USGA directly.</div></div>
-        <div class="rule-item"><div class="rule-icon">2</div><div class="rule-text"><strong>Maximum Index: 18</strong> — The Corridor is open to players with a verified GHIN index of 0–18. This keeps competition serious while remaining accessible to dedicated recreational golfers.</div></div>
-        <div class="rule-item"><div class="rule-icon">3</div><div class="rule-text"><strong>Net Scoring Throughout</strong> — All tournament scoring, skins, and season standings are calculated on a net basis. Handicap strokes applied per hole based on stroke index.</div></div>
-        <div class="rule-item"><div class="rule-icon">4</div><div class="rule-text"><strong>Sandbagging Clause</strong> — Any player whose net scores consistently outperform their handicap by 3 or more strokes over multiple tournaments is subject to a mandatory handicap review. The league reserves the right to adjust playing handicaps.</div></div>
-        <div class="rule-item"><div class="rule-icon">5</div><div class="rule-text"><strong>Team Balance</strong> — Teams are friend groups but must carry a reasonable handicap spread. No team may stack all low handicap players. Captain submits roster for approval at enrollment.</div></div>
-      </div>
-    </div>
-
   </div>
 
   <!-- FOOTER -->
@@ -429,13 +447,7 @@ body { background: #f0ede6; font-family: 'Inter', sans-serif; color: #1a1a1a; }
         <path d="M110 8 L202 40 L202 110 C202 155 160 185 110 196 C60 185 18 155 18 110 L18 40 Z" fill="#c8a84b"/>
         <path d="M110 14 L196 44 L196 110 C196 152 156 180 110 191 C64 180 24 152 24 110 L24 44 Z" fill="#1a4730"/>
         <path d="M110 22 L188 50 L188 110 C188 147 151 173 110 183 C69 173 32 147 32 110 L32 50 Z" stroke="#c8a84b" stroke-width="1.5" fill="none" opacity="0.4"/>
-        <text x="110" y="72" text-anchor="middle" font-family="Barlow Condensed" font-size="11" font-weight="700" letter-spacing="6" fill="#c8a84b">THE</text>
-        <text x="110" y="108" text-anchor="middle" font-family="Bebas Neue" font-size="30" letter-spacing="3" fill="white">CORRIDOR</text>
-        <line x1="52" y1="118" x2="168" y2="118" stroke="#c8a84b" stroke-width="1" opacity="0.6"/>
-        <text x="110" y="140" text-anchor="middle" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.6)">GOLF LEAGUE</text>
-        <circle cx="86" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
-        <circle cx="110" cy="158" r="2.5" fill="#c8a84b"/>
-        <circle cx="134" cy="158" r="2.5" fill="#c8a84b" opacity="0.7"/>
+        <text x="110" y="108" text-anchor="middle" font-family="Bebas Neue" font-size="30" letter-spacing="3" fill="white">C</text>
       </svg>
       <div>
         <div class="footer-logo">THE CORRIDOR</div>
